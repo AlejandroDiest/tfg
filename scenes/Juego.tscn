@@ -396,11 +396,5 @@ position = Vector2(118, 67)
 
 [node name="Personaje" parent="." instance=ExtResource("1_5wx1s")]
 
-[node name="Camera2D" type="Camera2D" parent="Personaje"]
-position = Vector2(0, -8)
-zoom = Vector2(4, 4)
-position_smoothing_enabled = true
-position_smoothing_speed = 6.0
-
 [node name="Moneda3" parent="." instance=ExtResource("3_41r3f")]
 position = Vector2(120, 105)
