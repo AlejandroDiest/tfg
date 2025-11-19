@@ -1,2 +1,7 @@
-Hola
-david
+COPIAR CAMBIOS
+git pull origin master
+
+GUARDAR CAMBIOS
+git add .
+git commit -m "mensaje"
+git push -u origin master
