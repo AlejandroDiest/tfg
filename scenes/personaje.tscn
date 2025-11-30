@@ -59,7 +59,7 @@ autoplay = "afk"
 frame_progress = 0.49306387
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -8)
-zoom = Vector2(4, 4)
-position_smoothing_enabled = true
-position_smoothing_speed = 6.0
+physics_interpolation_mode = 1
+position = Vector2(-1, -8)
+process_callback = 0
+position_smoothing_speed = 8.0

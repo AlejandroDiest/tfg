@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://d18qfvvtpmrsn" path="res://scenes/personaje.tscn" id="1_5wx1s"]
 [ext_resource type="Script" uid="uid://c7175h2t6ufs2" path="res://scripts/game_manager.gd" id="1_kgnyf"]
 [ext_resource type="Texture2D" uid="uid://cos5yyd6vkkt2" path="res://assets/sprites/world_tileset.png" id="2_p6t76"]
-[ext_resource type="PackedScene" uid="uid://dpjhr2wss0do1" path="res://scenes/moneda.tscn" id="3_41r3f"]
+[ext_resource type="PackedScene" uid="uid://dpjhr2wss0do1" path="res://scenes/pruebas_godot/moneda.tscn" id="3_41r3f"]
 [ext_resource type="Script" uid="uid://brpttyqe6vwka" path="res://scripts/menu_muerte.gd" id="3_xc6uk"]
 [ext_resource type="Script" uid="uid://cv0wh63n7vx3s" path="res://scripts/menu_win.gd" id="4_f1ijh"]
-[ext_resource type="PackedScene" uid="uid://dj54lotxb4v3f" path="res://scenes/slime.tscn" id="4_limju"]
+[ext_resource type="PackedScene" uid="uid://dj54lotxb4v3f" path="res://scenes/pruebas_godot/slime.tscn" id="4_limju"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_41r3f"]
 texture = ExtResource("2_p6t76")
