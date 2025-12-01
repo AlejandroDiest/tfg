@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bnlibe20d4b22"]
 
-[ext_resource type="Script" uid="uid://qe13n4w0kimt" path="res://scripts/zona_interaccion.gd" id="1_lp0uy"]
+[ext_resource type="Script" uid="uid://qe13n4w0kimt" path="res://scripts/ZonaInteraccion.gd" id="1_dt81v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sfpyy"]
 radius = 9.0
@@ -13,7 +13,7 @@ outline_color = Color(0, 0, 0, 1)
 [node name="ZonaInteraccion" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
-script = ExtResource("1_lp0uy")
+script = ExtResource("1_dt81v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_sfpyy")

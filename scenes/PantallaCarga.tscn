@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs1he1sajvby8"]
+
+[ext_resource type="Script" uid="uid://d00lhbhsl0dv6" path="res://scenes/PantallaCarga.gd" id="1_fk7ki"]
+[ext_resource type="FontFile" uid="uid://d0ux6r1e85p0s" path="res://assets/fonts/04B_30__.TTF" id="1_thwbu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fk7ki"]
+font = ExtResource("1_thwbu")
+
+[node name="PantallaCarga" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_fk7ki")
+
+[node name="ColorCarga" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextoCarga" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -11.5
+offset_right = 49.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "CARGANDO"
+label_settings = SubResource("LabelSettings_fk7ki")

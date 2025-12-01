@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://dfkmelil8dxkq"]
 
-[ext_resource type="PackedScene" uid="uid://bit23c28jljx6" path="res://scenes/casa.tscn" id="1_285xw"]
+[ext_resource type="PackedScene" uid="uid://bit23c28jljx6" path="res://scenes/Casa.tscn" id="1_285xw"]
 [ext_resource type="Texture2D" uid="uid://gddkiq8wxwlx" path="res://assets/sprites/asset_prueba/hyptosis/hyptosis_tile-art-batch-1.png" id="1_xwpn8"]
 [ext_resource type="Texture2D" uid="uid://btbihpmdniyfl" path="res://assets/sprites/asset_prueba/hyptosis/hyptosis_til-art-batch-2.png" id="2_285xw"]
 
@@ -11893,6 +11893,11 @@ sources/0 = SubResource("TileSetAtlasSource_yhy40")
 sources/1 = SubResource("TileSetAtlasSource_vu5w5")
 
 [node name="Pueblo" type="Node2D"]
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="SalidaCasa" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(-89, 70)
 
 [node name="TileMap" type="Node2D" parent="."]
 

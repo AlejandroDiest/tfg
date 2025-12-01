@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://dpjhr2wss0do1"]
 
 [ext_resource type="Texture2D" uid="uid://dk3ljikj25lyf" path="res://assets/sprites/coin.png" id="1_nghqc"]
-[ext_resource type="Script" uid="uid://dt8hvuw38b7c8" path="res://scripts/moneda.gd" id="1_r2l3b"]
+[ext_resource type="Script" uid="uid://dt8hvuw38b7c8" path="res://scripts/PruebasGodot/moneda.gd" id="1_r2l3b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r4iok"]
 atlas = ExtResource("1_nghqc")

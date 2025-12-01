@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bo47leixlh68v"]
 
-[ext_resource type="Script" uid="uid://b3eexnqpevub7" path="res://scripts/killzone.gd" id="1_xlapc"]
+[ext_resource type="Script" uid="uid://b3eexnqpevub7" path="res://scripts/PruebasGodot/Killzone.gd" id="1_xlapc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_csqde"]
 
