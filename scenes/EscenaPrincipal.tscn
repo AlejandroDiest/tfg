@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://b57oph4pgpiod"]
+
+[ext_resource type="PackedScene" uid="uid://dfkmelil8dxkq" path="res://scenes/Pueblo.tscn" id="1_fkvku"]
+[ext_resource type="PackedScene" uid="uid://d18qfvvtpmrsn" path="res://scenes/Personaje.tscn" id="2_muxc6"]
+[ext_resource type="PackedScene" uid="uid://dpjhr2wss0do1" path="res://scenes/PruebasGodot/moneda.tscn" id="3_muxc6"]
+[ext_resource type="PackedScene" uid="uid://b64ts4u6hq118" path="res://scenes/UI/HUD.tscn" id="4_33fsn"]
+
+[node name="pruebas" type="Node2D"]
+
+[node name="Pueblo" parent="." instance=ExtResource("1_fkvku")]
+
+[node name="Personaje" parent="." instance=ExtResource("2_muxc6")]
+
+[node name="Moneda" parent="." instance=ExtResource("3_muxc6")]
+position = Vector2(96, -7)
+
+[node name="HUD" parent="." instance=ExtResource("4_33fsn")]

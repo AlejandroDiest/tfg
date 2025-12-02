@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bs1he1sajvby8"]
 
-[ext_resource type="Script" uid="uid://d00lhbhsl0dv6" path="res://scenes/PantallaCarga.gd" id="1_fk7ki"]
+[ext_resource type="Script" uid="uid://d00lhbhsl0dv6" path="res://scripts/PantallaCarga.gd" id="1_fk7ki"]
 [ext_resource type="FontFile" uid="uid://d0ux6r1e85p0s" path="res://assets/fonts/04B_30__.TTF" id="1_thwbu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fk7ki"]

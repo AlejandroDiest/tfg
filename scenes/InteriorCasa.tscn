@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://du8v2eut0ihrx"]
+[gd_scene load_steps=12 format=4 uid="uid://du8v2eut0ihrx"]
 
 [ext_resource type="PackedScene" uid="uid://bnlibe20d4b22" path="res://scenes/ZonaInteraccion.tscn" id="1_ofhnb"]
 [ext_resource type="Texture2D" uid="uid://cpbqloh5dl0sa" path="res://assets/sprites/asset_prueba/LPC_house_interior/interior.png" id="1_tm8df"]
@@ -2072,6 +2072,9 @@ sources/1 = SubResource("TileSetAtlasSource_kl20s")
 atlas = ExtResource("5_0upui")
 region = Rect2(0, 47.98668, 5.0786877, 16.004913)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sfnrx"]
+size = Vector2(5, 18)
+
 [node name="InteriorCasa" type="Node2D"]
 
 [node name="EntradaCasa" type="Marker2D" parent="."]
@@ -2095,5 +2098,11 @@ texture = SubResource("AtlasTexture_sfnrx")
 
 [node name="ZonaInteraccion" parent="Puerta" instance=ExtResource("1_ofhnb")]
 position = Vector2(8, 15)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Puerta"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta/StaticBody2D"]
+position = Vector2(16.5, 8)
+shape = SubResource("RectangleShape2D_sfnrx")
 
 [connection signal="interactuado" from="Puerta/ZonaInteraccion" to="Puerta" method="_on_zona_interaccion_interactuado"]

@@ -11,7 +11,7 @@ size = Vector2(66, 85)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d31c8"]
 atlas = ExtResource("1_ias33")
-region = Rect2(289.46057, 223.8421, 63.63159, 65.17108)
+region = Rect2(288.14798, 223.8421, 64.63614, 65.19757)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6lyl3"]
 atlas = ExtResource("1_v8ver")

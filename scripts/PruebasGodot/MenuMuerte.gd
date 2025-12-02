@@ -9,6 +9,7 @@ func _ready():
 
 func _respawn_activado():
 	get_tree().paused = false
+	GM.respawnear()
 	get_tree().reload_current_scene()
 
 func _salir_activado():

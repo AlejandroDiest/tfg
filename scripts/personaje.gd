@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
+
 const SPEED = 80.0
 @onready var sprite_personaje: AnimatedSprite2D = $SpritePersonaje
 
 func _ready():
-	print("--- DEBUG SPAWN ---")
+	print("--- SPAWN ---")
 	print("Instrucción del GM: '", GM.destino_spawn_point, "'")
 	
 	if GM.destino_spawn_point != "":
@@ -14,17 +15,19 @@ func _ready():
 			print("Marcador encontrado en: ", spawn_marker.global_position)
 			global_position = spawn_marker.global_position
 		else:
-			print("¡ERROR! No existe ningún nodo llamado: '", GM.destino_spawn_point, "' en esta escena.")
+			print("No existe ningún nodo llamado: '", GM.destino_spawn_point, "'")
 			
 		GM.destino_spawn_point = ""
 	else:
-		print("El GM no tenía ninguna instrucción (Spawn normal).")
+		print("El GM no tiene ninguna instrucción (Spawn normal).")
 	print("-------------------")
 	
 	
+func _input(event):
+	if event.is_action_pressed("escape"):
+		GM.pausar_juego()
+		
 func _physics_process(_delta: float) -> void:
-	
-
 	var input_vector := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 
 	if input_vector.x < 0:

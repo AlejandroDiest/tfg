@@ -5,6 +5,6 @@ extends Area2D
 
 func _on_body_entered(_body: Node2D) -> void:
 	queue_free() 
-	game_manager.add_score()
+	GM.add_oro()
 
 	

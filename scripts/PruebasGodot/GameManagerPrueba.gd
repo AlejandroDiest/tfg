@@ -2,14 +2,12 @@ extends Node
 
 var hp = 3
 var score = 0
-
-@onready var label_vida = $"../CanvasLayer/LabelVida"
 @onready var win: Control = $"../CanvasLayer/Win"
 @onready var muerte: Control = $"../CanvasLayer/Muerte"
 
 
 func _ready():
-	label_vida.text = "Vidas " +str(hp)
+	pass
 	
 
 func add_score():
@@ -25,7 +23,7 @@ func show_win_menu():
 func remove_hp() -> void:
 	hp = hp - 1
 	print("David ha recibido daño, ahora tiene ", hp, " de vida.")
-	label_vida.text = "Vidas " +str(hp)
+	GM.recibir_daño()
 	if(hp == 0):
 		print("David ha muerto O7")       
 		show_death_menu()

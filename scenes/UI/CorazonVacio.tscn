@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg664duugk5ow"]
+
+[ext_resource type="Texture2D" uid="uid://bb5apyxh7uqnk" path="res://assets/sprites/asset_prueba/gfx/objects.png" id="1_t5gne"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etfbv"]
+atlas = ExtResource("1_t5gne")
+region = Rect2(128, 2, 14, 13)
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_etfbv")
+stretch_mode = 2

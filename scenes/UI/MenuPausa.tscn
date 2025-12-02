@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://wwinc27ni0dn"]
+
+[ext_resource type="Script" uid="uid://doev3mjcjgkfm" path="res://scripts/ScriptsUI/MenuPausa.gd" id="1_4peet"]
+
+[node name="MenuPausa" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_4peet")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.38039216)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+color = Color(0.4742008, 0.3934993, 0.19386032, 0.8745098)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="TextoPausa" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Menu Pausa"
+horizontal_alignment = 1
+
+[node name="BtnContinuar" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Continuar"
+
+[node name="BtnAjustes" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Ajustes"
+
+[node name="BtnSalir" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Salir"

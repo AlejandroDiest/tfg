@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://b64ts4u6hq118"]
+
+[ext_resource type="Script" uid="uid://qeebdl3iw2bn" path="res://scripts/ScriptsUI/HUD.gd" id="1_1etfg"]
+[ext_resource type="Texture2D" uid="uid://dk3ljikj25lyf" path="res://assets/sprites/coin.png" id="1_qpvh6"]
+[ext_resource type="FontFile" uid="uid://d0ux6r1e85p0s" path="res://assets/fonts/04B_30__.TTF" id="3_7hsmw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fls4u"]
+atlas = ExtResource("1_qpvh6")
+region = Rect2(3, 3, 10, 10)
+
+[sub_resource type="FontVariation" id="FontVariation_nysna"]
+base_font = ExtResource("3_7hsmw")
+
+[sub_resource type="LabelSettings" id="LabelSettings_f6qnu"]
+font = SubResource("FontVariation_nysna")
+font_size = 2
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_1etfg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ContenedorCorazones" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="ContenedorOro" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="SpriteOro" type="TextureRect" parent="VBoxContainer/ContenedorOro"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_fls4u")
+stretch_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/ContenedorOro"]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+
+[node name="CantOro" type="Label" parent="VBoxContainer/ContenedorOro/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.275
+anchor_top = -0.03333337
+anchor_right = 0.275
+anchor_bottom = -0.033333365
+offset_left = -13.0
+offset_right = -4.0
+offset_bottom = 11.0
+scale = Vector2(5, 5)
+text = "0"
+label_settings = SubResource("LabelSettings_f6qnu")
+metadata/_edit_use_anchors_ = true

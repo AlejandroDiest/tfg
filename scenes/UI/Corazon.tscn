@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://jcrqiqc7yo66"]
+
+[ext_resource type="Texture2D" uid="uid://bb5apyxh7uqnk" path="res://assets/sprites/asset_prueba/gfx/objects.png" id="1_ti3nx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtjvx"]
+atlas = ExtResource("1_ti3nx")
+region = Rect2(64, 2, 14, 13)
+
+[node name="Corazon" type="TextureRect"]
+texture = SubResource("AtlasTexture_dtjvx")
+stretch_mode = 4

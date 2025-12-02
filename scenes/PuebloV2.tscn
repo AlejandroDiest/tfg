@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://nnudpcjff4br"]
+
+[node name="PuebloV2" type="Node2D"]
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="SalidaCasa" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(-89, 70)
