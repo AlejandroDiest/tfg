@@ -20,7 +20,9 @@ func on_ready():
 	pass
 	
 #region cosas varias
-
+func aumentar_vida_maxima():
+	datos_jugador.vida_maxima += 1
+	
 func pausar_juego():
 	
 	var menu_instance = menu_pausa.instantiate()

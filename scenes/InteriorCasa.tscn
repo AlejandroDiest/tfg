@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://du8v2eut0ihrx"]
+[gd_scene load_steps=15 format=4 uid="uid://du8v2eut0ihrx"]
 
 [ext_resource type="PackedScene" uid="uid://bnlibe20d4b22" path="res://scenes/ZonaInteraccion.tscn" id="1_ofhnb"]
 [ext_resource type="Texture2D" uid="uid://cpbqloh5dl0sa" path="res://assets/sprites/asset_prueba/LPC_house_interior/interior.png" id="1_tm8df"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://d18qfvvtpmrsn" path="res://scenes/Personaje.tscn" id="3_kl20s"]
 [ext_resource type="Script" uid="uid://cls3nuv1xs0tg" path="res://scripts/ScriptsPuertas/PuertaSalida.gd" id="4_sfnrx"]
 [ext_resource type="Texture2D" uid="uid://b14ykrd8r2ne" path="res://assets/sprites/asset_prueba/randoms/things.png" id="5_0upui"]
+[ext_resource type="PackedScene" uid="uid://b64ts4u6hq118" path="res://scenes/UI/HUD.tscn" id="7_0upui"]
+[ext_resource type="PackedScene" uid="uid://dj54lotxb4v3f" path="res://scenes/PruebasGodot/slime.tscn" id="8_7a2cq"]
+[ext_resource type="PackedScene" uid="uid://eu1cpp0a8wde" path="res://scenes/PruebasGodot/Corazon.tscn" id="8_84hrt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e6cex"]
 texture = ExtResource("1_tm8df")
@@ -2104,5 +2107,19 @@ position = Vector2(8, 15)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta/StaticBody2D"]
 position = Vector2(16.5, 8)
 shape = SubResource("RectangleShape2D_sfnrx")
+
+[node name="slime3" parent="." instance=ExtResource("8_7a2cq")]
+position = Vector2(-155, -97)
+
+[node name="slime2" parent="." instance=ExtResource("8_7a2cq")]
+position = Vector2(-154, -132)
+
+[node name="slime" parent="." instance=ExtResource("8_7a2cq")]
+position = Vector2(-154, -62)
+
+[node name="Corazon" parent="." instance=ExtResource("8_84hrt")]
+position = Vector2(-157, -218)
+
+[node name="HUD" parent="." instance=ExtResource("7_0upui")]
 
 [connection signal="interactuado" from="Puerta/ZonaInteraccion" to="Puerta" method="_on_zona_interaccion_interactuado"]
