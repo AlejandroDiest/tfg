@@ -74,6 +74,7 @@ animations = [{
 }]
 
 [node name="slime" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_p2gj0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

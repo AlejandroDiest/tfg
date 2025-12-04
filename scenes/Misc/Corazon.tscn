@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://eu1cpp0a8wde"]
+
+[ext_resource type="Texture2D" uid="uid://bb5apyxh7uqnk" path="res://assets/sprites/asset_prueba/gfx/objects.png" id="1_l7gjj"]
+[ext_resource type="Script" uid="uid://4ej8gqm00ex8" path="res://scripts/vida.gd" id="3_5jh8l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x4qyr"]
+radius = 6.0
+
+[node name="Corazon" type="Area2D"]
+collision_mask = 3
+script = ExtResource("3_5jh8l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_l7gjj")
+region_enabled = true
+region_rect = Rect2(64, 2, 14, 13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x4qyr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://btbihpmdniyfl" path="res://assets/sprites/asset_prueba/hyptosis/hyptosis_til-art-batch-2.png" id="1_v8ver"]
 [ext_resource type="Script" uid="uid://b11h2rlwksqkf" path="res://scripts/ScriptsPuertas/PuertaEntrada.gd" id="3_6lyl3"]
 [ext_resource type="Texture2D" uid="uid://b14ykrd8r2ne" path="res://assets/sprites/asset_prueba/randoms/things.png" id="3_pnlk0"]
-[ext_resource type="PackedScene" uid="uid://bnlibe20d4b22" path="res://scenes/ZonaInteraccion.tscn" id="4_d31c8"]
+[ext_resource type="PackedScene" uid="uid://bnlibe20d4b22" path="res://scenes/Misc/ZonaInteraccion.tscn" id="4_d31c8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3ews"]
 size = Vector2(66, 85)

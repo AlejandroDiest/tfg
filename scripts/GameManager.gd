@@ -7,7 +7,7 @@ const RUTA_GUARDADO = "user://savegame"
 var partida_actual = 0
 var destino_spawn_point: String = ""
 var menu_pausa = preload("res://scenes/UI/MenuPausa.tscn")
-var loading_screen_scene = preload("res://scenes/PantallaCarga.tscn") 
+var loading_screen_scene = preload("res://scenes/UI/PantallaCarga.tscn") 
 var datos_jugador: Dictionary = {
 	"oro": 0,
 	"vida_maxima": 3,
