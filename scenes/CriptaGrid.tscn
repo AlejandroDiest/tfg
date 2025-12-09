@@ -1,0 +1,18 @@
+[gd_scene load_steps=8 format=3 uid="uid://cwysrloe6614r"]
+
+[ext_resource type="Script" uid="uid://cxlmhvdmx3ttk" path="res://Generadorgrid.gd" id="1_irqd5"]
+[ext_resource type="PackedScene" uid="uid://bgn8bgkngu5nc" path="res://scenes/SalasCripta2/SalaInicial.tscn" id="2_l2yto"]
+[ext_resource type="PackedScene" uid="uid://b04tjs02g0lg2" path="res://scenes/SalasCripta2/SalaEscaleraBoss.tscn" id="3_kooc5"]
+[ext_resource type="PackedScene" uid="uid://jorbfmek8h8a" path="res://scenes/SalasCripta2/SalaCripta1.tscn" id="4_vp0k0"]
+[ext_resource type="PackedScene" uid="uid://dyin7bbh8jwt3" path="res://scenes/SalasCripta2/SalaCripta2.tscn" id="5_k8g3f"]
+[ext_resource type="PackedScene" uid="uid://dn1ca4c3wulf6" path="res://scenes/SalasCripta2/SalaCripta3.tscn" id="6_lfsoj"]
+[ext_resource type="PackedScene" uid="uid://dlkassfj4thff" path="res://scenes/SalasCripta2/SalaCripta4.tscn" id="7_717ra"]
+
+[node name="CriptaGrid" type="Node2D"]
+script = ExtResource("1_irqd5")
+sala_inicial = ExtResource("2_l2yto")
+sala_escalera_boss = ExtResource("3_kooc5")
+salas_cripta = Array[PackedScene]([ExtResource("4_vp0k0"), ExtResource("5_k8g3f"), ExtResource("6_lfsoj"), ExtResource("7_717ra")])
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.1, 0.1)
