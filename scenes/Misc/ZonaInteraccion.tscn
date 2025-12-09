@@ -1,14 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnlibe20d4b22"]
+[gd_scene load_steps=5 format=3 uid="uid://bnlibe20d4b22"]
 
 [ext_resource type="Script" uid="uid://qe13n4w0kimt" path="res://scripts/ZonaInteraccion.gd" id="1_dt81v"]
+[ext_resource type="Texture2D" uid="uid://ccgw7oj245d8m" path="res://assets/sprites/keyboard-&-mouse_sheet_double.png" id="2_0nxl8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sfpyy"]
 radius = 9.0
 
-[sub_resource type="LabelSettings" id="LabelSettings_lp0uy"]
-font_size = 12
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjjgm"]
+atlas = ExtResource("2_0nxl8")
+region = Rect2(1424, 1296, 97, 97)
 
 [node name="ZonaInteraccion" type="Area2D"]
 collision_layer = 0
@@ -18,15 +18,10 @@ script = ExtResource("1_dt81v")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_sfpyy")
 
-[node name="Label" type="Label" parent="."]
-offset_left = -13.0
-offset_top = -35.0
-offset_right = 14.0
-offset_bottom = -12.0
-text = "E"
-label_settings = SubResource("LabelSettings_lp0uy")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.99999994, -23.999998)
+scale = Vector2(0.15, 0.15)
+texture = SubResource("AtlasTexture_rjjgm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

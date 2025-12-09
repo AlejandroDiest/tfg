@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c3pca05365113"]
+
+[node name="CasaHerrero" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]

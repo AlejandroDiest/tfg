@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://d18qfvvtpmrsn"]
+[gd_scene load_steps=10 format=3 uid="uid://d18qfvvtpmrsn"]
 
 [ext_resource type="Texture2D" uid="uid://b4fqflmwmt6uk" path="res://assets/sprites/knight.png" id="1_2kcgv"]
 [ext_resource type="Script" uid="uid://eglq17hs21mt" path="res://scripts/Personaje.gd" id="1_n1ehy"]
+[ext_resource type="PackedScene" uid="uid://8pk5ov0jgu6s" path="res://scenes/Espada.tscn" id="3_kqqgw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2kcgv"]
 radius = 5.0
@@ -42,7 +43,7 @@ animations = [{
 "speed": 7.0
 }]
 
-[node name="Personaje" type="CharacterBody2D"]
+[node name="Personaje" type="CharacterBody2D" groups=["Jugador"]]
 collision_layer = 2
 script = ExtResource("1_n1ehy")
 
@@ -63,3 +64,5 @@ physics_interpolation_mode = 1
 position = Vector2(-1, -8)
 process_callback = 0
 position_smoothing_speed = 8.0
+
+[node name="Espada" parent="." instance=ExtResource("3_kqqgw")]

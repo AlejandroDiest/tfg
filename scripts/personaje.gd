@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var arma = $Espada
 
 const SPEED = 80.0
 @onready var sprite_personaje: AnimatedSprite2D = $SpritePersonaje
@@ -26,7 +27,12 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("escape"):
 		GM.pausar_juego()
+	
+	if event.is_action_pressed("ataque"):
+		var mouse_pos = get_global_mouse_position()
+		var direccion = (mouse_pos - global_position).normalized()
 		
+		arma.atacar(direccion)
 func _physics_process(_delta: float) -> void:
 	var input_vector := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 

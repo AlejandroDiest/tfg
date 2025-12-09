@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cos5yyd6vkkt2" path="res://assets/sprites/world_tileset.png" id="1_jxcbb"]
 [ext_resource type="PackedScene" uid="uid://dpjhr2wss0do1" path="res://scenes/Misc/moneda.tscn" id="2_q386g"]
-[ext_resource type="Script" uid="uid://csafh435fu77" path="res://scenes/SalasCripta/SpawnerSimple.gd" id="3_5wu10"]
+[ext_resource type="Script" uid="uid://csafh435fu77" path="res://scripts/SpawnerSimple.gd" id="3_5wu10"]
 [ext_resource type="PackedScene" uid="uid://dj54lotxb4v3f" path="res://scenes/PruebasGodot/slime.tscn" id="3_q1wh7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_41r3f"]

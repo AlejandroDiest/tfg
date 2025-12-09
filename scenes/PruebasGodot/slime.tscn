@@ -1,8 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://dj54lotxb4v3f"]
+[gd_scene load_steps=15 format=3 uid="uid://dj54lotxb4v3f"]
 
 [ext_resource type="Texture2D" uid="uid://nxb3sk3xj1n6" path="res://assets/sprites/slime_green.png" id="1_371uh"]
 [ext_resource type="Script" uid="uid://c2uflhsio4drd" path="res://scripts/PruebasGodot/slime.gd" id="1_p2gj0"]
-[ext_resource type="PackedScene" uid="uid://bo47leixlh68v" path="res://scenes/PruebasGodot/killzone.tscn" id="3_n6pvg"]
+[ext_resource type="Script" uid="uid://b3eexnqpevub7" path="res://scripts/PruebasGodot/Killzone.gd" id="3_laanv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2gj0"]
 atlas = ExtResource("1_371uh")
@@ -73,8 +73,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="slime" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_laanv"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i6mj6"]
+radius = 7.0
+
+[node name="slime" type="CharacterBody2D" groups=["Enemigos"]]
 y_sort_enabled = true
+collision_mask = 3
 script = ExtResource("1_p2gj0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -82,14 +89,13 @@ sprite_frames = SubResource("SpriteFrames_vnioy")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="RayCastIzq" type="RayCast2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
-target_position = Vector2(-10, 0)
+shape = SubResource("CircleShape2D_laanv")
 
-[node name="RayCastDcha" type="RayCast2D" parent="."]
-position = Vector2(0, 8)
-target_position = Vector2(10, 0)
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_laanv")
 
-[node name="Area2D" parent="." instance=ExtResource("3_n6pvg")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 7)
-scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_i6mj6")

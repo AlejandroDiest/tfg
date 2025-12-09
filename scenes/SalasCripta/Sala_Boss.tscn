@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cos5yyd6vkkt2" path="res://assets/sprites/world_tileset.png" id="1_a3ljm"]
 [ext_resource type="PackedScene" uid="uid://dj54lotxb4v3f" path="res://scenes/PruebasGodot/slime.tscn" id="2_e6eiy"]
 [ext_resource type="PackedScene" uid="uid://eu1cpp0a8wde" path="res://scenes/Misc/Corazon.tscn" id="3_e6eiy"]
-[ext_resource type="Script" uid="uid://csafh435fu77" path="res://scenes/SalasCripta/SpawnerSimple.gd" id="3_kw112"]
+[ext_resource type="Script" uid="uid://csafh435fu77" path="res://scripts/SpawnerSimple.gd" id="3_kw112"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_41r3f"]
 texture = ExtResource("1_a3ljm")
