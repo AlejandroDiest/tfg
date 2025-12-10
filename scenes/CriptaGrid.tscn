@@ -13,6 +13,3 @@ script = ExtResource("1_irqd5")
 sala_inicial = ExtResource("2_l2yto")
 sala_escalera_boss = ExtResource("3_kooc5")
 salas_cripta = Array[PackedScene]([ExtResource("4_vp0k0"), ExtResource("5_k8g3f"), ExtResource("6_lfsoj"), ExtResource("7_717ra")])
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.1, 0.1)

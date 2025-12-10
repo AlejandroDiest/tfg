@@ -16,6 +16,7 @@ const PASO_GRID = 768
 var camino_generado = [] 
 
 func _ready():
+	# RenderingServer.set_default_clear_color(Color("#092437"))
 	randomize()
 	generar_nivel()
 
@@ -28,7 +29,7 @@ func generar_nivel():
 		exito = calcular_camino_serpiente()
 		if not exito:
 			intentos += 1
-			# print("Reintentando generación...")
+			print("Reintentando generación...")
 	
 	if exito:
 		print("¡Nivel generado con éxito tras ", intentos, " intentos!")
@@ -109,17 +110,7 @@ func spawn_salas():
 		
 		if i == 0:
 			instancia = sala_inicial.instantiate()
-			# --- AÑADE ESTO AQUÍ ---
-			print("Poniendo cámara en la sala inicial: ", coord)
-			var camara_debug = Camera2D.new()
-			camara_debug.enabled = true
-			
-			# Zoom 0.2 para verlo TODO desde muy lejos (Vista de pájaro)
-			# Si quieres verla de cerca, pon Vector2(1, 1)
-			camara_debug.zoom = Vector2(0.1, 0.1) 
-			
-			instancia.add_child(camara_debug)
-			# -----------------------
+
 		elif i == camino_generado.size() - 1:
 			instancia = sala_escalera_boss.instantiate()
 		else:
@@ -134,3 +125,79 @@ func spawn_salas():
 		label.text = str(coord)
 		label.scale = Vector2(3,3)
 		instancia.add_child(label)
+		
+#region grid y camino debug y camara
+
+	var linea_debug = Line2D.new()
+	linea_debug.width = 40.0
+	linea_debug.default_color = Color.RED
+	linea_debug.z_index = 100  # <--- ESTO ES LA CLAVE: Lo dibuja encima de las salas
+	
+	# Añadimos los puntos
+	for coord in camino_generado:
+		# Como tus salas están centradas, el punto es simplemente coord * PASO
+		linea_debug.add_point(Vector2(coord) * PASO_GRID)
+		
+	add_child(linea_debug)
+	var grosor_grid = 20.0
+	var color_grid = Color(0, 1, 0, 0.3)
+	var z_index_grid = 90 # Alto, pero menos que la línea roja (100) para que el camino destaque
+	var mitad_paso = PASO_GRID / 2.0
+
+	# 1. Crear líneas Verticales
+	for x in range(GRID_ANCHO + 1):
+		var linea = Line2D.new()
+		linea.width = grosor_grid
+		linea.default_color = color_grid
+		linea.z_index = z_index_grid
+		
+		var pos_x = (x * PASO_GRID) - mitad_paso
+		# Punto arriba
+		linea.add_point(Vector2(pos_x, -mitad_paso))
+		# Punto abajo
+		linea.add_point(Vector2(pos_x, (GRID_ALTO * PASO_GRID) - mitad_paso))
+		
+		add_child(linea)
+
+	# 2. Crear líneas Horizontales
+	for y in range(GRID_ALTO + 1):
+		var linea = Line2D.new()
+		linea.width = grosor_grid
+		linea.default_color = color_grid
+		linea.z_index = z_index_grid
+		
+		var pos_y = (y * PASO_GRID) - mitad_paso
+		# Punto izquierda
+		linea.add_point(Vector2(-mitad_paso, pos_y))
+		# Punto derecha
+		linea.add_point(Vector2((GRID_ANCHO * PASO_GRID) - mitad_paso, pos_y))
+		
+		add_child(linea)
+		
+		# ... (código anterior de salas, línea roja y grid verde) ...
+
+	# --- CÁMARA CENTRADA EN EL GRID (5x5) ---
+	var cam = Camera2D.new()
+	cam.set_script(load("res://scripts/CamaraDebug.gd")) 
+	cam.enabled = true
+	
+	# Ajusta el zoom inicial para ver casi todo el mapa
+	cam.zoom = Vector2(0.08, 0.08) 
+	
+	# CALCULAR EL CENTRO MATEMÁTICO
+	# En un grid de 0 a 4 (5 casillas), el centro es el índice 2.
+	# Fórmula: (Ancho - 1) / 2.0
+	var centro_x = (GRID_ANCHO - 1) / 2.0
+	var centro_y = (GRID_ALTO - 1) / 2.0
+	
+	# Convertimos coordenadas de grid a pixeles
+	# Como tus tiles tienen el pivote en el centro, la posición es directa:
+	cam.position = Vector2(centro_x, centro_y) * PASO_GRID
+	
+	# Añadimos la cámara al Generador (no a una sala)
+	add_child(cam)
+#endregion
+func _input(event):
+	if event is InputEventKey and event.pressed and event.keycode == KEY_R:
+		print("--- REINICIANDO ESCENA ---")
+		get_tree().reload_current_scene()
