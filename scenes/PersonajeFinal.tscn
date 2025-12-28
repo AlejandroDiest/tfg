@@ -457,6 +457,7 @@ animations = [{
 radius = 13.038404
 
 [node name="Personaje" type="CharacterBody2D" groups=["Jugador"]]
+z_index = 5
 scale = Vector2(0.8, 0.8)
 collision_layer = 2
 script = ExtResource("1_lwg3d")

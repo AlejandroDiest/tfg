@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var arma = $Espada # Asegúrate que el nodo hijo se llama "Espada"
 @onready var sprite_personaje = $SpritePersonaje # Tu AnimatedSprite2D
 
-const SPEED =120.0
+const SPEED =150.0
 var atacando: bool = false
 var ultima_direccion: String = "Abajo" # Por defecto
 
@@ -13,7 +13,6 @@ func _input(event):
 		realizar_ataque()
 
 func _physics_process(_delta):
-	# Si estamos atacando, no nos movemos (opcional, pero recomendado)
 	if atacando:
 		return
 
@@ -23,9 +22,7 @@ func _physics_process(_delta):
 	if input_vector.length() > 0:
 		velocity = input_vector.normalized() * SPEED
 		
-		# 2. DECIDIR DIRECCIÓN (Sin usar scale ni flips)
 		if abs(input_vector.x) > abs(input_vector.y):
-			# Movimiento Horizontal
 			if input_vector.x > 0: ultima_direccion = "Dcha"
 			else: ultima_direccion = "Izq"
 		else:
