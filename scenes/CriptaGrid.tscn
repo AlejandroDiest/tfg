@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://l3i8w8xaaneq" path="res://scenes/SalasCripta/SalasDosPuertas/Esquinas/Esquina_Abajo_Izq.tscn" id="11_717ra"]
 [ext_resource type="PackedScene" uid="uid://bpuui4rdjyav" path="res://scenes/SalasCripta/SalasTresPuertas/N-E-S-Prueba.tscn" id="12_lfsoj"]
 [ext_resource type="PackedScene" uid="uid://duh0tdao2g072" path="res://scenes/SalasCripta/SalasDosPuertas/Esquinas/Esquina_Arriba_Dcha.tscn" id="12_s2y03"]
-[ext_resource type="PackedScene" uid="uid://bebybnk1px7lp" path="res://scenes/SalasCripta/SalasTresPuertas/Esquina_Arriba_Izq.tscn" id="13_8ao0l"]
+[ext_resource type="PackedScene" uid="uid://bebybnk1px7lp" path="res://scenes/SalasCripta/SalasDosPuertas/Esquinas/Esquina_Arriba_Izq.tscn" id="13_8ao0l"]
 [ext_resource type="PackedScene" uid="uid://bnk172jon055p" path="res://scenes/SalasCripta/SalasTresPuertas/N-W-S-Prueba.tscn" id="13_717ra"]
 [ext_resource type="PackedScene" uid="uid://dc44fy26v3osf" path="res://scenes/SalasCripta/SalasTresPuertas/SalaT.tscn" id="14_8ao0l"]
 [ext_resource type="PackedScene" uid="uid://d0qll1cktqvfj" path="res://scenes/SalasCripta/SalasEspeciales/SalasTesoro/SalaTesoro.tscn" id="14_s2y03"]

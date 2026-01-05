@@ -7622,6 +7622,10 @@ tile_set = ExtResource("2_51sqt")
 
 [node name="TaponNorte" type="Node2D" parent="Tapones"]
 
+[node name="SueloTapon" type="TileMapLayer" parent="Tapones/TaponNorte"]
+tile_map_data = PackedByteArray("AAD+//f/AQARAAgAAAD///f/AQAQAAgAAAAAAPf/AQARAAkAAAAAAPj/AQAUAAkAAAABAPj/AQAVAAkAAAD+//j/AQAUAAoAAAD+//n/AQAUAAsAAAD///j/AQAVAAoAAAD///n/AQAVAAsAAAAAAPn/AQAWAAgAAAABAPn/AQATAAsAAAABAPf/AQARAAsAAAA=")
+tile_set = ExtResource("2_51sqt")
+
 [node name="ParedTapon" type="TileMapLayer" parent="Tapones/TaponNorte"]
 tile_map_data = PackedByteArray("AAD+//b/AQACAA0AAAD+//f/AQACAA4AAAD///b/AQACAA0AAAD///f/AQACAA4AAAAAAPb/AQACAA0AAAAAAPf/AQACAA4AAAABAPb/AQACAA0AAAABAPf/AQACAA4AAAD+//T/AQACAA0AAAD///T/AQACAA0AAAAAAPT/AQACAA0AAAABAPT/AQACAA0AAAD+//X/AQACAA0AAAD///X/AQACAA0AAAAAAPX/AQACAA0AAAABAPX/AQACAA0AAAA=")
 tile_set = ExtResource("2_51sqt")
