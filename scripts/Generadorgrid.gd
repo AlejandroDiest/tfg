@@ -131,6 +131,8 @@ func generar_ramas():
 func spawn_salas():
 	for child in get_children():
 		if child is Camera2D: continue
+		if child is CanvasModulate: continue
+		
 		child.queue_free()
 
 

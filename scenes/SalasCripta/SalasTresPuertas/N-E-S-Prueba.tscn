@@ -5661,7 +5661,7 @@ sources/0 = SubResource("TileSetAtlasSource_mfxil")
 rotation = 4.712389
 script = ExtResource("1_yq6la")
 puertas_disponibles = Array[Vector2]([Vector2(1, 0), Vector2(0, -1), Vector2(0, 1)])
-tapon_norte = NodePath("")
+tapon_norte = NodePath("Tapones/TaponNorte")
 tapon_sur = NodePath("Tapones/TaponSur")
 tapon_este = NodePath("Tapones/TaponEste")
 

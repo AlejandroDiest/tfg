@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://cw7fxylm675qc"]
 
 [ext_resource type="Texture2D" uid="uid://qdwn36qyt0qc" path="res://assets/sprites/assets_finales/cripta/Tilesets/Tileset-Terrain.png" id="1_hhl66"]
-[ext_resource type="Script" uid="uid://borugndy6jq2c" path="res://scenes/SalasCripta2/sala_base.gd" id="1_qfrkk"]
+[ext_resource type="Script" uid="uid://dg8gn27dfmoj7" path="res://scenes/SalasCripta/DatosSala.gd" id="1_qfrkk"]
 [ext_resource type="PackedScene" uid="uid://dphqtfa2kdgnu" path="res://scenes/PersonajeFinal.tscn" id="2_7g1rg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qfrkk"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=64 format=3 uid="uid://dphqtfa2kdgnu"]
+[gd_scene load_steps=67 format=3 uid="uid://dphqtfa2kdgnu"]
 
-[ext_resource type="Script" uid="uid://c3ln0owcjysk1" path="res://scripts/PersonajeFinal.gd" id="1_lwg3d"]
+[ext_resource type="Script" uid="uid://c3ln0owcjysk1" path="res://scripts/personaje/PersonajeFinal.gd" id="1_lwg3d"]
 [ext_resource type="Texture2D" uid="uid://cxrycxieswddf" path="res://assets/sprites/personaje/walk.png" id="1_tyrqv"]
 [ext_resource type="Texture2D" uid="uid://b8dlrl42px1qd" path="res://assets/sprites/personaje/slash.png" id="2_8vwep"]
 [ext_resource type="PackedScene" uid="uid://8pk5ov0jgu6s" path="res://scenes/Espada.tscn" id="4_0goh4"]
+[ext_resource type="Script" uid="uid://beg7ee2ep56fx" path="res://scripts/personaje/antorcha.gd" id="4_bj3h8"]
 [ext_resource type="PackedScene" uid="uid://b64ts4u6hq118" path="res://scenes/UI/HUD.tscn" id="5_8i353"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tyrqv"]
@@ -456,6 +457,16 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_lwg3d"]
 radius = 13.038404
 
+[sub_resource type="Gradient" id="Gradient_8i353"]
+interpolation_color_space = 2
+colors = PackedColorArray(0.8201437, 0.46298397, 1.732707e-06, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bj3h8"]
+gradient = SubResource("Gradient_8i353")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
 [node name="Personaje" type="CharacterBody2D" groups=["Jugador"]]
 z_index = 5
 scale = Vector2(0.8, 0.8)
@@ -471,12 +482,20 @@ z_index = 1
 position = Vector2(0, 20)
 shape = SubResource("CircleShape2D_lwg3d")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-physics_interpolation_mode = 1
-position = Vector2(-1, -8)
-process_callback = 0
-position_smoothing_speed = 8.0
+[node name="Antorcha" type="PointLight2D" parent="."]
+visible = false
+scale = Vector2(0.9999998, 0.9999998)
+texture = SubResource("GradientTexture2D_bj3h8")
+texture_scale = 10.0
+script = ExtResource("4_bj3h8")
 
 [node name="Espada" parent="." instance=ExtResource("4_0goh4")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+physics_interpolation_mode = 1
+position = Vector2(-0.99999994, -7.9999995)
+scale = Vector2(0.99999994, 0.99999994)
+process_callback = 0
+position_smoothing_speed = 8.0
 
 [node name="HUD" parent="." instance=ExtResource("5_8i353")]

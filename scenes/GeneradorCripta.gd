@@ -16,27 +16,41 @@ var ramas_generadas = []
 #endregion
 
 func _ready():
-	RenderingServer.set_default_clear_color(Color("#092437"))
 	randomize()
+	crear_fondo_infinito()
 	generar_nivel()
 
+func crear_fondo_infinito():
+	var fondo = ColorRect.new()
+	fondo.name = "FondoInfinito"; fondo.color = Color("#092437") ;fondo.size = Vector2(20000, 20000); fondo.position = Vector2(-5000, -5000); fondo.z_index = -100 
+	add_child(fondo)
+	
 func generar_nivel():
+	var tiempo_inicio = Time.get_ticks_msec()
+	
 	var exito = false
 	var intentos = 0
 	
-	while not exito and intentos < 100:
+	
+	while not exito and intentos < 1000: 
 		exito = calcular_camino_serpiente()
 		if not exito:
 			intentos += 1
-			print("Reintentando... (", intentos, ")")
+	
+	var tiempo_math = Time.get_ticks_msec()
+	print("⏱️ Tiempo pensando el laberinto: ", tiempo_math - tiempo_inicio, "ms (Intentos: ", intentos, ")")
 	
 	if exito:
-		generar_ramas() 
+		generar_ramas()
+		# FASE 2: DIBUJO
 		spawn_salas()
 		_dibujar_debug()
+		
+		var tiempo_fin = Time.get_ticks_msec()
+		print("⏱️ Tiempo dibujando (Tilemaps): ", tiempo_fin - tiempo_math, "ms")
+		print("⏱️ TIEMPO TOTAL: ", (tiempo_fin - tiempo_inicio) / 1000.0, " segundos")
 	else:
 		print("ERROR: Fallo en generación.")
-
 
 func calcular_camino_serpiente() -> bool:
 	camino_generado.clear()
@@ -131,6 +145,8 @@ func generar_ramas():
 func spawn_salas():
 	for child in get_children():
 		if child is Camera2D: continue
+		if child is CanvasModulate: continue
+		if child.name == "FondoInfinito": continue
 		child.queue_free()
 
 
@@ -197,9 +213,19 @@ func instanciar_sala(coord: Vector2i, packed_scene: PackedScene, mapa_referencia
 	if instancia.has_method("configurar_tapones"):
 		instancia.configurar_tapones(conexiones_necesarias)
 		
-	var l = Label.new(); l.text = str(coord); l.scale = Vector2(3,3); l.z_index=200
-	instancia.add_child(l)
+	#var l = Label.new(); l.text = str(coord); l.scale = Vector2(3,3); l.z_index=200; instancia.add_child(l)
 	
+	var personaje = instancia.get_node_or_null("Personaje")
+	
+	if personaje:
+		
+		personaje.modulate = Color(0.6, 0.6, 0.75)
+		
+		var antorcha = personaje.get_node_or_null("Antorcha")
+		if antorcha:
+			antorcha.visible = true
+		else:
+			print("Error al cargar la antorcha")
 #region utilidades
 
 

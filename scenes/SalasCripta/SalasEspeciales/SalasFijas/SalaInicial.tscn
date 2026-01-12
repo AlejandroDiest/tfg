@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=4 uid="uid://bgn8bgkngu5nc"]
+[gd_scene load_steps=13 format=4 uid="uid://bgn8bgkngu5nc"]
 
 [ext_resource type="Texture2D" uid="uid://qdwn36qyt0qc" path="res://assets/sprites/assets_finales/cripta/Tilesets/Tileset-Terrain.png" id="1_51sqt"]
 [ext_resource type="Script" uid="uid://dg8gn27dfmoj7" path="res://scenes/SalasCripta/DatosSala.gd" id="1_lkvdm"]
 [ext_resource type="TileSet" uid="uid://clxp5x6hvcxip" path="res://assets/sprites/assets_finales/HitboxBordeCripta.tres" id="2_51sqt"]
+[ext_resource type="PackedScene" uid="uid://dphqtfa2kdgnu" path="res://scenes/PersonajeFinal.tscn" id="4_ujs45"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pfykg"]
 texture = ExtResource("1_51sqt")
@@ -7637,6 +7638,8 @@ tile_set = ExtResource("2_51sqt")
 [node name="BordeTapon" type="TileMapLayer" parent="Tapones/TaponNorte"]
 tile_map_data = PackedByteArray("AAD+//X/AQAAAAIAAHD///X/AQAAAAIAAHAAAPX/AQAAAAIAAHABAPX/AQAAAAIAAHACAPX/AQAAAAIAAHD9//X/AQAAAAIAAHD9//T/AQACAAIAAAD+//T/AQACAAIAAAD///T/AQACAAIAAAAAAPT/AQACAAIAAAABAPT/AQACAAIAAAACAPT/AQACAAIAAAA=")
 tile_set = ExtResource("2_51sqt")
+
+[node name="Personaje" parent="." instance=ExtResource("4_ujs45")]
 
 [node name="ReferenceRect" type="ReferenceRect" parent="."]
 offset_left = -384.0

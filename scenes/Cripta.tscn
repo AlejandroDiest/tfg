@@ -22,3 +22,6 @@ sala_escalera_boss = ExtResource("3_w6415")
 salas_cripta = Array[PackedScene]([ExtResource("4_k4uu8"), ExtResource("5_t8cu5"), ExtResource("6_gi7i8"), ExtResource("7_ej2ho"), ExtResource("8_vdqad"), ExtResource("9_lmdx7"), ExtResource("10_eq6id"), ExtResource("11_kusib"), ExtResource("12_vpogj")])
 salas_tesoro = Array[PackedScene]([ExtResource("4_udp2p")])
 salas_cruce = Array[PackedScene]([ExtResource("5_yr8pw")])
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.47049934, 0.47555166, 0.67515445, 1)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://8pk5ov0jgu6s"]
 
-[ext_resource type="Script" uid="uid://evxtrnod1luo" path="res://scripts/Espada.gd" id="1_80j8p"]
+[ext_resource type="Script" uid="uid://evxtrnod1luo" path="res://scripts/personaje/Espada.gd" id="1_80j8p"]
 [ext_resource type="Texture2D" uid="uid://xjuhb6o8b1es" path="res://assets/sprites/personaje/slash_128.png" id="1_hv3vu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_80j8p"]
