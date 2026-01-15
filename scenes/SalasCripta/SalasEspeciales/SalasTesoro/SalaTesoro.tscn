@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dg8gn27dfmoj7" path="res://scenes/SalasCripta/DatosSala.gd" id="1_yv5r4"]
 [ext_resource type="Texture2D" uid="uid://qdwn36qyt0qc" path="res://assets/sprites/assets_finales/cripta/Tilesets/Tileset-Terrain.png" id="2_jha4c"]
 [ext_resource type="TileSet" uid="uid://clxp5x6hvcxip" path="res://assets/sprites/assets_finales/HitboxBordeCripta.tres" id="3_vchb1"]
-[ext_resource type="PackedScene" uid="uid://dj54lotxb4v3f" path="res://scenes/PruebasGodot/slime.tscn" id="4_7sdep"]
+[ext_resource type="PackedScene" uid="uid://dj54lotxb4v3f" path="res://scenes/Monstruos/slime.tscn" id="4_7sdep"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qfrkk"]
 texture = ExtResource("2_jha4c")

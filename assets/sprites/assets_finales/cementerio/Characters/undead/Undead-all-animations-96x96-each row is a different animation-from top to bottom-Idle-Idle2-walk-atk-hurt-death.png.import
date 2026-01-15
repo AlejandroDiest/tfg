@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwvinj4dpiins"
-path="res://.godot/imported/Undead-all-animations-96x96-each row is a different animation-from top to bottom-Idle-Idle2-walk-atk-hurt-death.png-b3522ebde09627165dc5e3617bf0f5f6.ctex"
+path="res://.godot/imported/Undead-all-animations-96x96-each row is a different animation-from top to bottom-Idle-Idle2-walk-atk-hurt-death.png-56866eca0b54521eb7af1ebef7ca3301.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/assets_finales/cementerio/Characters/bat/Undead-all-animations-96x96-each row is a different animation-from top to bottom-Idle-Idle2-walk-atk-hurt-death.png"
-dest_files=["res://.godot/imported/Undead-all-animations-96x96-each row is a different animation-from top to bottom-Idle-Idle2-walk-atk-hurt-death.png-b3522ebde09627165dc5e3617bf0f5f6.ctex"]
+source_file="res://assets/sprites/assets_finales/cementerio/Characters/undead/Undead-all-animations-96x96-each row is a different animation-from top to bottom-Idle-Idle2-walk-atk-hurt-death.png"
+dest_files=["res://.godot/imported/Undead-all-animations-96x96-each row is a different animation-from top to bottom-Idle-Idle2-walk-atk-hurt-death.png-56866eca0b54521eb7af1ebef7ca3301.ctex"]
 
 [params]
 

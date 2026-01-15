@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b57oph4pgpiod"]
 
-[ext_resource type="PackedScene" uid="uid://dphqtfa2kdgnu" path="res://scenes/PersonajeFinal.tscn" id="1_5muqg"]
-[ext_resource type="PackedScene" uid="uid://dfkmelil8dxkq" path="res://scenes/Pueblo.tscn" id="1_fkvku"]
+[ext_resource type="PackedScene" uid="uid://dphqtfa2kdgnu" path="res://scenes/Monstruos/PersonajeFinal.tscn" id="1_5muqg"]
+[ext_resource type="PackedScene" uid="uid://dfkmelil8dxkq" path="res://scenes/pueblo.tscn" id="1_fkvku"]
 [ext_resource type="PackedScene" uid="uid://dpjhr2wss0do1" path="res://scenes/Misc/moneda.tscn" id="3_muxc6"]
 [ext_resource type="PackedScene" uid="uid://b64ts4u6hq118" path="res://scenes/UI/HUD.tscn" id="4_33fsn"]
 [ext_resource type="Script" uid="uid://7gcpsbjc2ro" path="res://scripts/EntradaCripta.gd" id="5_ajfgm"]

@@ -42,7 +42,6 @@ func generar_nivel():
 	
 	if exito:
 		generar_ramas()
-		# FASE 2: DIBUJO
 		spawn_salas()
 		_dibujar_debug()
 		
@@ -202,6 +201,7 @@ func instanciar_sala(coord: Vector2i, packed_scene: PackedScene, mapa_referencia
 					break
 			intento.queue_free()
 
+
 	if instancia == null: 
 		instancia = packed_scene.instantiate()
 		print("AVISO: Forzando sala genérica en ", coord, ". Faltan piezas en tu inventario para: ", conexiones_necesarias)
@@ -228,7 +228,6 @@ func instanciar_sala(coord: Vector2i, packed_scene: PackedScene, mapa_referencia
 			print("Error al cargar la antorcha")
 #region utilidades
 
-
 func es_en_grid(pos: Vector2i) -> bool:
 	return pos.x >= 0 and pos.x < GRID_ANCHO and pos.y >= 0 and pos.y < GRID_ALTO
 
@@ -248,7 +247,7 @@ func contar_vecinos(coord: Vector2i, mapa: Array) -> int:
 #endregion
 
 func _dibujar_debug():
-	# 4. CÁMARA
+
 	if not has_node("CamaraDebug"):
 		var cam = Camera2D.new(); cam.name = "CamaraDebug"
 		if ResourceLoader.exists("res://scripts/CamaraDebug.gd"): cam.set_script(load("res://scripts/CamaraDebug.gd"))
