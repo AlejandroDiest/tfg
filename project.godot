@@ -32,6 +32,10 @@ window/stretch/aspect="expand"
 window/layer_2="Jugador"
 window/layer_1="Escenario"
 
+[global_group]
+
+Jugador=""
+
 [input]
 
 ui_left={
