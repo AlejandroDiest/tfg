@@ -457,12 +457,12 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_lwg3d"]
 radius = 13.038404
 
-[sub_resource type="Gradient" id="Gradient_8i353"]
+[sub_resource type="Gradient" id="Gradient_i55ev"]
 interpolation_color_space = 2
 colors = PackedColorArray(0.8201437, 0.46298397, 1.732707e-06, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_bj3h8"]
-gradient = SubResource("Gradient_8i353")
+gradient = SubResource("Gradient_i55ev")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)

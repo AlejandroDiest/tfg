@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://d18qfvvtpmrsn"]
 
-[ext_resource type="Texture2D" uid="uid://b4fqflmwmt6uk" path="res://assets/sprites/knight.png" id="1_2kcgv"]
-[ext_resource type="Script" uid="uid://eglq17hs21mt" path="res://scripts/Personaje.gd" id="1_n1ehy"]
+[ext_resource type="Texture2D" uid="uid://b4fqflmwmt6uk" path="res://assets/sprites/asset_prueba/randoms/knight.png" id="1_2kcgv"]
+[ext_resource type="Script" uid="uid://eglq17hs21mt" path="res://scripts/personaje.gd" id="1_n1ehy"]
 [ext_resource type="PackedScene" uid="uid://8pk5ov0jgu6s" path="res://scenes/Espada.tscn" id="3_kqqgw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2kcgv"]

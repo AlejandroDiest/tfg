@@ -11,8 +11,10 @@ config_version=5
 [application]
 
 config/name="TFG"
-run/main_scene="uid://blqxr6dq45278"
+run/main_scene="uid://c2yjpjvjelltf"
 config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="uid://chw755ds1u7d1"
 config/icon="uid://plm5oyfnfa4"
 
 [autoload]

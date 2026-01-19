@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://qdwn36qyt0qc" path="res://assets/sprites/assets_finales/cripta/Tilesets/Tileset-Terrain.png" id="1_51sqt"]
 [ext_resource type="Script" uid="uid://dg8gn27dfmoj7" path="res://scenes/SalasCripta/DatosSala.gd" id="1_lkvdm"]
 [ext_resource type="TileSet" uid="uid://clxp5x6hvcxip" path="res://assets/sprites/assets_finales/HitboxBordeCripta.tres" id="2_51sqt"]
-[ext_resource type="PackedScene" uid="uid://dphqtfa2kdgnu" path="res://scenes/Monstruos/PersonajeFinal.tscn" id="4_ujs45"]
 [ext_resource type="PackedScene" uid="uid://6qyi81l5yn03" path="res://scenes/Monstruos/Esqueleto.tscn" id="5_x45r2"]
 [ext_resource type="PackedScene" uid="uid://ba5x5pjaapnek" path="res://scenes/Monstruos/Esqueleto2.tscn" id="6_iyvl6"]
+[ext_resource type="PackedScene" uid="uid://c3y38jgxdprvi" path="res://scenes/Monstruos/PersonajePrueba.tscn" id="6_strer"]
 [ext_resource type="PackedScene" uid="uid://dc6fd3y1mf46m" path="res://scenes/Monstruos/Murcielago.tscn" id="7_strer"]
 [ext_resource type="PackedScene" uid="uid://cl7dgkp6oog23" path="res://scenes/Monstruos/Murcielago2.tscn" id="8_iuo2d"]
 
@@ -7651,16 +7651,15 @@ offset_bottom = 385.0
 border_width = 4.5
 
 [node name="EnemigoBase" parent="." instance=ExtResource("5_x45r2")]
-position = Vector2(-176, 167)
+position = Vector2(-208, -20)
 
 [node name="EnemigoBase2" parent="." instance=ExtResource("6_iyvl6")]
-position = Vector2(168, 199)
+position = Vector2(208, -23)
 
 [node name="EnemigoBase3" parent="." instance=ExtResource("7_strer")]
-position = Vector2(-13, 183)
-
-[node name="Personaje" parent="." instance=ExtResource("4_ujs45")]
-position = Vector2(-33, -28)
+position = Vector2(-1, 197)
 
 [node name="EnemigoBase4" parent="." instance=ExtResource("8_iuo2d")]
-position = Vector2(-262, 38)
+position = Vector2(-2, -201)
+
+[node name="Personaje" parent="." instance=ExtResource("6_strer")]
