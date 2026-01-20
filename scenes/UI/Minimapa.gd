@@ -12,8 +12,4 @@ func _process(delta):
 	if not is_instance_valid(jugador):
 		jugador = get_tree().get_first_node_in_group("Jugador")
 		return
-
-	# DEBUG: Imprime dónde está la cámara
-	print("Cámara Mapa en: ", jugador.global_position) 
-	
 	camara_mapa.global_position = jugador.global_position

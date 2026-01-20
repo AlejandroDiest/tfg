@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5hkren61vvt1"]
+
+[ext_resource type="Script" uid="uid://dbsdatmyhct3w" path="res://scripts/ScriptsUI/NieblaSala.gd" id="1_1gqkg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hii2"]
+
+[node name="NieblaSala" type="Node2D"]
+script = ExtResource("1_1gqkg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visibility_layer = 32
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.03529412, 0.14117648, 0.21568628, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visibility_layer = 3
+shape = SubResource("RectangleShape2D_4hii2")

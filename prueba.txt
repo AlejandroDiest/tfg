@@ -5,3 +5,8 @@ GUARDAR CAMBIOS
 git add .
 git commit -m "mensaje"
 git push -u origin master
+
+
+https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator/#sex=male
+
+image Edge detection algorithm

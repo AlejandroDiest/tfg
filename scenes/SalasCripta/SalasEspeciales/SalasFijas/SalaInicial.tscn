@@ -7663,3 +7663,4 @@ position = Vector2(-1, 197)
 position = Vector2(-2, -201)
 
 [node name="Personaje" parent="." instance=ExtResource("6_strer")]
+position = Vector2(2, -9)

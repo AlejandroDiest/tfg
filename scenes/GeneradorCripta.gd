@@ -10,6 +10,7 @@ extends Node2D
 const GRID_ANCHO = 5
 const GRID_ALTO = 5
 const PASO_GRID = 768 
+var niebla_scene = preload("res://scenes/UI/NieblaSala.tscn")
 
 var camino_generado = [] 
 var ramas_generadas = [] 
@@ -173,6 +174,7 @@ func instanciar_sala(coord: Vector2i, packed_scene: PackedScene, mapa_referencia
 	var conexiones_necesarias = calcular_conexiones(coord, mapa_referencia)
 	var instancia = null
 	
+	# --- Lógica de selección de sala (IGUAL QUE ANTES) ---
 	if packed_scene in salas_cripta or packed_scene in salas_tesoro:
 		var candidatas = []
 		if packed_scene in salas_tesoro: candidatas = salas_tesoro.duplicate()
@@ -188,7 +190,7 @@ func instanciar_sala(coord: Vector2i, packed_scene: PackedScene, mapa_referencia
 	else:
 		instancia = packed_scene.instantiate() 
 
-
+	# --- Lógica de cruces (IGUAL QUE ANTES) ---
 	if instancia == null and salas_cruce.size() > 0:
 		var candidatas_cruce = salas_cruce.duplicate()
 		candidatas_cruce.shuffle()
@@ -201,31 +203,52 @@ func instanciar_sala(coord: Vector2i, packed_scene: PackedScene, mapa_referencia
 					break
 			intento.queue_free()
 
-
+	# --- Fallback (IGUAL QUE ANTES) ---
 	if instancia == null: 
 		instancia = packed_scene.instantiate()
-		print("AVISO: Forzando sala genérica en ", coord, ". Faltan piezas en tu inventario para: ", conexiones_necesarias)
+		print("AVISO: Forzando sala genérica en ", coord)
 
-
+	# --- Posicionamiento (IGUAL QUE ANTES) ---
 	instancia.position = Vector2(coord.x * PASO_GRID, coord.y * PASO_GRID)
 	add_child(instancia)
 	
 	if instancia.has_method("configurar_tapones"):
 		instancia.configurar_tapones(conexiones_necesarias)
-		
-	#var l = Label.new(); l.text = str(coord); l.scale = Vector2(3,3); l.z_index=200; instancia.add_child(l)
+
+	# =========================================================
+	# 📍 AQUÍ ES DONDE AÑADIMOS LA NIEBLA AUTOMÁTICA
+	# =========================================================
 	
+	# Buscamos el TileMap dentro de la sala instanciada
+	# NOTA: Asegúrate de que el nodo de suelo en tus salas se llame "TileMap"
+	var tilemap_sala = instancia.get_node_or_null("Borde")
+	
+	if tilemap_sala:
+		var rect_celdas = tilemap_sala.get_used_rect()
+		var tamano_celda = tilemap_sala.tile_set.tile_size.x
+		
+		var rect_pixeles = Rect2(
+			rect_celdas.position * tamano_celda, 
+			rect_celdas.size * tamano_celda
+		)
+		
+		# Instanciamos la niebla (ya la tienes preloaded arriba)
+		var nueva_niebla = niebla_scene.instantiate()
+		instancia.add_child(nueva_niebla) # La hacemos hija de la sala
+		
+		# Ajustamos tamaño y capa
+		nueva_niebla.ajustar_tamano(rect_pixeles)
+		nueva_niebla.z_index = 50 # Alto para que tape todo
+	
+	# =========================================================
+
+	# --- Código del Personaje (IGUAL QUE ANTES) ---
 	var personaje = instancia.get_node_or_null("Personaje")
-	
 	if personaje:
-		
 		personaje.modulate = Color(0.6, 0.6, 0.75)
-		
 		var antorcha = personaje.get_node_or_null("Antorcha")
 		if antorcha:
 			antorcha.visible = true
-		else:
-			print("Error al cargar la antorcha")
 #region utilidades
 
 func es_en_grid(pos: Vector2i) -> bool:
