@@ -42,7 +42,7 @@ func _cargar_slot(numero_slot: int):
 	
 	GM.partida_actual = numero_slot
 	GM.cargar_partida()
-	GM.cambiar_y_posicionar("res://scenes/Niveles/EscenaPrincipal.tscn", "InicioJuego")
+	GM.cambiar_y_posicionar("res://scenes/Niveles/Pueblo/EscenaPrincipal.tscn", "InicioJuego")
 
 
 func actualizar_textos_slots():

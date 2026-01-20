@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2yjpjvjelltf"]
 
-[ext_resource type="Script" uid="uid://c0wu0nhlsnaw" path="res://scripts/ScriptsUI/CargarRecursos.gd" id="1_l5x40"]
+[ext_resource type="Script" uid="uid://c0wu0nhlsnaw" path="res://scripts/CargarRecursos.gd" id="1_l5x40"]
 [ext_resource type="Texture2D" uid="uid://chw755ds1u7d1" path="res://assets/images/MenuPrincipal.png" id="1_ogtgo"]
 
 [node name="PantallaCargaInicio" type="Control"]
