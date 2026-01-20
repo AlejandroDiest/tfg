@@ -5,6 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hii2"]
 
 [node name="NieblaSala" type="Node2D"]
+visibility_layer = 32
 script = ExtResource("1_1gqkg")
 
 [node name="ColorRect" type="ColorRect" parent="."]

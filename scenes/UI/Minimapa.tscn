@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://paxgys1b5mec"]
 
-[ext_resource type="Script" uid="uid://dlk7xedueqjvx" path="res://scenes/UI/Minimapa.gd" id="1_51gog"]
+[ext_resource type="Script" uid="uid://dlk7xedueqjvx" path="res://scripts/ScriptsUI/Minimapa.gd" id="1_51gog"]
 
 [node name="MinimapaUI" type="SubViewportContainer"]
 anchors_preset = 1

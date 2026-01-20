@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cpbqloh5dl0sa" path="res://assets/sprites/asset_prueba/LPC_house_interior/interior.png" id="1_tm8df"]
 [ext_resource type="Texture2D" uid="uid://ck06tymsftvkc" path="res://assets/sprites/asset_prueba/hyptosis/hyptosis_tile-art-batch-4.png" id="2_e6cex"]
 [ext_resource type="PackedScene" uid="uid://d18qfvvtpmrsn" path="res://scenes/personaje.tscn" id="3_kl20s"]
-[ext_resource type="Script" uid="uid://cls3nuv1xs0tg" path="res://scripts/ScriptsPuertas/PuertaSalida.gd" id="4_sfnrx"]
+[ext_resource type="Script" uid="uid://cls3nuv1xs0tg" path="res://scripts/Niveles/Pueblo/ScriptsPuertas/PuertaSalida.gd" id="4_sfnrx"]
 [ext_resource type="Texture2D" uid="uid://b14ykrd8r2ne" path="res://assets/sprites/asset_prueba/randoms/things.png" id="5_0upui"]
 [ext_resource type="PackedScene" uid="uid://b64ts4u6hq118" path="res://scenes/UI/HUD.tscn" id="7_0upui"]
-[ext_resource type="PackedScene" uid="uid://dj54lotxb4v3f" path="res://scenes/Monstruos/slime.tscn" id="8_7a2cq"]
+[ext_resource type="PackedScene" uid="uid://dj54lotxb4v3f" path="res://scenes/NPCs/Monstruos/slime.tscn" id="8_7a2cq"]
 [ext_resource type="PackedScene" uid="uid://eu1cpp0a8wde" path="res://scenes/Misc/Corazon.tscn" id="8_84hrt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e6cex"]

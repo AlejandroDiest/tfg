@@ -1,0 +1,27 @@
+[gd_scene load_steps=15 format=3 uid="uid://b5ilj4aondn1g"]
+
+[ext_resource type="Script" uid="uid://c7ewq3ppr0hsi" path="res://scripts/Niveles/Cripta/Generadores/GeneradorCripta.gd" id="1_w2ae0"]
+[ext_resource type="PackedScene" uid="uid://bgn8bgkngu5nc" path="res://scenes/Niveles/Cripta/SalasCripta/SalasEspeciales/SalasFijas/SalaInicial.tscn" id="2_rcd1m"]
+[ext_resource type="PackedScene" uid="uid://b04tjs02g0lg2" path="res://scenes/Niveles/Cripta/SalasCripta/SalasEspeciales/SalasFijas/SalaEscaleraBoss.tscn" id="3_a77li"]
+[ext_resource type="PackedScene" uid="uid://l3i8w8xaaneq" path="res://scenes/Niveles/Cripta/SalasCripta/SalasDosPuertas/Esquinas/Esquina_Abajo_Izq.tscn" id="4_wuh0y"]
+[ext_resource type="PackedScene" uid="uid://duh0tdao2g072" path="res://scenes/Niveles/Cripta/SalasCripta/SalasDosPuertas/Esquinas/Esquina_Arriba_Dcha.tscn" id="5_j0myy"]
+[ext_resource type="PackedScene" uid="uid://dyin7bbh8jwt3" path="res://scenes/Niveles/Cripta/SalasCripta/SalasDosPuertas/Lineas/SalaHorizontal.tscn" id="6_nk4k0"]
+[ext_resource type="PackedScene" uid="uid://pd0s4qrdpp86" path="res://scenes/Niveles/Cripta/SalasCripta/SalasDosPuertas/Lineas/SalaVertical.tscn" id="7_xh2c0"]
+[ext_resource type="PackedScene" uid="uid://dn1ca4c3wulf6" path="res://scenes/Niveles/Cripta/SalasCripta/SalasTresPuertas/Esquina_Abajo_Dcha.tscn" id="8_4ixys"]
+[ext_resource type="PackedScene" uid="uid://bebybnk1px7lp" path="res://scenes/Niveles/Cripta/SalasCripta/SalasDosPuertas/Esquinas/Esquina_Arriba_Izq.tscn" id="9_eyruf"]
+[ext_resource type="PackedScene" uid="uid://bpuui4rdjyav" path="res://scenes/Niveles/Cripta/SalasCripta/SalasTresPuertas/N-E-S-Prueba.tscn" id="10_ifrqk"]
+[ext_resource type="PackedScene" uid="uid://bnk172jon055p" path="res://scenes/Niveles/Cripta/SalasCripta/SalasTresPuertas/N-W-S-Prueba.tscn" id="11_2rumm"]
+[ext_resource type="PackedScene" uid="uid://dc44fy26v3osf" path="res://scenes/Niveles/Cripta/SalasCripta/SalasTresPuertas/SalaT.tscn" id="12_36lb3"]
+[ext_resource type="PackedScene" uid="uid://d0qll1cktqvfj" path="res://scenes/Niveles/Cripta/SalasCripta/SalasEspeciales/SalasTesoro/SalaTesoro.tscn" id="13_vwggq"]
+[ext_resource type="PackedScene" uid="uid://bmfbi16gerqyr" path="res://scenes/Niveles/Cripta/SalasCripta/SalasCuatroPuertas/N-W-S-E.tscn" id="14_jhj5q"]
+
+[node name="Cripta" type="Node2D"]
+script = ExtResource("1_w2ae0")
+sala_inicial = ExtResource("2_rcd1m")
+sala_escalera_boss = ExtResource("3_a77li")
+salas_cripta = Array[PackedScene]([ExtResource("4_wuh0y"), ExtResource("5_j0myy"), ExtResource("6_nk4k0"), ExtResource("7_xh2c0"), ExtResource("8_4ixys"), ExtResource("9_eyruf"), ExtResource("10_ifrqk"), ExtResource("11_2rumm"), ExtResource("12_36lb3")])
+salas_tesoro = Array[PackedScene]([ExtResource("13_vwggq")])
+salas_cruce = Array[PackedScene]([ExtResource("14_jhj5q")])
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.47049934, 0.47555166, 0.67515445, 1)
