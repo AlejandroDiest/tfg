@@ -1,7 +1,7 @@
 [gd_scene load_steps=28 format=4 uid="uid://cwysrloe6614r"]
 
 [ext_resource type="Script" uid="uid://cxlmhvdmx3ttk" path="res://scripts/Niveles/Cripta/Generadores/Generadorgrid.gd" id="1_irqd5"]
-[ext_resource type="PackedScene" uid="uid://bgn8bgkngu5nc" path="res://scenes/Niveles/Cripta/SalasCripta/SalasEspeciales/SalasFijas/SalaInicial.tscn" id="2_l2yto"]
+[ext_resource type="PackedScene" uid="uid://c3d5cwwdmyted" path="res://scenes/Niveles/Cripta/SalasCripta/SalasEspeciales/SalasFijas/SalaInicialDebug.tscn" id="2_gghok"]
 [ext_resource type="PackedScene" uid="uid://b04tjs02g0lg2" path="res://scenes/Niveles/Cripta/SalasCripta/SalasEspeciales/SalasFijas/SalaEscaleraBoss.tscn" id="3_kooc5"]
 [ext_resource type="PackedScene" uid="uid://dyin7bbh8jwt3" path="res://scenes/Niveles/Cripta/SalasCripta/SalasDosPuertas/Lineas/SalaHorizontal.tscn" id="5_k8g3f"]
 [ext_resource type="PackedScene" uid="uid://dn1ca4c3wulf6" path="res://scenes/Niveles/Cripta/SalasCripta/SalasTresPuertas/Esquina_Abajo_Dcha.tscn" id="6_lfsoj"]
@@ -7600,7 +7600,7 @@ _bundled = {
 
 [node name="CriptaGrid" type="Node2D"]
 script = ExtResource("1_irqd5")
-sala_inicial = ExtResource("2_l2yto")
+sala_inicial = ExtResource("2_gghok")
 sala_escalera_boss = ExtResource("3_kooc5")
 salas_cripta = Array[PackedScene]([ExtResource("5_k8g3f"), ExtResource("6_lfsoj"), SubResource("PackedScene_xj6w7"), SubResource("PackedScene_ufb8h"), ExtResource("10_lfsoj"), ExtResource("11_717ra"), ExtResource("12_s2y03"), ExtResource("13_8ao0l"), ExtResource("12_lfsoj"), ExtResource("13_717ra"), ExtResource("14_8ao0l")])
 salas_tesoro = Array[PackedScene]([ExtResource("14_s2y03")])

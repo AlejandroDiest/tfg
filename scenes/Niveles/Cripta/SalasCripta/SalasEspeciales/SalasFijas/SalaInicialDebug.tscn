@@ -1,16 +1,15 @@
-[gd_scene load_steps=17 format=4 uid="uid://bgn8bgkngu5nc"]
+[gd_scene load_steps=16 format=4 uid="uid://c3d5cwwdmyted"]
 
-[ext_resource type="Texture2D" uid="uid://qdwn36qyt0qc" path="res://assets/sprites/assets_finales/cripta/Tilesets/Tileset-Terrain.png" id="1_51sqt"]
-[ext_resource type="Script" uid="uid://dg8gn27dfmoj7" path="res://scripts/Niveles/Cripta/DatosSala.gd" id="1_lkvdm"]
-[ext_resource type="TileSet" uid="uid://clxp5x6hvcxip" path="res://assets/sprites/assets_finales/HitboxBordeCripta.tres" id="2_51sqt"]
-[ext_resource type="PackedScene" uid="uid://6qyi81l5yn03" path="res://scenes/NPCs/Monstruos/Esqueleto.tscn" id="5_x45r2"]
-[ext_resource type="PackedScene" uid="uid://ba5x5pjaapnek" path="res://scenes/NPCs/Monstruos/Esqueleto2.tscn" id="6_iyvl6"]
-[ext_resource type="PackedScene" uid="uid://c3y38jgxdprvi" path="res://scenes/NPCs/Personajes/PersonajePrueba.tscn" id="6_strer"]
-[ext_resource type="PackedScene" uid="uid://dc6fd3y1mf46m" path="res://scenes/NPCs/Monstruos/Murcielago.tscn" id="7_strer"]
-[ext_resource type="PackedScene" uid="uid://cl7dgkp6oog23" path="res://scenes/NPCs/Monstruos/Murcielago2.tscn" id="8_iuo2d"]
+[ext_resource type="Script" uid="uid://dg8gn27dfmoj7" path="res://scripts/Niveles/Cripta/DatosSala.gd" id="1_tt3c2"]
+[ext_resource type="Texture2D" uid="uid://qdwn36qyt0qc" path="res://assets/sprites/assets_finales/cripta/Tilesets/Tileset-Terrain.png" id="2_7t10f"]
+[ext_resource type="TileSet" uid="uid://clxp5x6hvcxip" path="res://assets/sprites/assets_finales/HitboxBordeCripta.tres" id="3_s4eas"]
+[ext_resource type="PackedScene" uid="uid://6qyi81l5yn03" path="res://scenes/NPCs/Monstruos/Esqueleto.tscn" id="4_kqeyn"]
+[ext_resource type="PackedScene" uid="uid://ba5x5pjaapnek" path="res://scenes/NPCs/Monstruos/Esqueleto2.tscn" id="5_baoaf"]
+[ext_resource type="PackedScene" uid="uid://dc6fd3y1mf46m" path="res://scenes/NPCs/Monstruos/Murcielago.tscn" id="6_ywo71"]
+[ext_resource type="PackedScene" uid="uid://cl7dgkp6oog23" path="res://scenes/NPCs/Monstruos/Murcielago2.tscn" id="7_c86ks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pfykg"]
-texture = ExtResource("1_51sqt")
+texture = ExtResource("2_7t10f")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 2:0/0 = 0
@@ -1896,7 +1895,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_pfykg")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2m38l"]
-texture = ExtResource("1_51sqt")
+texture = ExtResource("2_7t10f")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 2:0/0 = 0
@@ -3814,7 +3813,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_2m38l")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0wgr"]
-texture = ExtResource("1_51sqt")
+texture = ExtResource("2_7t10f")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 2:0/0 = 0
@@ -5695,7 +5694,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_e0wgr")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uribt"]
-texture = ExtResource("1_51sqt")
+texture = ExtResource("2_7t10f")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 2:0/0 = 0
@@ -7584,7 +7583,7 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_uribt")
 
 [node name="SalaBase" type="Node2D" node_paths=PackedStringArray("tapon_norte", "tapon_sur", "tapon_este", "tapon_oeste")]
-script = ExtResource("1_lkvdm")
+script = ExtResource("1_tt3c2")
 puertas_disponibles = Array[Vector2]([Vector2(1, 0), Vector2(0, 1), Vector2(-1, 0), Vector2(0, -1)])
 tapon_norte = NodePath("Tapones/TaponNorte")
 tapon_sur = NodePath("Tapones/TaponSur")
@@ -7615,33 +7614,33 @@ tile_set = SubResource("TileSet_4u82b")
 
 [node name="TaponSur" type="TileMapLayer" parent="Tapones"]
 tile_map_data = PackedByteArray("AAD+/woAAQAAAAIAAFD//woAAQAAAAIAAFAAAAoAAQAAAAIAAFABAAoAAQAAAAIAAFABAAsAAQACAAIAAAAAAAsAAQACAAIAAAD//wsAAQACAAIAAAD+/wsAAQACAAIAAAA=")
-tile_set = ExtResource("2_51sqt")
+tile_set = ExtResource("3_s4eas")
 
 [node name="TaponEste" type="TileMapLayer" parent="Tapones"]
 tile_map_data = PackedByteArray("AAALAP7/AQACAAIAAEAKAP7/AQAAAAIAACALAP//AQACAAIAAEAKAP//AQAAAAIAACALAAAAAQACAAIAAEAKAAAAAQAAAAIAACALAAEAAQACAAIAAEAKAAEAAQAAAAIAACA=")
-tile_set = ExtResource("2_51sqt")
+tile_set = ExtResource("3_s4eas")
 
 [node name="TaponOeste" type="TileMapLayer" parent="Tapones"]
 tile_map_data = PackedByteArray("AAD1//7/AQAAAAIAADD0//7/AQACAAIAAFD1////AQAAAAIAADD0////AQACAAIAAFD1/wAAAQAAAAIAADD0/wAAAQACAAIAAFD1/wEAAQAAAAIAADD0/wEAAQACAAIAAFA=")
-tile_set = ExtResource("2_51sqt")
+tile_set = ExtResource("3_s4eas")
 
 [node name="TaponNorte" type="Node2D" parent="Tapones"]
 
 [node name="SueloTapon" type="TileMapLayer" parent="Tapones/TaponNorte"]
 tile_map_data = PackedByteArray("AAD+//f/AQARAAgAAAD///f/AQAQAAgAAAAAAPf/AQARAAkAAAAAAPj/AQAUAAkAAAABAPj/AQAVAAkAAAD+//j/AQAUAAoAAAD+//n/AQAUAAsAAAD///j/AQAVAAoAAAD///n/AQAVAAsAAAAAAPn/AQAWAAgAAAABAPn/AQATAAsAAAABAPf/AQARAAsAAAA=")
-tile_set = ExtResource("2_51sqt")
+tile_set = ExtResource("3_s4eas")
 
 [node name="ParedTapon" type="TileMapLayer" parent="Tapones/TaponNorte"]
 tile_map_data = PackedByteArray("AAD+//b/AQACAA0AAAD+//f/AQACAA4AAAD///b/AQACAA0AAAD///f/AQACAA4AAAAAAPb/AQACAA0AAAAAAPf/AQACAA4AAAABAPb/AQACAA0AAAABAPf/AQACAA4AAAD+//T/AQACAA0AAAD///T/AQACAA0AAAAAAPT/AQACAA0AAAABAPT/AQACAA0AAAD+//X/AQACAA0AAAD///X/AQACAA0AAAAAAPX/AQACAA0AAAABAPX/AQACAA0AAAA=")
-tile_set = ExtResource("2_51sqt")
+tile_set = ExtResource("3_s4eas")
 
 [node name="PilaresParedTapon" type="TileMapLayer" parent="Tapones/TaponNorte"]
 tile_map_data = PackedByteArray("AAABAPX/AQAVACMAABABAPb/AQAVACQAABACAPX/AQAWACMAAAACAPb/AQAWACQAAAACAPf/AQAWACUAAAD+//X/AQAVACMAAAD9//X/AQAWACMAABD+//b/AQAVACQAAAD9//b/AQAWACQAABD9//f/AQAWACUAABD///X/AQAWACMAAAD///b/AQAWACQAAAD///f/AQAWACUAAAAAAPX/AQAWACMAABAAAPb/AQAWACQAABAAAPf/AQAWACUAABA=")
-tile_set = ExtResource("2_51sqt")
+tile_set = ExtResource("3_s4eas")
 
 [node name="BordeTapon" type="TileMapLayer" parent="Tapones/TaponNorte"]
 tile_map_data = PackedByteArray("AAD+//X/AQAAAAIAAHD///X/AQAAAAIAAHAAAPX/AQAAAAIAAHABAPX/AQAAAAIAAHACAPX/AQAAAAIAAHD9//X/AQAAAAIAAHD9//T/AQACAAIAAAD+//T/AQACAAIAAAD///T/AQACAAIAAAAAAPT/AQACAAIAAAABAPT/AQACAAIAAAACAPT/AQACAAIAAAA=")
-tile_set = ExtResource("2_51sqt")
+tile_set = ExtResource("3_s4eas")
 
 [node name="ReferenceRect" type="ReferenceRect" parent="."]
 offset_left = -384.0
@@ -7650,16 +7649,14 @@ offset_right = 384.0
 offset_bottom = 385.0
 border_width = 4.5
 
-[node name="EnemigoBase" parent="." instance=ExtResource("5_x45r2")]
+[node name="EnemigoBase" parent="." instance=ExtResource("4_kqeyn")]
 position = Vector2(-208, -20)
 
-[node name="EnemigoBase2" parent="." instance=ExtResource("6_iyvl6")]
+[node name="EnemigoBase2" parent="." instance=ExtResource("5_baoaf")]
 position = Vector2(208, -23)
 
-[node name="EnemigoBase3" parent="." instance=ExtResource("7_strer")]
+[node name="EnemigoBase3" parent="." instance=ExtResource("6_ywo71")]
 position = Vector2(-1, 197)
 
-[node name="EnemigoBase4" parent="." instance=ExtResource("8_iuo2d")]
+[node name="EnemigoBase4" parent="." instance=ExtResource("7_c86ks")]
 position = Vector2(-2, -201)
-
-[node name="Personaje" parent="." instance=ExtResource("6_strer")]

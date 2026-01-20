@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://b1porfba1cef4"]
+
+[ext_resource type="Texture2D" uid="uid://dyqx4l4onc6hw" path="res://assets/sprites/assets_finales/pueblo/Props/animated/Animated Tree1.png" id="1_xg3sh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7klr"]
+atlas = ExtResource("1_xg3sh")
+region = Rect2(0, 0, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wy4bi"]
+atlas = ExtResource("1_xg3sh")
+region = Rect2(128, 0, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asb83"]
+atlas = ExtResource("1_xg3sh")
+region = Rect2(256, 0, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhdhm"]
+atlas = ExtResource("1_xg3sh")
+region = Rect2(384, 0, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbp4w"]
+atlas = ExtResource("1_xg3sh")
+region = Rect2(512, 0, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0frq"]
+atlas = ExtResource("1_xg3sh")
+region = Rect2(640, 0, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h77r7"]
+atlas = ExtResource("1_xg3sh")
+region = Rect2(768, 0, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjnr5"]
+atlas = ExtResource("1_xg3sh")
+region = Rect2(896, 0, 128, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l1guw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7klr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wy4bi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asb83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhdhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbp4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0frq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h77r7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjnr5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="ArbolUno" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_l1guw")
+frame_progress = 0.9929529
