@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://3ikkqlsoioaw"]
+
+[ext_resource type="Texture2D" uid="uid://phbhv3ga4v5x" path="res://assets/sprites/assets_finales/pueblo/Props/animated/sword sharpener-1.png" id="1_8gd2h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svlsd"]
+atlas = ExtResource("1_8gd2h")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0c8i"]
+atlas = ExtResource("1_8gd2h")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqsnc"]
+atlas = ExtResource("1_8gd2h")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xq3l"]
+atlas = ExtResource("1_8gd2h")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dwc1q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svlsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0c8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqsnc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xq3l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="Afilador" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dwc1q")
+autoplay = "default"
+frame_progress = 0.11553588

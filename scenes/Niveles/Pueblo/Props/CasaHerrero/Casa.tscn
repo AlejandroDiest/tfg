@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgi848cn33hfj"]
+
+[ext_resource type="Texture2D" uid="uid://pbq77wfs68x2" path="res://assets/sprites/assets_finales/pueblo/Props/Atlas-Props-individual sprites/blacksmith shadow.png" id="1_f2ny0"]
+[ext_resource type="Texture2D" uid="uid://bsqr3awe3gtml" path="res://assets/sprites/assets_finales/pueblo/Props/Atlas-Props-individual sprites/blacksmith.png" id="2_1f62t"]
+
+[node name="Casa" type="Node2D"]
+
+[node name="Sombra" type="Sprite2D" parent="."]
+position = Vector2(1, 80)
+texture = ExtResource("1_f2ny0")
+
+[node name="Casa" type="Sprite2D" parent="."]
+texture = ExtResource("2_1f62t")

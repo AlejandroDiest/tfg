@@ -7650,16 +7650,18 @@ offset_right = 384.0
 offset_bottom = 385.0
 border_width = 4.5
 
-[node name="EnemigoBase" parent="." instance=ExtResource("5_x45r2")]
+[node name="Enemigos" type="Node2D" parent="."]
+
+[node name="EnemigoBase" parent="Enemigos" instance=ExtResource("5_x45r2")]
 position = Vector2(-208, -20)
 
-[node name="EnemigoBase2" parent="." instance=ExtResource("6_iyvl6")]
+[node name="EnemigoBase2" parent="Enemigos" instance=ExtResource("6_iyvl6")]
 position = Vector2(208, -23)
 
-[node name="EnemigoBase3" parent="." instance=ExtResource("7_strer")]
-position = Vector2(-1, 197)
-
-[node name="EnemigoBase4" parent="." instance=ExtResource("8_iuo2d")]
+[node name="EnemigoBase4" parent="Enemigos" instance=ExtResource("8_iuo2d")]
 position = Vector2(-2, -201)
+
+[node name="EnemigoBase3" parent="Enemigos" instance=ExtResource("7_strer")]
+position = Vector2(-1, 197)
 
 [node name="Personaje" parent="." instance=ExtResource("6_strer")]

@@ -1,5 +1,32 @@
-[gd_scene format=3 uid="uid://c3pca05365113"]
+[gd_scene load_steps=8 format=3 uid="uid://c3pca05365113"]
+
+[ext_resource type="PackedScene" uid="uid://d34613jcjauel" path="res://scenes/Niveles/Pueblo/Props/CasaHerrero/Horno.tscn" id="1_3vx0m"]
+[ext_resource type="Texture2D" uid="uid://x7mdxagisp85" path="res://assets/sprites/assets_finales/pueblo/Props/Atlas-Props-individual sprites/blacksmith wall1.png" id="1_bac4j"]
+[ext_resource type="PackedScene" uid="uid://bgi848cn33hfj" path="res://scenes/Niveles/Pueblo/Props/CasaHerrero/Casa.tscn" id="2_k27om"]
+[ext_resource type="PackedScene" uid="uid://by1k4o4cxuq3j" path="res://scenes/Niveles/Pueblo/Props/CasaHerrero/Cartel.tscn" id="3_wfiex"]
+[ext_resource type="PackedScene" uid="uid://3ikkqlsoioaw" path="res://scenes/Niveles/Pueblo/Props/CasaHerrero/Afilador.tscn" id="5_kfbc5"]
+[ext_resource type="PackedScene" uid="uid://dgn45ycgbihc2" path="res://scenes/Niveles/Pueblo/Props/CasaHerrero/Yunque.tscn" id="6_vx18l"]
+[ext_resource type="PackedScene" uid="uid://o1y7xjoabkn0" path="res://scenes/Niveles/Pueblo/Props/CasaHerrero/Herrero.tscn" id="7_kfbc5"]
 
 [node name="CasaHerrero" type="Node2D"]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="ParedCasa" type="Sprite2D" parent="."]
+position = Vector2(75, 70)
+texture = ExtResource("1_bac4j")
+
+[node name="Horno" parent="." instance=ExtResource("1_3vx0m")]
+position = Vector2(13, 60)
+
+[node name="Casa" parent="." instance=ExtResource("2_k27om")]
+
+[node name="Cartel" parent="." instance=ExtResource("3_wfiex")]
+position = Vector2(166, 59)
+
+[node name="Afilador" parent="." instance=ExtResource("5_kfbc5")]
+position = Vector2(7, 108)
+
+[node name="Yunque" parent="." instance=ExtResource("6_vx18l")]
+position = Vector2(73, 103)
+
+[node name="Herrero" parent="." instance=ExtResource("7_kfbc5")]
+position = Vector2(71, 83)

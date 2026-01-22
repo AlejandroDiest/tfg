@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgn45ycgbihc2"]
+
+[ext_resource type="Texture2D" uid="uid://cpynev60f3fok" path="res://assets/sprites/assets_finales/pueblo/Props/Atlas-Props-individual sprites/anvil-shine_frame6.png" id="1_qcorj"]
+
+[node name="Yunque" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qcorj")

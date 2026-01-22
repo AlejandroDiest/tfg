@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://d34613jcjauel"]
+
+[ext_resource type="Texture2D" uid="uid://de2dle2pmqwy8" path="res://assets/sprites/assets_finales/pueblo/Props/animated/forge1-anim1.png" id="1_6e5y8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5nea"]
+atlas = ExtResource("1_6e5y8")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bq4nn"]
+atlas = ExtResource("1_6e5y8")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cx4a"]
+atlas = ExtResource("1_6e5y8")
+region = Rect2(128, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xrhy"]
+atlas = ExtResource("1_6e5y8")
+region = Rect2(192, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y67k5"]
+atlas = ExtResource("1_6e5y8")
+region = Rect2(256, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kt5x6"]
+atlas = ExtResource("1_6e5y8")
+region = Rect2(320, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4hji"]
+atlas = ExtResource("1_6e5y8")
+region = Rect2(384, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdxr4"]
+atlas = ExtResource("1_6e5y8")
+region = Rect2(448, 0, 64, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7seep"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5nea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bq4nn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cx4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xrhy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y67k5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kt5x6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4hji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdxr4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="Horno" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7seep")
+autoplay = "default"
+frame_progress = 0.84083533

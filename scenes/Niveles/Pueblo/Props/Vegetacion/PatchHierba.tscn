@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3dvrr1mblqpx"]
+
+[ext_resource type="PackedScene" uid="uid://bf7o36vakaejy" path="res://scenes/Niveles/Pueblo/Props/Vegetacion/Hierba.tscn" id="1_nyexu"]
+
+[node name="PatchHierba" type="Node2D"]
+
+[node name="Hierba" parent="." instance=ExtResource("1_nyexu")]
+position = Vector2(35, 28)
+frame_progress = 0.42861554
+
+[node name="Hierba2" parent="." instance=ExtResource("1_nyexu")]
+position = Vector2(-5, 21)
+frame_progress = 0.06713615

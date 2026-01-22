@@ -1,0 +1,130 @@
+[gd_scene load_steps=19 format=3 uid="uid://by1k4o4cxuq3j"]
+
+[ext_resource type="Texture2D" uid="uid://m1yg3dkptf2c" path="res://assets/sprites/assets_finales/pueblo/Props/animated/blacksmith sign- swinging sign anim.png" id="1_qgjr8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lp1rg"]
+atlas = ExtResource("1_qgjr8")
+region = Rect2(0, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs6jt"]
+atlas = ExtResource("1_qgjr8")
+region = Rect2(32, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqxkt"]
+atlas = ExtResource("1_qgjr8")
+region = Rect2(64, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nu6uc"]
+atlas = ExtResource("1_qgjr8")
+region = Rect2(96, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3a5om"]
+atlas = ExtResource("1_qgjr8")
+region = Rect2(128, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnby6"]
+atlas = ExtResource("1_qgjr8")
+region = Rect2(160, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_502si"]
+atlas = ExtResource("1_qgjr8")
+region = Rect2(192, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgx02"]
+atlas = ExtResource("1_qgjr8")
+region = Rect2(224, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unq7y"]
+atlas = ExtResource("1_qgjr8")
+region = Rect2(256, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shjhv"]
+atlas = ExtResource("1_qgjr8")
+region = Rect2(288, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m67yr"]
+atlas = ExtResource("1_qgjr8")
+region = Rect2(320, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6ds3"]
+atlas = ExtResource("1_qgjr8")
+region = Rect2(352, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xiafk"]
+atlas = ExtResource("1_qgjr8")
+region = Rect2(384, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vmbt"]
+atlas = ExtResource("1_qgjr8")
+region = Rect2(416, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sc54k"]
+atlas = ExtResource("1_qgjr8")
+region = Rect2(448, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2j4qm"]
+atlas = ExtResource("1_qgjr8")
+region = Rect2(480, 0, 32, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yss5v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lp1rg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs6jt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqxkt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nu6uc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3a5om")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnby6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_502si")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgx02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unq7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shjhv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m67yr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6ds3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xiafk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vmbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sc54k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2j4qm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Cartel" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yss5v")
+autoplay = "default"
+frame_progress = 0.38345578
