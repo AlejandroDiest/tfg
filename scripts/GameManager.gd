@@ -127,7 +127,6 @@ func cargar_partida():
 	
 	if datos_guardados:
 		datos_jugador = datos_guardados
-		# Asegurar tipos de datos (Godot a veces lee floats en vez de ints del JSON)
 		datos_jugador.oro = int(datos_jugador.oro)
 		datos_jugador.vida_maxima = int(datos_jugador.vida_maxima)
 		datos_jugador.vida_actual = int(datos_jugador.vida_actual)

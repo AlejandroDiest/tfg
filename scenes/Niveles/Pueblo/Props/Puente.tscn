@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0hn5q2l6i5wn"]
+
+[ext_resource type="Texture2D" uid="uid://biw8ld4fycm0v" path="res://assets/sprites/assets_finales/pueblo/Props/Atlas-Props.png" id="1_6lrma"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lrma"]
+atlas = ExtResource("1_6lrma")
+region = Rect2(7.4397545, 177.75423, 81.11955, 126.26161)
+
+[node name="Puente" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_6lrma")

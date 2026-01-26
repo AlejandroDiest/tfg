@@ -1,22 +1,44 @@
-[gd_scene load_steps=2 format=3 uid="uid://paxgys1b5mec"]
+[gd_scene load_steps=3 format=3 uid="uid://paxgys1b5mec"]
 
 [ext_resource type="Script" uid="uid://dlk7xedueqjvx" path="res://scripts/ScriptsUI/Minimapa.gd" id="1_51gog"]
+[ext_resource type="Texture2D" uid="uid://dbfbebb25dnea" path="res://assets/sprites/assets_finales/pueblo/UI/UI-elements-32x32-original.png" id="2_1sh4r"]
 
-[node name="MinimapaUI" type="SubViewportContainer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -100.0
+[node name="MinimapaUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 100.0
 offset_bottom = 100.0
-grow_horizontal = 0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_51gog")
 
-[node name="SubViewport" type="SubViewport" parent="."]
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
 size = Vector2i(100, 100)
 render_target_update_mode = 4
 
-[node name="Camera2D" type="Camera2D" parent="SubViewport"]
+[node name="Camera2D" type="Camera2D" parent="SubViewportContainer/SubViewport"]
 visibility_layer = 33
 position = Vector2(540, 0)
 zoom = Vector2(0.1, 0.1)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1sh4r")
+draw_center = false
+region_rect = Rect2(196, 228, 24, 24)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4

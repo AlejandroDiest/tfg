@@ -1,13 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgi848cn33hfj"]
+[gd_scene load_steps=4 format=3 uid="uid://bgi848cn33hfj"]
 
 [ext_resource type="Texture2D" uid="uid://pbq77wfs68x2" path="res://assets/sprites/assets_finales/pueblo/Props/Atlas-Props-individual sprites/blacksmith shadow.png" id="1_f2ny0"]
 [ext_resource type="Texture2D" uid="uid://bsqr3awe3gtml" path="res://assets/sprites/assets_finales/pueblo/Props/Atlas-Props-individual sprites/blacksmith.png" id="2_1f62t"]
 
-[node name="Casa" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1f62t"]
+size = Vector2(296, 123)
+
+[node name="Casa" type="StaticBody2D"]
 
 [node name="Sombra" type="Sprite2D" parent="."]
-position = Vector2(1, 80)
+position = Vector2(0, 16)
 texture = ExtResource("1_f2ny0")
 
 [node name="Casa" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -70)
 texture = ExtResource("2_1f62t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_1f62t")

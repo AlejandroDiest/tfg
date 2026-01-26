@@ -11,22 +11,22 @@
 [node name="CasaHerrero" type="Node2D"]
 
 [node name="ParedCasa" type="Sprite2D" parent="."]
-position = Vector2(75, 70)
+position = Vector2(75, 0)
 texture = ExtResource("1_bac4j")
 
 [node name="Horno" parent="." instance=ExtResource("1_3vx0m")]
-position = Vector2(13, 60)
+position = Vector2(13, -10)
 
 [node name="Casa" parent="." instance=ExtResource("2_k27om")]
 
 [node name="Cartel" parent="." instance=ExtResource("3_wfiex")]
-position = Vector2(166, 59)
+position = Vector2(166, -11)
 
 [node name="Afilador" parent="." instance=ExtResource("5_kfbc5")]
-position = Vector2(7, 108)
+position = Vector2(7, 38)
 
 [node name="Yunque" parent="." instance=ExtResource("6_vx18l")]
-position = Vector2(73, 103)
+position = Vector2(73, 33)
 
 [node name="Herrero" parent="." instance=ExtResource("7_kfbc5")]
-position = Vector2(71, 83)
+position = Vector2(71, 13)

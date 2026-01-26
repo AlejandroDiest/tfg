@@ -6,7 +6,7 @@ extends Control
 # LISTA DE LA COMPRA: ¿Qué escenas quieres guardar en la mochila?
 var lista_de_carga = [
 	# CAMBIA ESTAS RUTAS POR LAS TUYAS EXACTAS
-	{ "ruta": "res://scenes/Niveles/Pueblo/EscenaPrincipal.tscn", "tipo": "Pueblo" },
+	{ "ruta": "res://scenes/Niveles/Pueblo/Pueblo.tscn", "tipo": "Pueblo" },
 	{ "ruta": "res://scenes/Niveles/Cripta/Cripta.tscn", "tipo": "Cripta" },
 	{ "ruta": "res://scenes/UI/MenuInicio.tscn", "tipo": "Menu" }
 ]

@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dp218wch143gm"]
+[gd_scene load_steps=3 format=3 uid="uid://dp218wch143gm"]
 
 [ext_resource type="Texture2D" uid="uid://bpxanubbvik30" path="res://assets/sprites/assets_finales/pueblo/Props/Atlas-Props-individual sprites/signs_8.png" id="1_avo2j"]
 
-[node name="CartelCamino" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_avo2j"]
+radius = 8.0
+
+[node name="CartelCamino" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_avo2j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 10)
+shape = SubResource("CircleShape2D_avo2j")

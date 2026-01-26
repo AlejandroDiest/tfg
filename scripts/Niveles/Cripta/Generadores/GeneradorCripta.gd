@@ -10,6 +10,7 @@ extends Node2D
 const GRID_ANCHO = 5
 const GRID_ALTO = 5
 const PASO_GRID = 768 
+var sala_visitada = false
 var niebla_scene = preload("res://scenes/UI/NieblaSala.tscn")
 
 var camino_generado = [] 
@@ -20,6 +21,7 @@ func _ready():
 	randomize()
 	crear_fondo_infinito()
 	generar_nivel()
+	get_viewport().canvas_cull_mask = get_viewport().canvas_cull_mask & ~(1 << 5)
 
 func crear_fondo_infinito():
 	var fondo = ColorRect.new()
@@ -174,7 +176,7 @@ func instanciar_sala(coord: Vector2i, packed_scene: PackedScene, mapa_referencia
 	var conexiones_necesarias = calcular_conexiones(coord, mapa_referencia)
 	var instancia = null
 	
-	# --- Lógica de selección de sala (IGUAL QUE ANTES) ---
+	#Lógica de selección de sala 
 	if packed_scene in salas_cripta or packed_scene in salas_tesoro:
 		var candidatas = []
 		if packed_scene in salas_tesoro: candidatas = salas_tesoro.duplicate()
@@ -190,7 +192,7 @@ func instanciar_sala(coord: Vector2i, packed_scene: PackedScene, mapa_referencia
 	else:
 		instancia = packed_scene.instantiate() 
 
-	# --- Lógica de cruces (IGUAL QUE ANTES) ---
+	# Lógica de cruces
 	if instancia == null and salas_cruce.size() > 0:
 		var candidatas_cruce = salas_cruce.duplicate()
 		candidatas_cruce.shuffle()
@@ -203,24 +205,18 @@ func instanciar_sala(coord: Vector2i, packed_scene: PackedScene, mapa_referencia
 					break
 			intento.queue_free()
 
-	# --- Fallback (IGUAL QUE ANTES) ---
 	if instancia == null: 
 		instancia = packed_scene.instantiate()
 		print("AVISO: Forzando sala genérica en ", coord)
 
-	# --- Posicionamiento (IGUAL QUE ANTES) ---
+	#Posicionamiento
 	instancia.position = Vector2(coord.x * PASO_GRID, coord.y * PASO_GRID)
 	add_child(instancia)
 	
 	if instancia.has_method("configurar_tapones"):
 		instancia.configurar_tapones(conexiones_necesarias)
 
-	# =========================================================
-	# 📍 AQUÍ ES DONDE AÑADIMOS LA NIEBLA AUTOMÁTICA
-	# =========================================================
-	
-	# Buscamos el TileMap dentro de la sala instanciada
-	# NOTA: Asegúrate de que el nodo de suelo en tus salas se llame "TileMap"
+	#NIEBLA
 	var tilemap_sala = instancia.get_node_or_null("Borde")
 	
 	if tilemap_sala:
@@ -232,17 +228,12 @@ func instanciar_sala(coord: Vector2i, packed_scene: PackedScene, mapa_referencia
 			rect_celdas.size * tamano_celda
 		)
 		
-		# Instanciamos la niebla (ya la tienes preloaded arriba)
 		var nueva_niebla = niebla_scene.instantiate()
-		instancia.add_child(nueva_niebla) # La hacemos hija de la sala
+		instancia.add_child(nueva_niebla)
 		
-		# Ajustamos tamaño y capa
 		nueva_niebla.ajustar_tamano(rect_pixeles)
-		nueva_niebla.z_index = 50 # Alto para que tape todo
-	
-	# =========================================================
+		nueva_niebla.z_index = 2
 
-	# --- Código del Personaje (IGUAL QUE ANTES) ---
 	var personaje = instancia.get_node_or_null("Personaje")
 	if personaje:
 		personaje.modulate = Color(0.6, 0.6, 0.75)
