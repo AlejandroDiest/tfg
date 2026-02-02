@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-# --- CONFIGURACIÓN ---
+@export var inventario : Inv
 @export var velocidad: float = 180.0
 @export var vida_maxima: int = 5
 

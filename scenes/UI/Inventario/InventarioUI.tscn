@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfj6mhfr5npud"]
+
+[ext_resource type="Texture2D" uid="uid://dbfbebb25dnea" path="res://assets/sprites/assets_finales/pueblo/UI/UI-elements-32x32-original.png" id="1_5v76k"]
+[ext_resource type="Script" uid="uid://n00c1ibiylhq" path="res://scripts/ScriptsUI/Inventario/inventario_ui.gd" id="2_dpae8"]
+[ext_resource type="PackedScene" uid="uid://b5kwwh814j7ig" path="res://scenes/UI/Inventario/SlotInvUI.tscn" id="3_yaliu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epjf7"]
+atlas = ExtResource("1_5v76k")
+region = Rect2(164, 228, 24, 24)
+
+[node name="Inventario" type="NinePatchRect"]
+offset_right = 145.0
+offset_bottom = 109.0
+texture = SubResource("AtlasTexture_epjf7")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+script = ExtResource("2_dpae8")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = -46.0
+offset_right = 62.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
+
+[node name="Slot" parent="GridContainer" instance=ExtResource("3_yaliu")]
+layout_mode = 2
+
+[node name="Slot2" parent="GridContainer" instance=ExtResource("3_yaliu")]
+layout_mode = 2
+
+[node name="Slot3" parent="GridContainer" instance=ExtResource("3_yaliu")]
+layout_mode = 2
+
+[node name="Slot4" parent="GridContainer" instance=ExtResource("3_yaliu")]
+layout_mode = 2
+
+[node name="Slot5" parent="GridContainer" instance=ExtResource("3_yaliu")]
+layout_mode = 2
+
+[node name="Slot6" parent="GridContainer" instance=ExtResource("3_yaliu")]
+layout_mode = 2
+
+[node name="Slot7" parent="GridContainer" instance=ExtResource("3_yaliu")]
+layout_mode = 2
+
+[node name="Slot8" parent="GridContainer" instance=ExtResource("3_yaliu")]
+layout_mode = 2
+
+[node name="Slot9" parent="GridContainer" instance=ExtResource("3_yaliu")]
+layout_mode = 2
+
+[node name="Slot10" parent="GridContainer" instance=ExtResource("3_yaliu")]
+layout_mode = 2
+
+[node name="Slot11" parent="GridContainer" instance=ExtResource("3_yaliu")]
+layout_mode = 2
+
+[node name="Slot12" parent="GridContainer" instance=ExtResource("3_yaliu")]
+layout_mode = 2

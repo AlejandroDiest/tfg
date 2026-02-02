@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://dphqtfa2kdgnu"]
+[gd_scene load_steps=68 format=3 uid="uid://dphqtfa2kdgnu"]
 
 [ext_resource type="Script" uid="uid://c3ln0owcjysk1" path="res://scripts/NPCs/personaje/PersonajeFinal.gd" id="1_lwg3d"]
 [ext_resource type="Texture2D" uid="uid://cxrycxieswddf" path="res://assets/sprites/personaje/walk.png" id="1_tyrqv"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://8pk5ov0jgu6s" path="res://scenes/Misc/Espada.tscn" id="4_0goh4"]
 [ext_resource type="Script" uid="uid://beg7ee2ep56fx" path="res://scripts/NPCs/personaje/antorcha.gd" id="4_bj3h8"]
 [ext_resource type="PackedScene" uid="uid://b64ts4u6hq118" path="res://scenes/UI/HUD.tscn" id="5_8i353"]
+[ext_resource type="PackedScene" uid="uid://dfj6mhfr5npud" path="res://scenes/UI/Inventario/InventarioUI.tscn" id="7_kfgue"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tyrqv"]
 atlas = ExtResource("1_tyrqv")
@@ -501,3 +502,5 @@ process_callback = 0
 position_smoothing_speed = 8.0
 
 [node name="HUD" parent="." instance=ExtResource("5_8i353")]
+
+[node name="Inventario" parent="." instance=ExtResource("7_kfgue")]

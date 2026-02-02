@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5kwwh814j7ig"]
+
+[ext_resource type="Texture2D" uid="uid://byjny4y51b7cw" path="res://assets/sprites/assets_finales/pueblo/UI/UI-elements-32x32-separated sprites/9SlicedObjects_slot1_0.png" id="1_5g2cy"]
+
+[node name="Slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(28, 28)
+offset_right = 28.0
+offset_bottom = 28.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, -2)
+texture = ExtResource("1_5g2cy")
+centered = false

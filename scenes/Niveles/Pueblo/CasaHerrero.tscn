@@ -20,7 +20,7 @@ position = Vector2(13, -10)
 [node name="Casa" parent="." instance=ExtResource("2_k27om")]
 
 [node name="Cartel" parent="." instance=ExtResource("3_wfiex")]
-position = Vector2(166, -11)
+position = Vector2(166, 4)
 
 [node name="Afilador" parent="." instance=ExtResource("5_kfbc5")]
 position = Vector2(7, 38)

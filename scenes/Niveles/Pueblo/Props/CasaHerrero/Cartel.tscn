@@ -125,6 +125,7 @@ animations = [{
 [node name="Cartel" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_yss5v")
 autoplay = "default"
 frame_progress = 0.38345578

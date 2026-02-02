@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=4 format=3 uid="uid://d2hr5rhja4a6e"]
+
+[ext_resource type="Script" uid="uid://dqrekxnosbd60" path="res://scripts/ScriptsUI/Inventario/InventoryItem.gd" id="1_47gpu"]
+[ext_resource type="Texture2D" uid="uid://bl7gxs4ytfuo7" path="res://assets/sprites/assets_finales/pueblo/UI/UI-elements-32x32-separated sprites/icons_items_sword2.png" id="2_q38fh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3jas"]
+atlas = ExtResource("2_q38fh")
+
+[resource]
+script = ExtResource("1_47gpu")
+nombreItem = "Espada"
+texturaItem = SubResource("AtlasTexture_e3jas")
+metadata/_custom_type_script = "uid://dqrekxnosbd60"

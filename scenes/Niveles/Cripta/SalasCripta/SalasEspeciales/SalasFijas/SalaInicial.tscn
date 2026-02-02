@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://clxp5x6hvcxip" path="res://assets/sprites/assets_finales/HitboxBordeCripta.tres" id="2_51sqt"]
 [ext_resource type="PackedScene" uid="uid://6qyi81l5yn03" path="res://scenes/NPCs/Monstruos/Esqueleto.tscn" id="5_x45r2"]
 [ext_resource type="PackedScene" uid="uid://ba5x5pjaapnek" path="res://scenes/NPCs/Monstruos/Esqueleto2.tscn" id="6_iyvl6"]
-[ext_resource type="PackedScene" uid="uid://c3y38jgxdprvi" path="res://scenes/NPCs/Personajes/PersonajePrueba.tscn" id="6_strer"]
+[ext_resource type="PackedScene" uid="uid://c3y38jgxdprvi" path="res://scenes/NPCs/Personajes/Personaje.tscn" id="6_strer"]
 [ext_resource type="PackedScene" uid="uid://dc6fd3y1mf46m" path="res://scenes/NPCs/Monstruos/Murcielago.tscn" id="7_strer"]
 [ext_resource type="PackedScene" uid="uid://cl7dgkp6oog23" path="res://scenes/NPCs/Monstruos/Murcielago2.tscn" id="8_iuo2d"]
 
