@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://qeebdl3iw2bn" path="res://scripts/ScriptsUI/HUD.gd" id="1_1etfg"]
 [ext_resource type="Texture2D" uid="uid://dk3ljikj25lyf" path="res://assets/sprites/asset_prueba/randoms/coin.png" id="1_qpvh6"]
 [ext_resource type="FontFile" uid="uid://d0ux6r1e85p0s" path="res://assets/fonts/04B_30__.TTF" id="3_7hsmw"]
-[ext_resource type="PackedScene" uid="uid://paxgys1b5mec" path="res://scenes/UI/Minimapa.tscn" id="4_5ip4n"]
+[ext_resource type="PackedScene" uid="uid://paxgys1b5mec" path="res://scenes/UI/HUD/Minimapa.tscn" id="4_5ip4n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fls4u"]
 atlas = ExtResource("1_qpvh6")

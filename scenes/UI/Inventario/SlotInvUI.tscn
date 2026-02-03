@@ -1,14 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5kwwh814j7ig"]
+[gd_scene load_steps=3 format=3 uid="uid://b5kwwh814j7ig"]
 
 [ext_resource type="Texture2D" uid="uid://byjny4y51b7cw" path="res://assets/sprites/assets_finales/pueblo/UI/UI-elements-32x32-separated sprites/9SlicedObjects_slot1_0.png" id="1_5g2cy"]
+[ext_resource type="Script" uid="uid://drc4wraf06hv4" path="res://scripts/scriptsUI/Inventario/slot_inv_ui.gd" id="1_q8785"]
 
 [node name="Slot" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(28, 28)
 offset_right = 28.0
 offset_bottom = 28.0
+script = ExtResource("1_q8785")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-2, -2)
 texture = ExtResource("1_5g2cy")
 centered = false
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="item" type="Sprite2D" parent="CenterContainer/Panel"]

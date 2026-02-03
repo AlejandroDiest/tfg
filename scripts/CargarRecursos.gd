@@ -8,7 +8,7 @@ var lista_de_carga = [
 	# CAMBIA ESTAS RUTAS POR LAS TUYAS EXACTAS
 	{ "ruta": "res://scenes/Niveles/Pueblo/Pueblo.tscn", "tipo": "Pueblo" },
 	{ "ruta": "res://scenes/Niveles/Cripta/Cripta.tscn", "tipo": "Cripta" },
-	{ "ruta": "res://scenes/UI/MenuInicio.tscn", "tipo": "Menu" }
+	{ "ruta": "res://scenes/UI/Menus/MenuInicio.tscn", "tipo": "Menu" }
 ]
 
 var indice_actual: int = 0
@@ -66,4 +66,4 @@ func terminar_carga():
 	print("--- CARGA FINALIZADA. YENDO AL MENÚ ---")
 	await get_tree().create_timer(0.5).timeout
 	
-	get_tree().change_scene_to_file("res://scenes/UI/MenuInicio.tscn")
+	get_tree().change_scene_to_file("res://scenes/UI/Menus/MenuInicio.tscn")

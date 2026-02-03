@@ -4,8 +4,8 @@ extends CanvasLayer
 @onready var texto_oro: Label = $VBoxContainer/ContenedorOro/Control/CantOro
 
 
-var corazon_lleno_scene = preload("res://scenes/UI/Corazon.tscn")
-var corazon_vacio_scene = preload("res://scenes/UI/CorazonVacio.tscn")
+var corazon_lleno_scene = preload("res://scenes/UI/HUD/Corazon.tscn")
+var corazon_vacio_scene = preload("res://scenes/UI/HUD/CorazonVacio.tscn")
 
 
 func _process(_delta: float) -> void:

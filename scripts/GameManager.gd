@@ -9,8 +9,8 @@ var destino_spawn_point: String = ""
 var nivel_pueblo_cache: PackedScene = null
 var nivel_cripta_cache: PackedScene = null
 
-var menu_pausa = preload("res://scenes/UI/MenuPausa.tscn")
-var loading_screen_scene = preload("res://scenes/UI/PantallaCarga.tscn") 
+var menu_pausa = preload("res://scenes/UI/Menus/MenuPausa.tscn")
+var loading_screen_scene = preload("res://scenes/UI/PantallasCarga/PantallaCarga.tscn") 
 
 
 var datos_jugador: Dictionary = {

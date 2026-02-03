@@ -11,7 +11,7 @@ const GRID_ANCHO = 5
 const GRID_ALTO = 5
 const PASO_GRID = 768 
 var sala_visitada = false
-var niebla_scene = preload("res://scenes/UI/NieblaSala.tscn")
+var niebla_scene = preload("res://scenes/UI/HUD/NieblaSala.tscn")
 
 var camino_generado = [] 
 var ramas_generadas = [] 

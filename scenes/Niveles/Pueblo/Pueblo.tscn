@@ -4166,8 +4166,10 @@ position = Vector2(-74.5, -117.75)
 position = Vector2(-88, 592)
 
 [node name="MusicaFondo" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("11_u0jbr")
 autoplay = true
+bus = &"Musica"
 
 [connection signal="body_entered" from="Puerta/ZonaInteraccion" to="Puerta" method="_on_zona_interaccion_body_entered"]
 [connection signal="interactuado" from="Puerta/ZonaInteraccion" to="Puerta" method="_on_zona_interaccion_interactuado"]

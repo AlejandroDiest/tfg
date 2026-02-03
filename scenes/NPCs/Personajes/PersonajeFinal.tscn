@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b8dlrl42px1qd" path="res://assets/sprites/personaje/slash.png" id="2_8vwep"]
 [ext_resource type="PackedScene" uid="uid://8pk5ov0jgu6s" path="res://scenes/Misc/Espada.tscn" id="4_0goh4"]
 [ext_resource type="Script" uid="uid://beg7ee2ep56fx" path="res://scripts/NPCs/personaje/antorcha.gd" id="4_bj3h8"]
-[ext_resource type="PackedScene" uid="uid://b64ts4u6hq118" path="res://scenes/UI/HUD.tscn" id="5_8i353"]
+[ext_resource type="PackedScene" uid="uid://b64ts4u6hq118" path="res://scenes/UI/HUD/HUD.tscn" id="5_8i353"]
 [ext_resource type="PackedScene" uid="uid://dfj6mhfr5npud" path="res://scenes/UI/Inventario/InventarioUI.tscn" id="7_kfgue"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tyrqv"]

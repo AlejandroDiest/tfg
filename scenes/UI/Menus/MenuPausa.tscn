@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://wwinc27ni0dn"]
 
-[ext_resource type="Script" uid="uid://doev3mjcjgkfm" path="res://scripts/ScriptsUI/MenuPausa.gd" id="1_4peet"]
+[ext_resource type="Script" uid="uid://doev3mjcjgkfm" path="res://scripts/ScriptsUI/Menus/MenuPausa.gd" id="1_du1f8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4peet"]
 font_color = Color(0, 0, 0, 1)
@@ -13,7 +13,7 @@ stacked_shadow_0/outline_size = 2
 
 [node name="MenuPausa" type="CanvasLayer"]
 process_mode = 2
-script = ExtResource("1_4peet")
+script = ExtResource("1_du1f8")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15

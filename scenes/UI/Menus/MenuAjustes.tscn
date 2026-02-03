@@ -1,0 +1,95 @@
+[gd_scene load_steps=3 format=3 uid="uid://cspsivd5lopen"]
+
+[ext_resource type="Script" uid="uid://0blad3wd2mvt" path="res://scripts/ScriptsUI/Menus/MenuAjustes.gd" id="1_seqmc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_seqmc"]
+font_color = Color(0, 0, 0, 1)
+shadow_size = 7
+shadow_color = Color(5.053729e-07, 0.6369396, 0.14400876, 0)
+stacked_shadow_count = 1
+stacked_shadow_0/offset = Vector2(1, 1)
+stacked_shadow_0/color = Color(0.427493, 0.42749307, 0.42749307, 1)
+stacked_shadow_0/outline_size = 2
+
+[node name="MenuAjustes" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_seqmc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.38039216)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+color = Color(0.42735425, 0.36040643, 0.56361425, 0.8745098)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Titulo" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Ajustes"
+label_settings = SubResource("LabelSettings_seqmc")
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+self_modulate = Color(0.0018410678, 0.0018410682, 0.0018410678, 1)
+layout_mode = 2
+
+[node name="FilaMusica" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/FilaMusica"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+text = "Música"
+
+[node name="SliderMusica" type="HSlider" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/FilaMusica"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="FilaSonido" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/FilaSonido"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+text = "SFX"
+
+[node name="HSlider" type="HSlider" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/FilaSonido"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="BtnVolver" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+modulate = Color(0.8646751, 0.86467516, 0.8646751, 1)
+self_modulate = Color(0, 0, 0, 0.972549)
+layout_mode = 2
+text = "Volver"
+
+[connection signal="value_changed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/FilaMusica/SliderMusica" to="." method="_on_slider_musica_value_changed"]
