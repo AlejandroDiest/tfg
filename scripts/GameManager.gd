@@ -1,7 +1,7 @@
 extends Node
 
 #region VARIABLES Y CONSTANTES
-
+var inventario_recurso: Inv = preload("res://scenes/UI/Inventario/Inventario.tres")
 const RUTA_GUARDADO = "user://savegame"
 var partida_actual = 0
 
@@ -24,7 +24,7 @@ var datos_jugador: Dictionary = {
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
-#region GESTIÓN DE LA MOCHILA (NUEVO)
+#region GESTIÓN DE ESCENAS EN CACHE 
 
 func ir_al_nivel_rapido(nombre_nivel: String, nombre_spawn: String):
 	
@@ -93,14 +93,42 @@ func cambiar_y_posicionar(nueva_escena_ruta: String, nombre_spawn_point: String)
 func guardado_ruta_actual() -> String:
 	return RUTA_GUARDADO + str(partida_actual) + ".json"
 	
+
+	
+func _serializar_inventario() -> Array:
+	var lista_guardado = []
+	for slot in inventario_recurso.inventario:
+		if slot.item != null:
+			var datos_slot = {
+				"ruta_item": slot.item.resource_path,
+				"cantidad": slot.cantItem
+			}
+			lista_guardado.append(datos_slot)
+		else:
+			lista_guardado.append(null)
+	return lista_guardado
+	
+func _deserializar_inventario(datos_cargados: Array):
+	inventario_recurso.reset()
+	for i in range(datos_cargados.size()):
+		var datos = datos_cargados[i]
+		if datos != null and i < inventario_recurso.inventario.size():
+			if ResourceLoader.exists(datos["ruta_item"]):
+				var item_cargado = load(datos["ruta_item"])
+				inventario_recurso.inventario[i].item = item_cargado
+				inventario_recurso.inventario[i].cantItem = int(datos["cantidad"])
+	inventario_recurso.update_ui.emit()
+	
+	
 func guardar_partida():
 	var archivo = FileAccess.open(guardado_ruta_actual(), FileAccess.WRITE)
 	
 	if FileAccess.get_open_error() != OK:
 		print("Error al guardar en slot ", partida_actual)
 		return
-	
-	var json_texto = JSON.stringify(datos_jugador)
+		
+	datos_jugador["inventario"] = _serializar_inventario()
+	var json_texto = JSON.stringify(datos_jugador, "\t")
 	archivo.store_string(json_texto)
 	print("Partida guardada en Slot ", partida_actual)
 
@@ -119,6 +147,10 @@ func cargar_partida():
 		datos_jugador.oro = int(datos_jugador.oro)
 		datos_jugador.vida_maxima = int(datos_jugador.vida_maxima)
 		datos_jugador.vida_actual = int(datos_jugador.vida_actual)
+		if datos_guardados.has("inventario"):
+			_deserializar_inventario(datos_guardados["inventario"])
+		else:
+			inventario_recurso.reset()
 		print("Datos cargados del Slot ", partida_actual)
 
 func resetear_datos():
@@ -127,12 +159,14 @@ func resetear_datos():
 		"vida_maxima": 3,
 		"vida_actual": 3, 
 	}
+	if inventario_recurso:
+		inventario_recurso.reset()
 
 func existe_partida_en_slot(numero_slot: int) -> bool:
 	var ruta = RUTA_GUARDADO + str(numero_slot) + ".json"
 	return FileAccess.file_exists(ruta)
 #endregion
-
+ 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		pausar_juego()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5kwwh814j7ig"]
 
 [ext_resource type="Texture2D" uid="uid://byjny4y51b7cw" path="res://assets/sprites/assets_finales/pueblo/UI/UI-elements-32x32-separated sprites/9SlicedObjects_slot1_0.png" id="1_5g2cy"]
-[ext_resource type="Script" uid="uid://drc4wraf06hv4" path="res://scripts/scriptsUI/Inventario/slot_inv_ui.gd" id="1_q8785"]
+[ext_resource type="Script" uid="uid://drc4wraf06hv4" path="res://scripts/ScriptsUI/Inventario/slot_inv_ui.gd" id="1_q8785"]
 
 [node name="Slot" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)

@@ -12,8 +12,8 @@ func _ready():
 	cerrar()
 	
 func update_slots():
-	for i in range(min(inv.items.size(), slots.size())):
-		slots[i].update(inv.items[i].item)
+	for i in range(min(inv.inventario.size(), slots.size())):
+		slots[i].update(inv.inventario[i])
 		
 func _process(_delta):
 	if Input.is_action_just_pressed("I"):

@@ -9,6 +9,7 @@ atlas = ExtResource("1_5v76k")
 region = Rect2(164, 228, 24, 24)
 
 [node name="Inventario" type="NinePatchRect"]
+z_index = 99
 offset_right = 145.0
 offset_bottom = 109.0
 texture = SubResource("AtlasTexture_epjf7")

@@ -20,12 +20,8 @@ font_size = 2
 script = ExtResource("1_1etfg")
 
 [node name="MinimapaUI" parent="." instance=ExtResource("4_5ip4n")]
-anchors_preset = 0
-anchor_left = 0.0
-anchor_right = 0.0
 offset_left = 540.0
 offset_right = 640.0
-grow_horizontal = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_right = 40.0
@@ -51,13 +47,14 @@ layout_mode = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.275
-anchor_top = -0.03333337
-anchor_right = 0.275
-anchor_bottom = -0.033333365
-offset_left = -13.0
-offset_right = -4.0
-offset_bottom = 11.0
-scale = Vector2(5, 5)
+anchor_top = 0.033333328
+anchor_right = 0.6563333
+anchor_bottom = 0.53333336
+offset_left = -11.0
+offset_top = -0.9999998
+offset_right = -24.253334
+offset_bottom = -13.0
+scale = Vector2(3, 3)
 text = "0"
 label_settings = SubResource("LabelSettings_f6qnu")
 metadata/_edit_use_anchors_ = true
