@@ -78,32 +78,30 @@ func recibir_daño(cantidad: int):
 func morir():
 	esta_muerto = true
 	anim.play("Die")
-	# Desactivamos colisiones para que los enemigos no sigan chocando contigo
 	$CollisionShape2D.set_deferred("disabled", true)
 	print("GAME OVER") 
-	# Aquí podrías poner un Timer para recargar la escena o mostrar menú
 
 # --- UTILIDADES ---
 
 func _actualizar_animacion(nombre: String):
-	# Solo cambiamos si no está sonando ya esa animación
 	if anim.current_animation != nombre:
 		anim.play(nombre)
 
 func _gestionar_giro_sprite(direccion_x):
-	# Si vamos a la derecha (positivo) -> No voltear
 	if direccion_x > 0:
 		sprite.flip_h = false
-	# Si vamos a la izquierda (negativo) -> Voltear
 	elif direccion_x < 0:
 		sprite.flip_h = true
 
+func recolectar(item):
+	inventario.insertar(item)
 # --- SEÑALES ---
 
 func _on_animation_finished(anim_name):
 	if anim_name == "Attack":
 		esta_atacando = false
-		# area_espada.monitoring = false # Desactivar daño de espada
 	
 	if anim_name == "Hurt":
 		esta_herido = false
+		
+		

@@ -7,14 +7,15 @@ var abierto = false
 
 
 func _ready():
+	inv.update_ui.connect(update_slots)
 	update_slots()
 	cerrar()
 	
 func update_slots():
-	for i in range(min(inv.items.size(),slots.size())): 
-		slots[i].update(inv.items[i])
+	for i in range(min(inv.items.size(), slots.size())):
+		slots[i].update(inv.items[i].item)
 		
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("I"):
 		if abierto:
 			cerrar()

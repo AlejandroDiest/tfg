@@ -26,42 +26,32 @@ func _ready():
 
 #region GESTIÓN DE LA MOCHILA (NUEVO)
 
-# Esta es la función MÁGICA que usarás en las puertas.
-# nombre_nivel: "Pueblo" o "Cripta"
-# nombre_spawn: El nombre del Marker2D donde quieres aparecer (ej: "SalidaCripta")
 func ir_al_nivel_rapido(nombre_nivel: String, nombre_spawn: String):
 	
-	# 1. Configurar dónde vamos a aparecer
 	destino_spawn_point = nombre_spawn
 	
 	var escena_destino: PackedScene = null
 	
-	# 2. Buscar en la mochila
 	match nombre_nivel:
 		"Pueblo": escena_destino = nivel_pueblo_cache
 		"Cripta": escena_destino = nivel_cripta_cache
-		# Añade más casos aquí
 	
-	# 3. Cambiar de escena
 	if escena_destino != null:
 		print("Viajando rápido a: ", nombre_nivel)
 		
-		# Opcional: Si quieres un pequeño fundido a negro aquí, podrías hacerlo,
-		# pero como es instantáneo, change_scene_to_packed es suficiente.
+
 		get_tree().change_scene_to_packed(escena_destino)
 		
 	else:
 		print("ERROR CRÍTICO: El nivel ", nombre_nivel, " no está en la mochila (es null).")
 		print("Intentando carga de emergencia tradicional...")
-		# Si fallara la caché, aquí podrías llamar a cambiar_y_posicionar antigua como respaldo
 
 #endregion
 
 #region COSAS VARIAS (Gameplay)
 func aumentar_vida_maxima():
 	datos_jugador.vida_maxima += 1
-	datos_jugador.vida_actual = datos_jugador.vida_maxima # Normalmente al subir vida se rellena
-
+	datos_jugador.vida_actual = datos_jugador.vida_maxima 
 func pausar_juego():
 	var menu_instance = menu_pausa.instantiate()
 	get_tree().root.add_child(menu_instance)
@@ -82,9 +72,8 @@ func add_oro():
 	print("Oro actual: ", datos_jugador.oro)
 #endregion
 
-#region SISTEMA ANTIGUO (Carga lenta con pantalla)
-# Mantenemos esta función por si necesitas cargar algo que NO esté en la mochila
-# o para transiciones que sí requieran pantalla de carga.
+#region SISTEMA ANTIGUO (Carga lenta con pantalla) 
+
 func cambiar_y_posicionar(nueva_escena_ruta: String, nombre_spawn_point: String):
 	destino_spawn_point = nombre_spawn_point
 	
@@ -92,7 +81,7 @@ func cambiar_y_posicionar(nueva_escena_ruta: String, nombre_spawn_point: String)
 	get_tree().root.add_child(loading_instance) 
 	
 	await loading_instance.aparecer()
-	await get_tree().create_timer(1.0).timeout # Simular carga
+	await get_tree().create_timer(1.0).timeout 
 	
 	get_tree().change_scene_to_file(nueva_escena_ruta)
 	

@@ -10,6 +10,11 @@ extends CharacterBody2D
 @export var distancia_ataque: float = 30.0 
 @export var velocidad_deambular: float = 30.0 
 
+@export_group("Loot (Drops)")
+@export var scene_drop : PackedScene 
+@export var loot_item : InvItem      
+@export var drop_chance : float = 0.5 
+
 var vida_actual: int = 0
 var objetivo: Node2D = null 
 var puede_atacar: bool = true
@@ -114,6 +119,7 @@ func recibir_daño(cantidad: int, direccion_empuje: Vector2 = Vector2.ZERO):
 
 func morir():
 	esta_muerto = true
+	intentar_soltar_loot()
 	atacando = false
 	herido = false
 	velocity = Vector2.ZERO
@@ -159,6 +165,25 @@ func _on_area_deteccion_body_exited(body):
 func _on_timer_ataque_timeout():
 	puede_atacar = true
 	
+func intentar_soltar_loot():
+	# 1. Seguridad: Si no hemos configurado qué soltar, no hacemos nada
+	if scene_drop == null or loot_item == null:
+		return
+	
+	# 2. Tiramos el dado (0.0 a 1.0)
+	if randf() <= drop_chance:
+		var nuevo_drop = scene_drop.instantiate()
+		
+		# 3. Le pasamos los datos del objeto (Ej: El Ala)
+		# IMPORTANTE: Asumimos que ItemDrop.gd tiene la variable 'item_data'
+		nuevo_drop.item_data = loot_item
+		
+		# 4. Lo colocamos donde está el monstruo
+		nuevo_drop.global_position = global_position
+		
+		# 5. Lo añadimos al MUNDO (no al monstruo, o desaparecerá con él)
+		get_tree().current_scene.add_child(nuevo_drop)
+		# Alternativa si la anterior falla: get_parent().add_child(nuevo_drop)
 	
 func _deambular():
 	# Aplicamos movimiento en la dirección aleatoria actual
