@@ -48,7 +48,7 @@ func _physics_process(delta):
 	
 	# --- CONTROL DE ATAQUE ---
 # Cambia "atacar" por "ui_accept"
-	if Input.is_action_just_pressed("ui_accept"): 
+	if Input.is_action_just_pressed("ataque"): 
 		atacar()
 
 # --- ACCIONES ---
