@@ -14,7 +14,7 @@ base_font = ExtResource("3_7hsmw")
 
 [sub_resource type="LabelSettings" id="LabelSettings_f6qnu"]
 font = SubResource("FontVariation_nysna")
-font_size = 2
+font_size = 4
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_1etfg")
@@ -54,7 +54,7 @@ offset_left = -11.0
 offset_top = -0.9999998
 offset_right = -24.253334
 offset_bottom = -13.0
-scale = Vector2(3, 3)
+scale = Vector2(2.5, 2.5)
 text = "0"
 label_settings = SubResource("LabelSettings_f6qnu")
 metadata/_edit_use_anchors_ = true

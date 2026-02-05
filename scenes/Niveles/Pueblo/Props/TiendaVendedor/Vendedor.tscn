@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://cd0m2k0u4mxvj"]
+
+[ext_resource type="Texture2D" uid="uid://olorr5nogg28" path="res://assets/sprites/assets_finales/pueblo/Characters/NPC/Vendor-guy-animation1-bold.png" id="1_uyr15"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm8f2"]
+atlas = ExtResource("1_uyr15")
+region = Rect2(0, 0, 96, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srwjp"]
+atlas = ExtResource("1_uyr15")
+region = Rect2(96, 0, 96, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f07sk"]
+atlas = ExtResource("1_uyr15")
+region = Rect2(192, 0, 96, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7ohf"]
+atlas = ExtResource("1_uyr15")
+region = Rect2(288, 0, 96, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddbm1"]
+atlas = ExtResource("1_uyr15")
+region = Rect2(384, 0, 96, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r540n"]
+atlas = ExtResource("1_uyr15")
+region = Rect2(480, 0, 96, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdlgk"]
+atlas = ExtResource("1_uyr15")
+region = Rect2(576, 0, 96, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuaaj"]
+atlas = ExtResource("1_uyr15")
+region = Rect2(672, 0, 96, 91)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_07com"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lm8f2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srwjp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f07sk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7ohf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddbm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r540n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdlgk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uuaaj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="Vendedor" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_07com")
+autoplay = "default"
+frame_progress = 0.9104169

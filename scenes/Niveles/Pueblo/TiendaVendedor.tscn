@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://422ovqvum50u"]
+
+[ext_resource type="PackedScene" uid="uid://dnfwf2canmm8m" path="res://scenes/Niveles/Pueblo/Props/TiendaVendedor/Tienda.tscn" id="1_sh6yi"]
+[ext_resource type="PackedScene" uid="uid://cd0m2k0u4mxvj" path="res://scenes/Niveles/Pueblo/Props/TiendaVendedor/Vendedor.tscn" id="2_q0kym"]
+
+[node name="TiendaVendedor" type="Node2D"]
+
+[node name="Tienda" parent="." instance=ExtResource("1_sh6yi")]
+y_sort_enabled = true
+
+[node name="Vendedor" parent="." instance=ExtResource("2_q0kym")]
+position = Vector2(0, 22)

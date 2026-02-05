@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnfwf2canmm8m"]
+
+[ext_resource type="Texture2D" uid="uid://bxsjn0cp7fyki" path="res://assets/sprites/assets_finales/pueblo/Props/vendor-tent-1.png" id="1_4nynx"]
+
+[node name="Tienda" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4nynx")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-156, 39, -143, 0, -158, -35, -116, -40, 115, -41, 157, -33, 142, -1, 157, 40, 113, 32, 103, 36, 102, 53, 86, 58, 77, 63, 64, 62, 57, 56, -102, 54, -107, 34)
