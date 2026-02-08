@@ -77,7 +77,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/FilaSonido"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 2
-text = "SFX"
+text = "SFX      "
 
 [node name="HSlider" type="HSlider" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/FilaSonido"]
 layout_mode = 2

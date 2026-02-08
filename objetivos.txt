@@ -1,0 +1,19 @@
+terminar mapa pueblo, idea principal; 4 casas 2 npc 1 player y 1 rota, camino a cementerio incluido
+hacer cementerio entero
+decorar cripta
+inventario terminado e interactuable
+cofre en casa player
+sistema diálogos con npc
+cinematica reparación casa
+recetas/misiones
+menús
+
+
+COMBATE:
+	MEJORAR HITBOXES
+	MEJORAR MONSTRUOS
+	AÑADIR EFECTOS A LOS ATQUES(MURCIELAGO ATAQUE DE 180 GRADOS PARA EVITAR QUE EL JUGADOR LO MATE DESDE ARRIBA, ESQUELETO LANZA DAGA SI ESTA A 			DISTANCIA ETC:)
+	QUIZAS VARIEDAD DE TAMAÑOS PARA GRUPOS CON UN MINIBOSS Y "SUDBITOS"
+	BOSS AL FINAL DEL PISO
+	
+	
