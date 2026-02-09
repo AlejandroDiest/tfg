@@ -19,7 +19,9 @@ config/icon="uid://plm5oyfnfa4"
 
 [autoload]
 
-GM="*res://scripts/GameManager.gd"
+GameManager="*res://scripts/Managers/GameManager.gd"
+SaveManager="*res://scripts/Managers/SaveManager.gd"
+SceneManager="*res://scripts/Managers/SceneManager.gd"
 
 [display]
 

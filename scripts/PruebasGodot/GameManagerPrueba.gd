@@ -23,7 +23,7 @@ func show_win_menu():
 func remove_hp() -> void:
 	hp = hp - 1
 	print("David ha recibido daño, ahora tiene ", hp, " de vida.")
-	GM.recibir_daño()
+	GameManager.recibir_daño()
 	if(hp == 0):
 		print("David ha muerto O7")       
 		show_death_menu()

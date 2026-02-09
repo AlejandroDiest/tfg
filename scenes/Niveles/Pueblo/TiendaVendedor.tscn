@@ -9,4 +9,4 @@
 y_sort_enabled = true
 
 [node name="Vendedor" parent="." instance=ExtResource("2_q0kym")]
-position = Vector2(0, 22)
+position = Vector2(-3, 23)

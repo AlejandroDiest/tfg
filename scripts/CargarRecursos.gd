@@ -58,8 +58,8 @@ func _process(delta):
 
 func guardar_en_mochila(tipo, recurso):
 	match tipo:
-		"Pueblo": GM.nivel_pueblo_cache = recurso
-		"Cripta": GM.nivel_cripta_cache = recurso
+		"Pueblo": SceneManager.nivel_pueblo_cache = recurso
+		"Cripta": SceneManager.nivel_cripta_cache = recurso
 
 func terminar_carga():
 	barra.value = barra.max_value

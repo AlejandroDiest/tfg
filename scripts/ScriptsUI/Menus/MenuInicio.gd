@@ -40,23 +40,23 @@ func _on_btn_salir_pressed():
 func _cargar_slot(numero_slot: int):
 	print("Cargando Slot ", numero_slot)
 	
-	GM.partida_actual = numero_slot
-	GM.cargar_partida()
-	GM.cambiar_y_posicionar("res://scenes/Niveles/Pueblo/Pueblo.tscn", "InicioJuego")
+	SaveManager.partida_actual = numero_slot
+	SaveManager.cargar_partida()
+	SceneManager.cambiar_y_posicionar("res://scenes/Niveles/Pueblo/Pueblo.tscn", "InicioJuego")
 
 
 func actualizar_textos_slots():
-	if GM.existe_partida_en_slot(0):
+	if SaveManager.existe_partida_en_slot(0):
 		btn_slot_0.text = "Partida 1 (Continuar)"
 	else:
 		btn_slot_0.text = "Partida 1 (Nueva)"
 		
-	if GM.existe_partida_en_slot(1):
+	if SaveManager.existe_partida_en_slot(1):
 		btn_slot_1.text = "Partida 2 (Continuar)"
 	else:
 		btn_slot_1.text = "Partida 2 (Nueva)"
 		
-	if GM.existe_partida_en_slot(2):
+	if SaveManager.existe_partida_en_slot(2):
 		btn_slot_2.text = "Partida 3 (Continuar)"
 	else:
 		btn_slot_2.text = "Partida 3 (Nueva)"

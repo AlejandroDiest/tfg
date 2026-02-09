@@ -11,7 +11,7 @@ func _on_btn_continuar_pressed():
 	queue_free()
 
 func _on_btn_salir_pressed():
-	GM.guardar_partida()
+	SaveManager.guardar_partida()
 	get_tree().change_scene_to_file("res://scenes/UI/Menus/MenuInicio.tscn")
 	queue_free()
 	

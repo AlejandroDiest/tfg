@@ -13,15 +13,15 @@ func _process(_delta: float) -> void:
 	actualizar_vida()
 	
 func actualizar_oro():
-	texto_oro.text = str(GM.datos_jugador.oro)
+	texto_oro.text = str(GameManager.datos_jugador.oro)
 
 func actualizar_vida():
 	
 	for corazon in contenedor_corazones.get_children():
 		corazon.queue_free()
 
-	var vida_actual = GM.datos_jugador.vida_actual
-	var vida_maxima = GM.datos_jugador.vida_maxima
+	var vida_actual = GameManager.datos_jugador.vida_actual
+	var vida_maxima = GameManager.datos_jugador.vida_maxima
 	var corazones_vacios_a_añadir = vida_maxima - vida_actual
 	
 	for i in range(vida_actual):

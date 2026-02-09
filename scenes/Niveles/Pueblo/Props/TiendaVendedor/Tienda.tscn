@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dnfwf2canmm8m"]
 
-[ext_resource type="Texture2D" uid="uid://bxsjn0cp7fyki" path="res://assets/sprites/assets_finales/pueblo/Props/vendor-tent-1.png" id="1_4nynx"]
+[ext_resource type="Texture2D" uid="uid://dbcxxx6etony2" path="res://assets/sprites/assets_finales/pueblo/Props/vendor-tent.png" id="1_4nynx"]
 
 [node name="Tienda" type="StaticBody2D"]
 
