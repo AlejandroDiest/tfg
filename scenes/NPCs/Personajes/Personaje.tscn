@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c3y38jgxdprvi"]
+[gd_scene load_steps=19 format=3 uid="uid://c3y38jgxdprvi"]
 
 [ext_resource type="Script" uid="uid://datihs8q5th02" path="res://scripts/NPCs/personaje/PersonajePrueba.gd" id="1_4xru5"]
 [ext_resource type="Resource" uid="uid://duqxbv32ij5ag" path="res://scenes/UI/Inventario/Inventario.tres" id="2_5qa1r"]
@@ -136,12 +136,27 @@ _data = {
 &"Run": SubResource("Animation_g0knn")
 }
 
-[sub_resource type="Gradient" id="Gradient_8i353"]
+[sub_resource type="Gradient" id="Gradient_5qa1r"]
 interpolation_color_space = 2
-colors = PackedColorArray(0.8201437, 0.46298397, 1.732707e-06, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.18666667)
+colors = PackedColorArray(0.80766773, 0.45721108, 1.92523e-07, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rtgx6"]
+gradient = SubResource("Gradient_5qa1r")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_j3q6p"]
+interpolation_color_space = 2
+colors = PackedColorArray(0.54954237, 0.3742814, 0.17711046, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_7pojj"]
-gradient = SubResource("Gradient_8i353")
+gradient = SubResource("Gradient_j3q6p")
+width = 256
+height = 256
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
@@ -173,6 +188,14 @@ libraries = {
 [node name="Antorcha" type="PointLight2D" parent="."]
 visible = false
 scale = Vector2(0.9999998, 0.9999998)
+texture = SubResource("GradientTexture2D_rtgx6")
+texture_scale = 10.0
+script = ExtResource("3_5qa1r")
+
+[node name="AntorchaPueblo" type="PointLight2D" parent="."]
+visible = false
+scale = Vector2(0.2, 0.2)
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_7pojj")
 texture_scale = 10.0
 script = ExtResource("3_5qa1r")
