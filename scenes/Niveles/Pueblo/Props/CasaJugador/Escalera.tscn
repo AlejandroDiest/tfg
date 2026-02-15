@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxsoanpk02hcw"]
+
+[ext_resource type="Texture2D" uid="uid://biw8ld4fycm0v" path="res://assets/sprites/assets_finales/pueblo/Props/Atlas-Props.png" id="1_0msgf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48j6n"]
+atlas = ExtResource("1_0msgf")
+region = Rect2(92.17398, 1822.9971, 104.80582, 52.66626)
+
+[node name="Escalera" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 25)
+polygon = PackedVector2Array(-37, 22, 44, 22, 44, 13, 37, 13, 11, 4, -28, 4, -27, -26, -37, -26)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_48j6n")
+offset = Vector2(0, 25)

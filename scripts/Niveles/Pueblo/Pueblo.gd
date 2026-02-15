@@ -1,7 +1,7 @@
 extends Node2D
-@onready var personaje: CharacterBody2D = $Personaje
+@onready var personaje: CharacterBody2D = $Node2D/Personaje
 
-@onready var jugador = $Personaje 
+@onready var jugador = $Node2D/Personaje
 @onready var filtro_noche = $Noche 
 func _ready():
 	configurar_camaras()
@@ -27,13 +27,13 @@ func configurar_camaras():
 	var minimapa_cam = jugador.get_node("HUD/MinimapaUI/SubViewportContainer/SubViewport/Camera2D")
 	
 	camara.limit_left = -870
-	camara.limit_right = 1054
+	camara.limit_right = 1272.0
 	camara.limit_bottom = 862
 	
 	if minimapa_cam:
 		minimapa_cam.limit_left = -1000
 		minimapa_cam.limit_top = -1300
-		minimapa_cam.limit_right = 1200
+		minimapa_cam.limit_right = 1450
 		minimapa_cam.limit_bottom = 862
 
 func _input(event):

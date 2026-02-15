@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://3d3eyveopu52"]
+
+[ext_resource type="Texture2D" uid="uid://biw8ld4fycm0v" path="res://assets/sprites/assets_finales/pueblo/Props/Atlas-Props.png" id="1_ti1sd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrn5f"]
+atlas = ExtResource("1_ti1sd")
+region = Rect2(6.3186493, 1519.8947, 444.64166, 294.37878)
+
+[node name="Casa" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_yrn5f")
+offset = Vector2(0, -80)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -80)
+polygon = PackedVector2Array(6, 138, 6, 118, 197, 118, 197, 20, -193, 19, -193, 137, -111, 137, -111, 130, -68, 130, -43, 133)

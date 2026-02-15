@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://00lpcxccearw"]
+
+[ext_resource type="PackedScene" uid="uid://3d3eyveopu52" path="res://scenes/Niveles/Pueblo/Props/CasaJugador/Casa.tscn" id="1_fvixh"]
+[ext_resource type="PackedScene" uid="uid://dxsoanpk02hcw" path="res://scenes/Niveles/Pueblo/Props/CasaJugador/Escalera.tscn" id="2_j1gsd"]
+
+[node name="CasaPlayer" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Casa" parent="." instance=ExtResource("1_fvixh")]
+position = Vector2(222, 185)
+
+[node name="Escalera" parent="." instance=ExtResource("2_j1gsd")]
+position = Vector2(138, 231)
