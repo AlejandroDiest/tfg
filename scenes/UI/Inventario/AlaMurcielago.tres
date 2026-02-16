@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=4 format=3 uid="uid://csti4bddfo5m2"]
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://csti4bddfo5m2"]
 
 [ext_resource type="Script" uid="uid://dqrekxnosbd60" path="res://scripts/ScriptsUI/Inventario/InventoryItem.gd" id="1_gkc5o"]
 [ext_resource type="Texture2D" uid="uid://cbyssutccv2l2" path="res://assets/sprites/assets_finales/cementerio/Characters/bat/Bat2-atk animation.png" id="2_gqr57"]

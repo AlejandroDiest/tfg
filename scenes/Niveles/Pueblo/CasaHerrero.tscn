@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://c3pca05365113"]
+[gd_scene format=4 uid="uid://c3pca05365113"]
 
 [ext_resource type="PackedScene" uid="uid://d34613jcjauel" path="res://scenes/Niveles/Pueblo/Props/CasaHerrero/Horno.tscn" id="1_3vx0m"]
 [ext_resource type="Texture2D" uid="uid://x7mdxagisp85" path="res://assets/sprites/assets_finales/pueblo/Props/Atlas-Props-individual sprites/blacksmith wall1.png" id="1_bac4j"]
@@ -1682,29 +1682,33 @@ terrain_set_0/terrain_0/name = "Piedras"
 terrain_set_0/terrain_0/color = Color(0.982806, 0.960066, 0.9472757, 1)
 sources/0 = SubResource("TileSetAtlasSource_x28wo")
 
-[node name="CasaHerrero" type="Node2D"]
+[node name="CasaHerrero" type="Node2D" unique_id=976223899]
+y_sort_enabled = true
 
-[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=988207704]
 tile_map_data = PackedByteArray("AAD//wEAAAArAB0AAAAAAAEAAAAsAB0AAAAAAAIAAAAsAB4AAAABAAEAAAAtAB0AAAABAAIAAAAtAB4AAAACAAEAAAAtAB0AAAACAAIAAAAtAB4AAAADAAEAAAAuAB0AAAADAAIAAAAuAB4AAAAEAAEAAAAvAB0AAAD//wAAAAArABwAAAAAAAAAAAAsABwAAAABAAAAAAAtABwAAAACAAAAAAAtABwAAAADAAAAAAAuABwAAAAEAAAAAAAvABwAAAA=")
 tile_set = SubResource("TileSet_ps3oc")
 
-[node name="ParedCasa" type="Sprite2D" parent="."]
+[node name="ParedCasa" type="Sprite2D" parent="." unique_id=507105680]
+y_sort_enabled = true
 position = Vector2(75, 0)
 texture = ExtResource("1_bac4j")
 
-[node name="Horno" parent="." instance=ExtResource("1_3vx0m")]
-position = Vector2(13, -10)
+[node name="Horno" parent="." unique_id=1602395865 instance=ExtResource("1_3vx0m")]
+position = Vector2(15, 0)
 
-[node name="Casa" parent="." instance=ExtResource("2_k27om")]
+[node name="Casa" parent="." unique_id=2086439738 instance=ExtResource("2_k27om")]
 
-[node name="Cartel" parent="." instance=ExtResource("3_wfiex")]
+[node name="Cartel" parent="." unique_id=1916856025 instance=ExtResource("3_wfiex")]
+y_sort_enabled = true
 position = Vector2(166, 4)
 
-[node name="Afilador" parent="." instance=ExtResource("5_kfbc5")]
-position = Vector2(7, 38)
+[node name="Afilador" parent="." unique_id=364342825 instance=ExtResource("5_kfbc5")]
+position = Vector2(114, 31)
 
-[node name="Yunque" parent="." instance=ExtResource("6_vx18l")]
+[node name="Yunque" parent="." unique_id=1010600550 instance=ExtResource("6_vx18l")]
 position = Vector2(73, 33)
 
-[node name="Herrero" parent="." instance=ExtResource("7_kfbc5")]
+[node name="Herrero" parent="." unique_id=208205751 instance=ExtResource("7_kfbc5")]
+y_sort_enabled = true
 position = Vector2(71, 13)
