@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://clxp5x6hvcxip"]
+[gd_resource type="TileSet" format=3 uid="uid://clxp5x6hvcxip"]
 
 [ext_resource type="Texture2D" uid="uid://qdwn36qyt0qc" path="res://assets/sprites/assets_finales/cripta/Tilesets/Tileset-Terrain.png" id="1_hep8w"]
 

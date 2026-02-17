@@ -23,8 +23,8 @@ func ir_al_nivel_rapido(nombre_nivel: String, nombre_spawn: String):
 	else:
 		print("ERROR CRÍTICO: El nivel ", nombre_nivel, " no está en la mochila.")
 
-func cambiar_y_posicionar(nueva_escena_ruta: String, nombre_spawn_point: String):
-	destino_spawn_point = nombre_spawn_point
+func cambiar_y_posicionar(nueva_escena_ruta: String):
+
 	
 	var loading_instance = loading_screen_scene.instantiate()
 	get_tree().root.add_child(loading_instance) 
