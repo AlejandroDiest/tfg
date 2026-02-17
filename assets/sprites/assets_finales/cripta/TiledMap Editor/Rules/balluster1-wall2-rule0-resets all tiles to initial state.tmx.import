@@ -1,0 +1,23 @@
+[remap]
+
+importer="YATI"
+type="PackedScene"
+uid="uid://0p1111r0woic"
+path="res://.godot/imported/balluster1-wall2-rule0-resets all tiles to initial state.tmx-ed7d712484c2364e8bc0cf641e7d7dba.tscn"
+
+[deps]
+
+source_file="res://assets/sprites/assets_finales/cripta/TiledMap Editor/Rules/balluster1-wall2-rule0-resets all tiles to initial state.tmx"
+dest_files=["res://.godot/imported/balluster1-wall2-rule0-resets all tiles to initial state.tmx-ed7d712484c2364e8bc0cf641e7d7dba.tscn"]
+
+[params]
+
+use_default_filter=false
+add_class_as_metadata=false
+add_id_as_metadata=false
+no_alternative_tiles=false
+map_wangset_to_terrain=false
+custom_data_prefix="data_"
+tiled_project_file=""
+post_processor=""
+save_tileset_to=""

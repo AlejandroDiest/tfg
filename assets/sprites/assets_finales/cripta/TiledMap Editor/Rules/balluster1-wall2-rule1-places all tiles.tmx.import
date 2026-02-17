@@ -1,0 +1,23 @@
+[remap]
+
+importer="YATI"
+type="PackedScene"
+uid="uid://b7bdalalblfnc"
+path="res://.godot/imported/balluster1-wall2-rule1-places all tiles.tmx-9ee918ad5cd50abf0b061e7697675173.tscn"
+
+[deps]
+
+source_file="res://assets/sprites/assets_finales/cripta/TiledMap Editor/Rules/balluster1-wall2-rule1-places all tiles.tmx"
+dest_files=["res://.godot/imported/balluster1-wall2-rule1-places all tiles.tmx-9ee918ad5cd50abf0b061e7697675173.tscn"]
+
+[params]
+
+use_default_filter=false
+add_class_as_metadata=false
+add_id_as_metadata=false
+no_alternative_tiles=false
+map_wangset_to_terrain=false
+custom_data_prefix="data_"
+tiled_project_file=""
+post_processor=""
+save_tileset_to=""

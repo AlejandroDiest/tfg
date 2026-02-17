@@ -1,0 +1,23 @@
+[remap]
+
+importer="YATI"
+type="PackedScene"
+uid="uid://c3wduh4o7vo71"
+path="res://.godot/imported/cliff-rule0-erases all generated tiles and resets them to their initial state.tmx-5df6c404e5d2e81bf8d889ae74e843c0.tscn"
+
+[deps]
+
+source_file="res://assets/sprites/assets_finales/pueblo/TiledMap Editor/rules/cliff-rule0-erases all generated tiles and resets them to their initial state.tmx"
+dest_files=["res://.godot/imported/cliff-rule0-erases all generated tiles and resets them to their initial state.tmx-5df6c404e5d2e81bf8d889ae74e843c0.tscn"]
+
+[params]
+
+use_default_filter=false
+add_class_as_metadata=false
+add_id_as_metadata=false
+no_alternative_tiles=false
+map_wangset_to_terrain=false
+custom_data_prefix="data_"
+tiled_project_file=""
+post_processor=""
+save_tileset_to=""
