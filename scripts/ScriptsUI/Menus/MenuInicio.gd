@@ -42,7 +42,7 @@ func _cargar_slot(numero_slot: int):
 	
 	SaveManager.partida_actual = numero_slot
 	SaveManager.cargar_partida()
-	SceneManager.cambiar_y_posicionar("res://scenes/Niveles/Pueblo/Pueblo.tscn", "InicioJuego")
+	SceneManager.cambiar_y_posicionar("res://scenes/Niveles/Pueblo/Pueblo.tscn")
 
 
 func actualizar_textos_slots():
