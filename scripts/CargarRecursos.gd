@@ -8,7 +8,8 @@ var lista_de_carga = [
 	# CAMBIA ESTAS RUTAS POR LAS TUYAS EXACTAS
 	{ "ruta": "res://scenes/Niveles/Pueblo/Pueblo.tscn", "tipo": "Pueblo" },
 	{ "ruta": "res://scenes/Niveles/Cripta/Cripta.tscn", "tipo": "Cripta" },
-	{ "ruta": "res://scenes/UI/Menus/MenuInicio.tscn", "tipo": "Menu" }
+	{ "ruta": "res://scenes/UI/Menus/MenuInicio.tscn", "tipo": "Menu" },
+	{ "ruta": "res://scenes/Niveles/Cementerio/Cementerio.tscn","tipo": "Cementerio" }
 ]
 
 var indice_actual: int = 0
@@ -60,6 +61,7 @@ func guardar_en_mochila(tipo, recurso):
 	match tipo:
 		"Pueblo": SceneManager.nivel_pueblo_cache = recurso
 		"Cripta": SceneManager.nivel_cripta_cache = recurso
+		"Cementerio": SceneManager.nivel_cementerio_cache = recurso
 
 func terminar_carga():
 	barra.value = barra.max_value

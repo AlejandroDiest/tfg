@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2yjpjvjelltf"]
+[gd_scene format=3 uid="uid://c2yjpjvjelltf"]
 
 [ext_resource type="Script" uid="uid://c0wu0nhlsnaw" path="res://scripts/CargarRecursos.gd" id="1_l5x40"]
 [ext_resource type="Texture2D" uid="uid://chw755ds1u7d1" path="res://assets/images/MenuPrincipal.png" id="1_ogtgo"]
 
-[node name="PantallaCargaInicio" type="Control"]
+[node name="PantallaCargaInicio" type="Control" unique_id=287809602]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l5x40")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=236641247]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,7 +23,7 @@ texture = ExtResource("1_ogtgo")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=764368416]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0

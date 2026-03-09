@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cd0m2k0u4mxvj"]
+[gd_scene format=3 uid="uid://cd0m2k0u4mxvj"]
 
 [ext_resource type="Script" uid="uid://1wd2gvu7x0cn" path="res://scripts/Niveles/Pueblo/NPCs/VendedorNPC.gd" id="1_lm8f2"]
 [ext_resource type="Texture2D" uid="uid://olorr5nogg28" path="res://assets/sprites/assets_finales/pueblo/Characters/NPC/Vendor-guy-animation1-bold.png" id="1_uyr15"]
@@ -67,10 +67,10 @@ animations = [{
 "speed": 7.0
 }]
 
-[node name="Vendedor" type="CharacterBody2D"]
+[node name="Vendedor" type="CharacterBody2D" unique_id=574545028]
 script = ExtResource("1_lm8f2")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=707646966]
 sprite_frames = SubResource("SpriteFrames_07com")
 autoplay = "default"
 frame_progress = 0.9104169

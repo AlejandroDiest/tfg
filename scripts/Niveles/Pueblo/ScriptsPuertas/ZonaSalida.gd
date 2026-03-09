@@ -1,6 +1,6 @@
 extends Area2D
 
-@export_file("*.tscn") var escena_destino
+@export_file("res://scenes/Niveles/Cementerio/Cementerio.tscn") var escena_destino: String
 
 
 func _on_body_entered(body):

@@ -2,6 +2,7 @@ extends Node
 
 var nivel_pueblo_cache: PackedScene = null
 var nivel_cripta_cache: PackedScene = null
+var nivel_cementerio_cache: PackedScene = null
 
 var loading_screen_scene = preload("res://scenes/UI/PantallasCarga/PantallaCarga.tscn") 
 var destino_spawn_point: String = ""
@@ -16,6 +17,7 @@ func ir_al_nivel_rapido(nombre_nivel: String, nombre_spawn: String):
 	match nombre_nivel:
 		"Pueblo": escena_destino = nivel_pueblo_cache
 		"Cripta": escena_destino = nivel_cripta_cache
+		"Cementerio": escena_destino  = nivel_cementerio_cache
 	
 	if escena_destino != null:
 		print("Viajando rápido a: ", nombre_nivel)

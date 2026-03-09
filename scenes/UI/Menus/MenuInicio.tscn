@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://blqxr6dq45278"]
+[gd_scene format=3 uid="uid://blqxr6dq45278"]
 
 [ext_resource type="Texture2D" uid="uid://chw755ds1u7d1" path="res://assets/images/MenuPrincipal.png" id="1_gy3ng"]
 [ext_resource type="Script" uid="uid://27suodilani5" path="res://scripts/ScriptsUI/Menus/MenuInicio.gd" id="1_yp4fm"]
@@ -8,7 +8,7 @@
 font = ExtResource("2_3axvr")
 font_color = Color(9.241105e-06, 0.8922299, 0.8711341, 1)
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" unique_id=425263006]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,7 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yp4fm")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=182672961]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,7 +28,7 @@ texture = ExtResource("1_gy3ng")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="MenuInicio" type="CenterContainer" parent="."]
+[node name="MenuInicio" type="CenterContainer" parent="." unique_id=858033545]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,24 +36,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuInicio"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuInicio" unique_id=119991419]
 layout_mode = 2
 
-[node name="BtnJugar" type="Button" parent="MenuInicio/VBoxContainer"]
+[node name="BtnJugar" type="Button" parent="MenuInicio/VBoxContainer" unique_id=1181681183]
 layout_mode = 2
 text = "Jugar"
 
-[node name="BtnAjustes" type="Button" parent="MenuInicio/VBoxContainer"]
+[node name="BtnAjustes" type="Button" parent="MenuInicio/VBoxContainer" unique_id=1541935482]
 layout_mode = 2
 text = "Ajustes
 "
 
-[node name="BtnSalir" type="Button" parent="MenuInicio/VBoxContainer"]
+[node name="BtnSalir" type="Button" parent="MenuInicio/VBoxContainer" unique_id=959696403]
 layout_mode = 2
 text = "Salir
 "
 
-[node name="MenuSlots" type="CenterContainer" parent="."]
+[node name="MenuSlots" type="CenterContainer" parent="." unique_id=442042543]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -61,23 +61,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuSlots"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuSlots" unique_id=1118627135]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MenuSlots/VBoxContainer"]
+[node name="Label" type="Label" parent="MenuSlots/VBoxContainer" unique_id=882495993]
 layout_mode = 2
 text = "ELIGE PARTIDA"
 label_settings = SubResource("LabelSettings_yp4fm")
 
-[node name="BtnSlot0" type="Button" parent="MenuSlots/VBoxContainer"]
+[node name="BtnSlot0" type="Button" parent="MenuSlots/VBoxContainer" unique_id=1626442490]
 layout_mode = 2
 
-[node name="BtnSlot1" type="Button" parent="MenuSlots/VBoxContainer"]
+[node name="BtnSlot1" type="Button" parent="MenuSlots/VBoxContainer" unique_id=1092680515]
 layout_mode = 2
 
-[node name="BtnSlot2" type="Button" parent="MenuSlots/VBoxContainer"]
+[node name="BtnSlot2" type="Button" parent="MenuSlots/VBoxContainer" unique_id=1696060783]
 layout_mode = 2
 
-[node name="BtnAtras" type="Button" parent="MenuSlots/VBoxContainer"]
+[node name="BtnAtras" type="Button" parent="MenuSlots/VBoxContainer" unique_id=1945003836]
 layout_mode = 2
 text = "Atras"

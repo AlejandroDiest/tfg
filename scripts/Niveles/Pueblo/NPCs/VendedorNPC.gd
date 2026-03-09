@@ -1,8 +1,6 @@
 extends CharacterBody2D
 
 # Referencias a nodos hijos (asegúrate de tenerlos o quita estas líneas)
-@onready var label = $LabelDialogo # Un Label encima de su cabeza
-@onready var anim_player = $AnimationPlayer # Para animaciones si tienes
 
 # Configuración
 const MADERA_NECESARIA = 10
@@ -33,23 +31,23 @@ func gestionar_interaccion():
 	
 	match estado:
 		GameManager.EstadoVendedor.DESCONOCIDO:
-			mostrar_texto(dialogos["hola"] + " " + dialogos["pedir"])
+#			mostrar_texto(dialogos["hola"] + " " + dialogos["pedir"])
 			GameManager.estado_actual_vendedor = GameManager.EstadoVendedor.MISION_MADERA
 			
 		GameManager.EstadoVendedor.MISION_MADERA:
 			# AQUÍ COMPROBAMOS EL INVENTARIO
 			if tiene_suficiente_madera():
 				quitar_madera_del_inventario()
-				mostrar_texto(dialogos["gracias"])
+#				mostrar_texto(dialogos["gracias"])
 				
 				# ¡Magia! Reparamos la casa y avanzamos la misión
 				reparar_casa_visual()
 				GameManager.estado_actual_vendedor = GameManager.EstadoVendedor.CASA_REPARADA
-			else:
-				mostrar_texto(dialogos["esperando"])
+			#else:
+			#	mostrar_texto(dialogos["esperando"])
 				
 		GameManager.EstadoVendedor.CASA_REPARADA:
-			mostrar_texto(dialogos["tienda"])
+			#mostrar_texto(dialogos["tienda"])
 			GameManager.estado_actual_vendedor = GameManager.EstadoVendedor.TIENDA_ABIERTA
 			abrir_tienda_ui()
 			
@@ -100,13 +98,13 @@ func activar_casa_reparada():
 		var anim = casa.get_node_or_null("AnimationPlayer")
 		if anim: anim.play("EstadoReparado") 
 
-func mostrar_texto(texto):
-	if label:
-		label.text = texto
-		label.visible = true
-		await get_tree().create_timer(4.0).timeout
-		label.visible = false
-	print("Vendedor dice: ", texto)
+#func mostrar_texto(texto):
+	#if label:
+	#	label.text = texto
+	#	label.visible = true
+	#	await get_tree().create_timer(4.0).timeout
+	#	label.visible = false
+	#print("Vendedor dice: ", texto)
 
 func abrir_tienda_ui():
 	print("Abriendo menú de tienda...")
