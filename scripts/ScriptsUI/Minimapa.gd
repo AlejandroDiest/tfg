@@ -8,7 +8,7 @@ func _ready():
 	
 	sub_viewport.world_2d = get_viewport().world_2d
 	
-func _process(delta):
+func _process(_delta):
 	if not is_instance_valid(jugador):
 		jugador = get_tree().get_first_node_in_group("Jugador")
 		return

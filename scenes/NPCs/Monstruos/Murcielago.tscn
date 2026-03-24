@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dc6fd3y1mf46m"]
+[gd_scene format=3 uid="uid://dc6fd3y1mf46m"]
 
 [ext_resource type="PackedScene" uid="uid://4kcex6wgwvo1" path="res://scenes/NPCs/Monstruos/EnemigoBase.tscn" id="1_epmnj"]
 [ext_resource type="Texture2D" uid="uid://bae2shws2om4o" path="res://assets/sprites/assets_finales/cementerio/Characters/bat/Bat-all-animations-96x96-each row is a different animation-from top to bottom-Idle-walk-walk to atk transition-atk instance-atk-hurt-death.png" id="2_pptii"]
@@ -117,7 +117,7 @@ _data = {
 &"Run": SubResource("Animation_ewgas")
 }
 
-[node name="EnemigoBase" instance=ExtResource("1_epmnj")]
+[node name="EnemigoBase" unique_id=749072759 instance=ExtResource("1_epmnj")]
 visibility_layer = 2
 velocidad = 80.0
 velocidad_deambular = 40.0
@@ -125,20 +125,18 @@ scene_drop = ExtResource("2_yenp6")
 loot_item = ExtResource("3_q3n2q")
 drop_chance = 1.0
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="CollisionShape2D" parent="." index="0" unique_id=1081048242]
 position = Vector2(0, 0)
 
-[node name="Sprite2D" parent="." index="1"]
+[node name="Sprite2D" parent="." index="1" unique_id=416455241]
 texture = ExtResource("2_pptii")
 hframes = 15
 vframes = 7
 
-[node name="AnimationPlayer" parent="." index="2"]
-libraries = {
-&"": SubResource("AnimationLibrary_wpk1o")
-}
+[node name="AnimationPlayer" parent="." index="2" unique_id=467816267]
+libraries/ = SubResource("AnimationLibrary_wpk1o")
 
-[node name="AreaDeteccion" parent="." index="4"]
+[node name="AreaDeteccion" parent="." index="4" unique_id=1324305469]
 collision_mask = 2
 
 [connection signal="body_entered" from="AreaDeteccion" to="." method="_on_area_deteccion_body_entered"]

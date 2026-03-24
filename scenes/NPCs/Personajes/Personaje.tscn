@@ -211,3 +211,12 @@ offset_left = -73.0
 offset_top = -164.0
 offset_right = 72.0
 offset_bottom = -55.0
+
+[node name="PivoteHitboxAtaque" type="Node2D" parent="." unique_id=2046493940]
+
+[node name="HitboxAtaque" type="Area2D" parent="PivoteHitboxAtaque" unique_id=377975132]
+position = Vector2(20, -5)
+
+[node name="PolygonHitbox" type="CollisionPolygon2D" parent="PivoteHitboxAtaque/HitboxAtaque" unique_id=202935347]
+position = Vector2(3, 0)
+polygon = PackedVector2Array(-20, -37, -20, 20, -12, 19, -6, 17, -1, 12, 3, 7, 6, 0, 7, -8, 6, -15, 4, -22, 1, -28, -4, -32, -11, -35)

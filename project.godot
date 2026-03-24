@@ -45,6 +45,7 @@ enabled=PackedStringArray("res://addons/YATI/plugin.cfg")
 [global_group]
 
 Jugador=""
+Enemigo=""
 
 [input]
 

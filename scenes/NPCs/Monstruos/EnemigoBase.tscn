@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://4kcex6wgwvo1"]
+[gd_scene format=3 uid="uid://4kcex6wgwvo1"]
 
 [ext_resource type="Script" uid="uid://b6qp72xb6tpgh" path="res://scripts/NPCs/Monstruos/enemigo.gd" id="1_sigje"]
 
@@ -11,31 +11,32 @@ radius = 150.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_d304v"]
 radius = 25.0
 
-[node name="EnemigoBase" type="CharacterBody2D"]
+[node name="EnemigoBase" type="CharacterBody2D" unique_id=1693575482 groups=["Enemigo"]]
+y_sort_enabled = true
 script = ExtResource("1_sigje")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1081048242]
 position = Vector2(0, 17)
 shape = SubResource("CircleShape2D_184uq")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=416455241]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=467816267]
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=2052521027]
 
-[node name="AreaDeteccion" type="Area2D" parent="."]
+[node name="AreaDeteccion" type="Area2D" parent="." unique_id=1324305469]
 visible = false
 
-[node name="AreaDeteccion" type="CollisionShape2D" parent="AreaDeteccion"]
+[node name="AreaDeteccion" type="CollisionShape2D" parent="AreaDeteccion" unique_id=1117197315]
 shape = SubResource("CircleShape2D_wfjt1")
 
-[node name="AreaAtaque" type="Area2D" parent="."]
+[node name="AreaAtaque" type="Area2D" parent="." unique_id=7745664]
 visible = false
 
-[node name="AreaAtaque" type="CollisionShape2D" parent="AreaAtaque"]
+[node name="AreaAtaque" type="CollisionShape2D" parent="AreaAtaque" unique_id=1776960448]
 shape = SubResource("CircleShape2D_d304v")
 
-[node name="TimerAtaque" type="Timer" parent="."]
+[node name="TimerAtaque" type="Timer" parent="." unique_id=1573780330]
 
-[node name="TimerDeambular" type="Timer" parent="."]
+[node name="TimerDeambular" type="Timer" parent="." unique_id=484842673]

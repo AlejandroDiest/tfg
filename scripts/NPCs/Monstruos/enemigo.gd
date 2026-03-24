@@ -57,19 +57,25 @@ func _ready():
 
 		
 func _physics_process(_delta):
-	if esta_muerto or atacando or herido: 
+	if esta_muerto or atacando: 
 		return
 	
+	# --- NUEVO LÓGICA DE KNOCKBACK ---
+	if herido:
+		# Si está herido, frenamos la velocidad poco a poco usando move_toward
+		# El * 5 es la "fricción". A mayor número, antes frena.
+		velocity = velocity.move_toward(Vector2.ZERO, empuje * _delta * 5)
+		move_and_slide()
+		return # No hacemos nada más mientras esté aturdido por el golpe
+
 	if objetivo:
-		# PRIORIDAD 1: Si veo al jugador, le persigo
 		var distancia = global_position.distance_to(objetivo.global_position)
 		if distancia > distancia_ataque:
 			_perseguir_jugador()
 		else:
 			_intentar_atacar()
 	else:
-		# PRIORIDAD 2: Si no veo a nadie, patrullo relajado
-		_deambular()  # <--- NUEVA FUNCIÓN
+		_deambular()
 
 	move_and_slide()
 	_gestionar_giro_sprite()
@@ -99,20 +105,16 @@ func atacar():
 func recibir_daño(cantidad: int, direccion_empuje: Vector2 = Vector2.ZERO):
 	if esta_muerto: return
 	
-	# SOLUCIÓN 2: Interrumpir ataque si me pegan
 	atacando = false 
 	herido = true
-	
 	vida_actual -= cantidad
+	
 	velocity = direccion_empuje * empuje
-	move_and_slide() # Aplicar el empuje inmediatamente
 	
 	if vida_actual <= 0:
 		morir()
 	else:
-		anim.play("Hurt") # Forzamos animación de dolor
-		
-		# Efecto visual rojo
+		anim.play("Hurt")
 		sprite.modulate = Color.RED
 		await get_tree().create_timer(0.1).timeout
 		sprite.modulate = Color.WHITE
