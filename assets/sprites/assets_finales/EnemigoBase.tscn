@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://8kyi3te2qvge"]
+
+[ext_resource type="Script" uid="uid://b6qp72xb6tpgh" path="res://scripts/NPCs/Monstruos/enemigo.gd" id="1_sigje"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_184uq"]
+radius = 17.029387
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wfjt1"]
+radius = 150.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d304v"]
+radius = 25.0
+
+[node name="EnemigoBase" type="CharacterBody2D"]
+script = ExtResource("1_sigje")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 17)
+shape = SubResource("CircleShape2D_184uq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="AreaDeteccion" type="Area2D" parent="."]
+visible = false
+
+[node name="AreaDeteccion" type="CollisionShape2D" parent="AreaDeteccion"]
+shape = SubResource("CircleShape2D_wfjt1")
+
+[node name="AreaAtaque" type="Area2D" parent="."]
+visible = false
+
+[node name="AreaAtaque" type="CollisionShape2D" parent="AreaAtaque"]
+shape = SubResource("CircleShape2D_d304v")
+
+[node name="TimerAtaque" type="Timer" parent="."]
+
+[node name="TimerDeambular" type="Timer" parent="."]
