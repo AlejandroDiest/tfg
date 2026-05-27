@@ -40,7 +40,7 @@ window/layer_1="Escenario"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/YATI/plugin.cfg")
+enabled=PackedStringArray()
 
 [global_group]
 

@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" format=3 uid="uid://llrtj3qovpyi"]
+[gd_resource type="TileSet" load_steps=1471 format=3 uid="uid://llrtj3qovpyi"]
 
 [ext_resource type="Texture2D" uid="uid://b0fwq1ayg0qes" path="res://assets/sprites/assets_finales/cementerio/Tilesets/tileset-wall1.png" id="1_g66xd"]
 [ext_resource type="Texture2D" uid="uid://cja6btpd2qaov" path="res://assets/sprites/assets_finales/cementerio/Tilesets/hole-1.png" id="2_16b6g"]
