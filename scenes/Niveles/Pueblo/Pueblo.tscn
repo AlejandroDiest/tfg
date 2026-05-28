@@ -10,12 +10,16 @@
 [ext_resource type="Texture2D" uid="uid://c6gguno1wyayp" path="res://assets/sprites/assets_finales/pueblo/Tilesets/tileset-cliff-transp.png" id="6_qkm2x"]
 [ext_resource type="Script" uid="uid://7gcpsbjc2ro" path="res://scripts/Niveles/Pueblo/ScriptsPuertas/EntradaCripta.gd" id="6_upvll"]
 [ext_resource type="Texture2D" uid="uid://bq2wryqirbxph" path="res://assets/sprites/assets_finales/pueblo/Tilesets/tileset-cliff.png" id="7_1ijsk"]
-[ext_resource type="Texture2D" uid="uid://b14ykrd8r2ne" path="res://assets/sprites/asset_prueba/randoms/things.png" id="7_40rvy"]
 [ext_resource type="PackedScene" uid="uid://bnlibe20d4b22" path="res://scenes/Misc/ZonaInteraccion.tscn" id="8_87i80"]
-[ext_resource type="AudioStream" uid="uid://b71i4pnatun7o" path="res://assets/music/Ambient 1.mp3" id="11_u0jbr"]
+[ext_resource type="Texture2D" uid="uid://balx0dcxyct5q" path="res://assets/sprites/assets_finales/interior/assets/furniture_and_props_sprites/banner_4.png" id="10_i03kf"]
+[ext_resource type="AudioStream" uid="uid://b71i4pnatun7o" path="res://assets/music/Pueblo.mp3" id="11_u0jbr"]
 [ext_resource type="Script" uid="uid://iyxpw13q4rtt" path="res://scripts/Niveles/Pueblo/ScriptsPuertas/ZonaSalida.gd" id="14_xws1h"]
 [ext_resource type="PackedScene" uid="uid://422ovqvum50u" path="res://scenes/Niveles/Pueblo/TiendaVendedor.tscn" id="15_iwlaa"]
 [ext_resource type="PackedScene" uid="uid://00lpcxccearw" path="res://scenes/Niveles/Pueblo/CasaPlayer.tscn" id="15_xws1h"]
+[ext_resource type="AudioStream" uid="uid://lo6e88pudavo" path="res://assets/sounds/PasosHierba.ogg" id="16_q7iq4"]
+[ext_resource type="PackedScene" uid="uid://d4jcrfkxni85d" path="res://scenes/ItemDrop.tscn" id="17_1ijsk"]
+[ext_resource type="Resource" uid="uid://d2hr5rhja4a6e" path="res://scenes/Items/Espada.tres" id="21_uolu1"]
+[ext_resource type="Resource" uid="uid://i011q37k6mh6" path="res://scenes/Items/Armadura_1.tres" id="22_atufp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i03kf"]
 texture = ExtResource("6_6klks")
@@ -6350,10 +6354,6 @@ terrain_set_0/terrain_0/name = "Rio"
 terrain_set_0/terrain_0/color = Color(0.7005346, 0.110190116, 0.22674766, 1)
 sources/1 = SubResource("TileSetAtlasSource_87i80")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u0jbr"]
-atlas = ExtResource("7_40rvy")
-region = Rect2(0, 0, 16, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iwlaa"]
 size = Vector2(20, 150)
 
@@ -6436,7 +6436,7 @@ tile_set = SubResource("TileSet_u0jbr")
 [node name="Estructuras" type="Node2D" parent="." unique_id=91680203]
 y_sort_enabled = true
 
-[node name="CasaHerrero" parent="Estructuras" unique_id=1599085141 instance=ExtResource("2_7d4hp")]
+[node name="CasaHerrero" parent="Estructuras" unique_id=1599085141 groups=["CasaHerrero"] instance=ExtResource("2_7d4hp")]
 position = Vector2(540, -266)
 
 [node name="Puerta" type="Node2D" parent="Estructuras" unique_id=622219981]
@@ -6447,7 +6447,7 @@ escena_destino = "uid://b5ilj4aondn1g"
 [node name="SpritePuerta" type="Sprite2D" parent="Estructuras/Puerta" unique_id=687199432]
 position = Vector2(-74.49999, -128.74998)
 scale = Vector2(1.1874998, 1.15625)
-texture = SubResource("AtlasTexture_u0jbr")
+texture = ExtResource("10_i03kf")
 
 [node name="ZonaInteraccion" parent="Estructuras/Puerta" unique_id=1879887701 instance=ExtResource("8_87i80")]
 position = Vector2(-74.5, -117.75)
@@ -6474,14 +6474,32 @@ shape = SubResource("RectangleShape2D_iwlaa")
 [node name="Node2D" type="Node2D" parent="." unique_id=2087802730]
 y_sort_enabled = true
 
-[node name="Personaje" parent="Node2D" unique_id=1725817340 instance=ExtResource("3_d2twj")]
-position = Vector2(830, 106)
+[node name="Personaje" parent="Node2D" unique_id=1725817340 groups=["player"] instance=ExtResource("3_d2twj")]
+position = Vector2(-272, 380)
+archivo_sonido_pasos = ExtResource("16_q7iq4")
 
 [node name="MusicaFondo" type="AudioStreamPlayer" parent="Node2D" unique_id=215846445]
 process_mode = 3
 stream = ExtResource("11_u0jbr")
 autoplay = true
 bus = &"Musica"
+
+[node name="SalidaCementerio" type="Marker2D" parent="." unique_id=222086771 groups=["SalidaCementerio"]]
+position = Vector2(957, 77)
+
+[node name="CasaHerrero" type="Marker2D" parent="." unique_id=1117848130 groups=["CasaHerrero"]]
+position = Vector2(543.9375, -310.39838)
+
+[node name="CasaJugador" type="Marker2D" parent="." unique_id=2014701178 groups=["CasaJugador"]]
+position = Vector2(-176.02673, -757.43414)
+
+[node name="ItemDrop2" parent="." unique_id=658332245 instance=ExtResource("17_1ijsk")]
+position = Vector2(12, 437)
+item_data = ExtResource("21_uolu1")
+
+[node name="ItemDrop3" parent="." unique_id=165679321 instance=ExtResource("17_1ijsk")]
+position = Vector2(88, 437)
+item_data = ExtResource("22_atufp")
 
 [connection signal="body_entered" from="Estructuras/Puerta/ZonaInteraccion" to="Estructuras/Puerta" method="_on_zona_interaccion_body_entered"]
 [connection signal="interactuado" from="Estructuras/Puerta/ZonaInteraccion" to="Estructuras/Puerta" method="_on_zona_interaccion_interactuado"]

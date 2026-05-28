@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://jcrqiqc7yo66"]
+[gd_scene format=3 uid="uid://jcrqiqc7yo66"]
 
-[ext_resource type="Texture2D" uid="uid://bb5apyxh7uqnk" path="res://assets/sprites/asset_prueba/gfx/objects.png" id="1_ti3nx"]
+[ext_resource type="Texture2D" uid="uid://80qh63v10ecr" path="res://assets/sprites/assets_finales/HUD/corazon_lleno.png" id="1_tnvcq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dtjvx"]
-atlas = ExtResource("1_ti3nx")
-region = Rect2(64, 2, 14, 13)
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnvcq"]
+atlas = ExtResource("1_tnvcq")
+region = Rect2(8, 9, 14, 13)
 
-[node name="Corazon" type="TextureRect"]
-texture = SubResource("AtlasTexture_dtjvx")
-stretch_mode = 4
+[node name="Corazon" type="TextureRect" unique_id=28561189]
+offset_right = 28.0
+offset_bottom = 28.0
+texture = SubResource("AtlasTexture_tnvcq")
+stretch_mode = 5

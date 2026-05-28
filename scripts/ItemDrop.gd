@@ -1,6 +1,5 @@
 extends Area2D
-
-var item_data: InvItem = null 
+@export var item_data: InvItem = null 
 
 func _ready():
 	if item_data != null:

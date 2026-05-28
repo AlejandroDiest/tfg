@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://beg7ee2ep56fx" path="res://scripts/NPCs/personaje/antorcha.gd" id="3_5qa1r"]
 [ext_resource type="PackedScene" uid="uid://b64ts4u6hq118" path="res://scenes/UI/HUD/HUD.tscn" id="4_rtgx6"]
 [ext_resource type="PackedScene" uid="uid://dfj6mhfr5npud" path="res://scenes/UI/Inventario/InventarioUI.tscn" id="6_5qa1r"]
+[ext_resource type="AudioStream" uid="uid://c5hggxplsbeeu" path="res://assets/sounds/666herohero-slash-21834.mp3" id="7_rtgx6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8nwfd"]
 radius = 12.0415945
@@ -125,6 +126,23 @@ tracks/0/keys = {
 "update": 1,
 "values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(4, 1), Vector2i(5, 1), Vector2i(6, 1), Vector2i(7, 1)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2857143, 0.85714287),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"reproducir_paso"
+}, {
+"args": [],
+"method": &"reproducir_paso"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g0knn"]
 _data = {
@@ -207,10 +225,6 @@ position_smoothing_speed = 8.0
 [node name="HUD" parent="." unique_id=845760117 instance=ExtResource("4_rtgx6")]
 
 [node name="Inventario" parent="." unique_id=2126260598 instance=ExtResource("6_5qa1r")]
-offset_left = -73.0
-offset_top = -164.0
-offset_right = 72.0
-offset_bottom = -55.0
 
 [node name="PivoteHitboxAtaque" type="Node2D" parent="." unique_id=2046493940]
 
@@ -220,3 +234,12 @@ position = Vector2(20, -5)
 [node name="PolygonHitbox" type="CollisionPolygon2D" parent="PivoteHitboxAtaque/HitboxAtaque" unique_id=202935347]
 position = Vector2(3, 0)
 polygon = PackedVector2Array(-20, -37, -20, 20, -12, 19, -6, 17, -1, 12, 3, 7, 6, 0, 7, -8, 6, -15, 4, -22, 1, -28, -4, -32, -11, -35)
+
+[node name="SonidoPasos" type="AudioStreamPlayer2D" parent="." unique_id=2127868254]
+volume_db = -15.0
+bus = &"VFX"
+
+[node name="SonidoAtaque" type="AudioStreamPlayer2D" parent="." unique_id=760489876 groups=["Jugador", "player"]]
+stream = ExtResource("7_rtgx6")
+volume_db = -5.0
+pitch_scale = 0.7

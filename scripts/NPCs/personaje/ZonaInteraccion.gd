@@ -18,10 +18,9 @@ func _on_body_exited(body: Node2D) -> void:
 		dentro = false
 		jugador_objetivo = null 
 		$Sprite2D.visible = false
-
 func _process(_delta):
 	if dentro and jugador_objetivo != null:
-		$Sprite2D.global_position = jugador_objetivo.global_position + Vector2(0, -30)
+		$Sprite2D.global_position = jugador_objetivo.global_position + Vector2(0, -60)
 	
 	if dentro and Input.is_action_just_pressed("interactuar"):
 		interactuado.emit()

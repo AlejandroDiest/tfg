@@ -1,13 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b64ts4u6hq118"]
+[gd_scene format=3 uid="uid://b64ts4u6hq118"]
 
 [ext_resource type="Script" uid="uid://qeebdl3iw2bn" path="res://scripts/ScriptsUI/HUD.gd" id="1_1etfg"]
-[ext_resource type="Texture2D" uid="uid://dk3ljikj25lyf" path="res://assets/sprites/asset_prueba/randoms/coin.png" id="1_qpvh6"]
 [ext_resource type="FontFile" uid="uid://d0ux6r1e85p0s" path="res://assets/fonts/04B_30__.TTF" id="3_7hsmw"]
+[ext_resource type="Texture2D" uid="uid://bs7ajbk43xtjy" path="res://assets/sprites/assets_finales/HUD/oro.png" id="3_vv405"]
 [ext_resource type="PackedScene" uid="uid://paxgys1b5mec" path="res://scenes/UI/HUD/Minimapa.tscn" id="4_5ip4n"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fls4u"]
-atlas = ExtResource("1_qpvh6")
-region = Rect2(3, 3, 10, 10)
 
 [sub_resource type="FontVariation" id="FontVariation_nysna"]
 base_font = ExtResource("3_7hsmw")
@@ -16,40 +12,44 @@ base_font = ExtResource("3_7hsmw")
 font = SubResource("FontVariation_nysna")
 font_size = 4
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" unique_id=899195714]
 script = ExtResource("1_1etfg")
 
-[node name="MinimapaUI" parent="." instance=ExtResource("4_5ip4n")]
-offset_left = -99.0
-offset_right = 1.0
+[node name="MinimapaUI" parent="." unique_id=1026326091 instance=ExtResource("4_5ip4n")]
+offset_left = -105.0
+offset_top = 6.0
+offset_right = -5.0
+offset_bottom = 106.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=988310583]
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 60.0
+offset_bottom = 46.0
 
-[node name="ContenedorCorazones" type="HBoxContainer" parent="VBoxContainer"]
+[node name="ContenedorCorazones" type="HBoxContainer" parent="VBoxContainer" unique_id=357913345]
 layout_mode = 2
 theme_override_constants/separation = 2
 
-[node name="ContenedorOro" type="HBoxContainer" parent="VBoxContainer"]
+[node name="ContenedorOro" type="HBoxContainer" parent="VBoxContainer" unique_id=1572316181]
 layout_mode = 2
 
-[node name="SpriteOro" type="TextureRect" parent="VBoxContainer/ContenedorOro"]
+[node name="SpriteOro" type="TextureRect" parent="VBoxContainer/ContenedorOro" unique_id=409060982]
 layout_mode = 2
-texture = SubResource("AtlasTexture_fls4u")
+texture = ExtResource("3_vv405")
 stretch_mode = 2
 
-[node name="Control" type="Control" parent="VBoxContainer/ContenedorOro"]
+[node name="Control" type="Control" parent="VBoxContainer/ContenedorOro" unique_id=1731064348]
 custom_minimum_size = Vector2(40, 30)
 layout_mode = 2
 
-[node name="CantOro" type="Label" parent="VBoxContainer/ContenedorOro/Control"]
+[node name="CantOro" type="Label" parent="VBoxContainer/ContenedorOro/Control" unique_id=190284395]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.275
-anchor_top = 0.033333328
-anchor_right = 0.6563333
-anchor_bottom = 0.53333336
+anchor_left = 0.2
+anchor_top = 0.099999994
+anchor_right = 0.63133335
+anchor_bottom = 0.6666667
 offset_left = -11.0
 offset_top = -0.9999998
 offset_right = -24.253334

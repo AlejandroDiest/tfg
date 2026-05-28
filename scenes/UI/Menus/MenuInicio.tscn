@@ -4,6 +4,11 @@
 [ext_resource type="Script" uid="uid://27suodilani5" path="res://scripts/ScriptsUI/Menus/MenuInicio.gd" id="1_yp4fm"]
 [ext_resource type="FontFile" uid="uid://d0ux6r1e85p0s" path="res://assets/fonts/04B_30__.TTF" id="2_3axvr"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_avtg2"]
+font = ExtResource("2_3axvr")
+font_size = 35
+font_color = Color(1, 0.6870425, 0.59238017, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_yp4fm"]
 font = ExtResource("2_3axvr")
 font_color = Color(9.241105e-06, 0.8922299, 0.8711341, 1)
@@ -28,6 +33,15 @@ texture = ExtResource("1_gy3ng")
 expand_mode = 1
 stretch_mode = 6
 
+[node name="Label" type="Label" parent="." unique_id=1109283046]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 39.0
+offset_right = 444.0
+offset_bottom = 75.0
+text = "REKINDLE"
+label_settings = SubResource("LabelSettings_avtg2")
+
 [node name="MenuInicio" type="CenterContainer" parent="." unique_id=858033545]
 layout_mode = 1
 anchors_preset = 15
@@ -42,11 +56,6 @@ layout_mode = 2
 [node name="BtnJugar" type="Button" parent="MenuInicio/VBoxContainer" unique_id=1181681183]
 layout_mode = 2
 text = "Jugar"
-
-[node name="BtnAjustes" type="Button" parent="MenuInicio/VBoxContainer" unique_id=1541935482]
-layout_mode = 2
-text = "Ajustes
-"
 
 [node name="BtnSalir" type="Button" parent="MenuInicio/VBoxContainer" unique_id=959696403]
 layout_mode = 2

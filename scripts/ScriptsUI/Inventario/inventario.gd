@@ -8,7 +8,6 @@ signal update_ui
 func insertar(item: InvItem):
 	for slot in inventario:
 		
-		#Si ya existe el item en el inventario solo suma a la cant
 		if slot.item == item:
 			if slot.cantItem == 99:
 				continue

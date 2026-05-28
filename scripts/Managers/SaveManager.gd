@@ -6,15 +6,16 @@ var partida_actual = 0
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
-# --- LÓGICA DE GUARDADO ORIGINAL ---
+# --- LÓGICA DE GUARDADO MEJORADA ---
 func guardar_partida():
 	var archivo = FileAccess.open(guardado_ruta_actual(), FileAccess.WRITE)
 	if FileAccess.get_open_error() != OK:
 		print("Error al guardar en slot ", partida_actual)
 		return
 		
-	# Obtenemos los datos del GameManager (que ahora vive separado)
 	GameManager.datos_jugador["inventario"] = _serializar_inventario()
+	GameManager.datos_jugador["estado_vendedor"] = GameManager.estado_actual_vendedor
+	GameManager.datos_jugador["estado_pueblo"] = GameManager.estado_pueblo
 	
 	var json_texto = JSON.stringify(GameManager.datos_jugador, "\t")
 	archivo.store_string(json_texto)
@@ -31,39 +32,56 @@ func cargar_partida():
 	var datos_guardados = JSON.parse_string(json_texto)
 	
 	if datos_guardados:
-		# Restauramos los datos en el GameManager
 		GameManager.datos_jugador = datos_guardados
 		
-		# Asegurar tipos (int) para evitar bugs de decimales
-		GameManager.datos_jugador.oro = int(GameManager.datos_jugador.oro)
-		GameManager.datos_jugador.vida_maxima = int(GameManager.datos_jugador.vida_maxima)
-		GameManager.datos_jugador.vida_actual = int(GameManager.datos_jugador.vida_actual)
+		GameManager.datos_jugador.oro = int(GameManager.datos_jugador.get("oro", 0))
+		GameManager.datos_jugador.vida_maxima = int(GameManager.datos_jugador.get("vida_maxima", 3))
+		GameManager.datos_jugador.vida_actual = int(GameManager.datos_jugador.get("vida_actual", 3))
+		GameManager.datos_jugador["volumen_musica"] = float(datos_guardados.get("volumen_musica", 1.0))
+		GameManager.datos_jugador["volumen_sfx"] = float(datos_guardados.get("volumen_sfx", 1.0))
+		GameManager.estado_actual_vendedor = int(datos_guardados.get("estado_vendedor", 0))
+		GameManager.estado_pueblo = int(datos_guardados.get("estado_pueblo", 0))
+		
+		var bus_musica = AudioServer.get_bus_index("Musica")
+		var vol_musica = GameManager.datos_jugador.get("volumen_musica", 1.0)
+		AudioServer.set_bus_volume_db(bus_musica, linear_to_db(vol_musica))
+		
+		var bus_sfx = AudioServer.get_bus_index("SFX")
+		var vol_sfx = GameManager.datos_jugador.get("volumen_sfx", 1.0)
+		AudioServer.set_bus_volume_db(bus_sfx, linear_to_db(vol_sfx))
 		
 		if datos_guardados.has("inventario"):
 			_deserializar_inventario(datos_guardados["inventario"])
 		else:
 			GameManager.inventario_recurso.reset()
+			
 		print("Datos cargados del Slot ", partida_actual)
 
 func resetear_datos():
-	# Reseteamos las variables del GameManager
 	GameManager.datos_jugador = {
 		"oro": 0,
 		"vida_maxima": 3,
-		"vida_actual": 3, 
+		"vida_actual": 3,
+		"dano": 0,
+		"equipamiento": {},
+		"volumen_musica": 1.0, 
+		"volumen_sfx": 1.0
 	}
+	
+	GameManager.estado_actual_vendedor = 0
+	GameManager.estado_pueblo = 0        
+	
 	if GameManager.inventario_recurso:
 		GameManager.inventario_recurso.reset()
 
 func guardado_ruta_actual() -> String:
 	return RUTA_GUARDADO + str(partida_actual) + ".json"
 
-# --- ESTA FUNCIÓN FALTABA Y ROMPÍA EL MENÚ ---
 func existe_partida_en_slot(numero_slot: int) -> bool:
 	var ruta = RUTA_GUARDADO + str(numero_slot) + ".json"
 	return FileAccess.file_exists(ruta)
 
-# --- SERIALIZACIÓN ORIGINAL ---
+# --- SERIALIZACIÓN (Intacta, ya era perfecta) ---
 func _serializar_inventario() -> Array:
 	var lista_guardado = []
 	for slot in GameManager.inventario_recurso.inventario:

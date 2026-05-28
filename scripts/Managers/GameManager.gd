@@ -4,14 +4,18 @@ extends Node
 # Ajusta la ruta si es necesario, pero mantenemos la lógica
 var inventario_recurso: Inv = preload("res://scenes/UI/Inventario/Inventario.tres") 
 var menu_pausa = preload("res://scenes/UI/Menus/MenuPausa.tscn")
-
+var dialogo_activo = false
+var inventario_abierto = false
 var datos_jugador: Dictionary = {
 	"oro": 0,
 	"vida_maxima": 3,
-	"vida_actual": 3, 
+	"vida_actual": 3,
+	"dano": 0,
+	"equipamiento": {},
+	"volumen_musica": 1.0, 
+	"volumen_sfx": 1.0
 }
 
-# --- ESTADOS DE MISIONES --
 enum EstadoPueblo { 
 	INICIO,          
 	MISION_ACTIVA,    
@@ -32,8 +36,8 @@ func alternar_dia_noche():
 	
 enum EstadoVendedor { 
 	DESCONOCIDO,   
-	MISION_MADERA,   
-	CASA_REPARADA,    
+	MISION_ITEM,   
+	CASA_REPARADA,
 	TIENDA_ABIERTA  
 }
 var estado_actual_vendedor = EstadoVendedor.DESCONOCIDO
@@ -41,7 +45,6 @@ var estado_actual_vendedor = EstadoVendedor.DESCONOCIDO
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
-# --- INPUT (ESTO FALTABA: Para pausar con Escape) ---
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		pausar_juego()
@@ -52,7 +55,7 @@ func pausar_juego():
 	get_tree().root.add_child(menu_instance)
 	get_tree().paused = true
 
-func recibir_daño(): # Faltaba el argumento vacío por defecto o sin argumento como en tu original
+func recibir_daño(): 
 	datos_jugador.vida_actual -= 1
 	if datos_jugador.vida_actual < 0: datos_jugador.vida_actual = 0
 	print("Vida: ", datos_jugador.vida_actual)

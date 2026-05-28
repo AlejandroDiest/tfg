@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://uvg05l12w1ib" path="res://assets/sprites/assets_finales/pueblo/Tilesets/Tileset-Terrain.png" id="1_vx18l"]
 [ext_resource type="PackedScene" uid="uid://bgi848cn33hfj" path="res://scenes/Niveles/Pueblo/Props/CasaHerrero/Casa.tscn" id="2_k27om"]
 [ext_resource type="PackedScene" uid="uid://by1k4o4cxuq3j" path="res://scenes/Niveles/Pueblo/Props/CasaHerrero/Cartel.tscn" id="3_wfiex"]
+[ext_resource type="PackedScene" uid="uid://nsk2wtey5j2r" path="res://scenes/Niveles/Pueblo/Props/CasaHerrero/HornoAbandonado.tscn" id="4_x28wo"]
 [ext_resource type="PackedScene" uid="uid://3ikkqlsoioaw" path="res://scenes/Niveles/Pueblo/Props/CasaHerrero/Afilador.tscn" id="5_kfbc5"]
 [ext_resource type="PackedScene" uid="uid://dgn45ycgbihc2" path="res://scenes/Niveles/Pueblo/Props/CasaHerrero/Yunque.tscn" id="6_vx18l"]
 [ext_resource type="PackedScene" uid="uid://o1y7xjoabkn0" path="res://scenes/Niveles/Pueblo/Props/CasaHerrero/Herrero.tscn" id="7_kfbc5"]
@@ -1695,20 +1696,27 @@ position = Vector2(75, 0)
 texture = ExtResource("1_bac4j")
 
 [node name="Horno" parent="." unique_id=1602395865 instance=ExtResource("1_3vx0m")]
+visible = false
+position = Vector2(15, 0)
+
+[node name="HornoAbandonado" parent="." unique_id=844814144 instance=ExtResource("4_x28wo")]
 position = Vector2(15, 0)
 
 [node name="Casa" parent="." unique_id=2086439738 instance=ExtResource("2_k27om")]
 
 [node name="Cartel" parent="." unique_id=1916856025 instance=ExtResource("3_wfiex")]
+visible = false
 y_sort_enabled = true
 position = Vector2(166, 4)
 
 [node name="Afilador" parent="." unique_id=364342825 instance=ExtResource("5_kfbc5")]
+visible = false
 position = Vector2(114, 31)
 
 [node name="Yunque" parent="." unique_id=1010600550 instance=ExtResource("6_vx18l")]
 position = Vector2(73, 33)
 
 [node name="Herrero" parent="." unique_id=208205751 instance=ExtResource("7_kfbc5")]
+visible = false
 y_sort_enabled = true
 position = Vector2(71, 13)

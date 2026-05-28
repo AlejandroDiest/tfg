@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://d4jcrfkxni85d"]
+[gd_scene format=3 uid="uid://d4jcrfkxni85d"]
 
 [ext_resource type="Script" uid="uid://cdu55law0oa00" path="res://scripts/ItemDrop.gd" id="1_i8wxv"]
 
@@ -42,20 +42,18 @@ _data = {
 &"RESET": SubResource("Animation_a4che")
 }
 
-[node name="ItemDrop" type="Area2D"]
+[node name="ItemDrop" type="Area2D" unique_id=658332245]
 collision_layer = 3
 collision_mask = 2
 script = ExtResource("1_i8wxv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1191920860]
 shape = SubResource("CircleShape2D_a4che")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2082638569]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_a4che")
-}
-autoplay = "Flotar"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1670547180]
+libraries/ = SubResource("AnimationLibrary_a4che")
+autoplay = &"Flotar"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

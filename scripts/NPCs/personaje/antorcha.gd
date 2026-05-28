@@ -1,6 +1,5 @@
 extends PointLight2D
 
-# Configuración del parpadeo
 var energia_base = 1.5
 var variacion = 0.1
 var velocidad = 6.0
