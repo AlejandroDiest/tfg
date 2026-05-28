@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://nsk2wtey5j2r"]
+
+[ext_resource type="Texture2D" uid="uid://m8ockast5kda" path="res://assets/sprites/assets_finales/pueblo/Props/Atlas-Props-individual sprites/blacksmith props_40.png" id="1_lj3l6"]
+
+[node name="HornoAbandonado" type="Node2D" unique_id=844814144]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=526356863]
+texture = ExtResource("1_lj3l6")

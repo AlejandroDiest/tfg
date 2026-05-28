@@ -1,71 +1,280 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfj6mhfr5npud"]
+[gd_scene format=3 uid="uid://dfj6mhfr5npud"]
 
 [ext_resource type="Texture2D" uid="uid://dbfbebb25dnea" path="res://assets/sprites/assets_finales/pueblo/UI/UI-elements-32x32-original.png" id="1_5v76k"]
 [ext_resource type="Script" uid="uid://n00c1ibiylhq" path="res://scripts/ScriptsUI/Inventario/inventario_ui.gd" id="2_dpae8"]
+[ext_resource type="FontFile" uid="uid://d0ux6r1e85p0s" path="res://assets/fonts/04B_30__.TTF" id="3_7i4el"]
 [ext_resource type="PackedScene" uid="uid://b5kwwh814j7ig" path="res://scenes/UI/Inventario/SlotInvUI.tscn" id="3_yaliu"]
+[ext_resource type="Texture2D" uid="uid://u7cib20khoyp" path="res://assets/sprites/assets_finales/pueblo/UI/UI-elements-64x64.png" id="5_l85gw"]
+[ext_resource type="Texture2D" uid="uid://b4ragqbof5fmu" path="res://assets/sprites/assets_finales/pueblo/Characters/Warrior/warrior-idle.png" id="6_vfkxd"]
+[ext_resource type="PackedScene" uid="uid://1s5hsd1ffwbb" path="res://scenes/UI/Inventario/SlotEquipo.tscn" id="7_vfkxd"]
+[ext_resource type="Texture2D" uid="uid://clbxjw57t81a6" path="res://assets/sprites/assets_finales/pueblo/UI/UI-elements-32x32-separated sprites/char_equip_slots_0.png" id="8_rvsot"]
+[ext_resource type="Texture2D" uid="uid://vjvhg6wv825w" path="res://assets/sprites/assets_finales/pueblo/UI/UI-elements-32x32-separated sprites/char_equip_slots_4.png" id="9_sv1gr"]
+[ext_resource type="Texture2D" uid="uid://cdhf0knvtpsij" path="res://assets/sprites/assets_finales/pueblo/UI/UI-elements-32x32-separated sprites/char_equip_slots_2.png" id="10_2qcag"]
+[ext_resource type="Texture2D" uid="uid://b12454cgr0mya" path="res://assets/sprites/assets_finales/pueblo/UI/UI-elements-32x32-separated sprites/char_equip_slots_5.png" id="11_dcerr"]
+[ext_resource type="Texture2D" uid="uid://gyio5kn42m38" path="res://assets/sprites/assets_finales/pueblo/UI/UI-elements-32x32-separated sprites/char_stats_slots_0.png" id="12_bayyy"]
+[ext_resource type="Texture2D" uid="uid://yapbybmcvo7u" path="res://assets/sprites/assets_finales/pueblo/UI/UI-elements-32x32-separated sprites/char_stats_slots_1.png" id="13_1ytqk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epjf7"]
 atlas = ExtResource("1_5v76k")
 region = Rect2(164, 228, 24, 24)
 
-[node name="Inventario" type="NinePatchRect"]
+[sub_resource type="LabelSettings" id="LabelSettings_5wcim"]
+font = ExtResource("3_7i4el")
+font_size = 10
+font_color = Color(1, 0.6870425, 0.59238017, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31arr"]
+atlas = ExtResource("5_l85gw")
+region = Rect2(256.16275, 447.97192, 64.21228, 64.21796)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvsot"]
+atlas = ExtResource("6_vfkxd")
+region = Rect2(44.768623, 23.558151, 56.242195, 55.421143)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ja7ft"]
+font = ExtResource("3_7i4el")
+font_size = 20
+font_color = Color(1, 0.6862745, 0.5921569, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sqqdh"]
+font = ExtResource("3_7i4el")
+font_size = 20
+font_color = Color(1, 0.6862745, 0.5921569, 1)
+
+[node name="Control" type="CanvasLayer" unique_id=1377733890]
+script = ExtResource("2_dpae8")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1661836812]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.38039216)
+
+[node name="Inventario" type="NinePatchRect" parent="." unique_id=1929322808]
 z_index = 99
-offset_right = 145.0
-offset_bottom = 109.0
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -257.0
+offset_top = -95.5
+offset_right = -142.0
+offset_bottom = 79.5
+grow_horizontal = 0
+grow_vertical = 2
 texture = SubResource("AtlasTexture_epjf7")
 patch_margin_left = 5
 patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
-script = ExtResource("2_dpae8")
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="Label" type="Label" parent="Inventario" unique_id=1242439088]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -39.0
+offset_top = 14.0
+offset_right = 39.0
+offset_bottom = 27.5
+grow_horizontal = 2
+text = "Inventario"
+label_settings = SubResource("LabelSettings_5wcim")
+
+[node name="GridContainer" type="GridContainer" parent="Inventario" unique_id=1888256505]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -62.0
-offset_top = -46.0
-offset_right = 62.0
-offset_bottom = 46.0
+offset_left = -46.0
+offset_top = -48.0
+offset_right = 46.0
+offset_bottom = 82.0
 grow_horizontal = 2
 grow_vertical = 2
-columns = 4
+columns = 3
 
-[node name="Slot" parent="GridContainer" instance=ExtResource("3_yaliu")]
+[node name="Slot" parent="Inventario/GridContainer" unique_id=1577098415 instance=ExtResource("3_yaliu")]
 layout_mode = 2
 
-[node name="Slot2" parent="GridContainer" instance=ExtResource("3_yaliu")]
+[node name="Slot2" parent="Inventario/GridContainer" unique_id=1248489098 instance=ExtResource("3_yaliu")]
 layout_mode = 2
 
-[node name="Slot3" parent="GridContainer" instance=ExtResource("3_yaliu")]
+[node name="Slot3" parent="Inventario/GridContainer" unique_id=1784481312 instance=ExtResource("3_yaliu")]
 layout_mode = 2
 
-[node name="Slot4" parent="GridContainer" instance=ExtResource("3_yaliu")]
+[node name="Slot4" parent="Inventario/GridContainer" unique_id=825404646 instance=ExtResource("3_yaliu")]
 layout_mode = 2
 
-[node name="Slot5" parent="GridContainer" instance=ExtResource("3_yaliu")]
+[node name="Slot5" parent="Inventario/GridContainer" unique_id=1697478340 instance=ExtResource("3_yaliu")]
 layout_mode = 2
 
-[node name="Slot6" parent="GridContainer" instance=ExtResource("3_yaliu")]
+[node name="Slot6" parent="Inventario/GridContainer" unique_id=1753636159 instance=ExtResource("3_yaliu")]
 layout_mode = 2
 
-[node name="Slot7" parent="GridContainer" instance=ExtResource("3_yaliu")]
+[node name="Slot7" parent="Inventario/GridContainer" unique_id=523760809 instance=ExtResource("3_yaliu")]
 layout_mode = 2
 
-[node name="Slot8" parent="GridContainer" instance=ExtResource("3_yaliu")]
+[node name="Slot8" parent="Inventario/GridContainer" unique_id=738385818 instance=ExtResource("3_yaliu")]
 layout_mode = 2
 
-[node name="Slot9" parent="GridContainer" instance=ExtResource("3_yaliu")]
+[node name="Slot9" parent="Inventario/GridContainer" unique_id=558909009 instance=ExtResource("3_yaliu")]
 layout_mode = 2
 
-[node name="Slot10" parent="GridContainer" instance=ExtResource("3_yaliu")]
+[node name="Slot10" parent="Inventario/GridContainer" unique_id=850079811 instance=ExtResource("3_yaliu")]
 layout_mode = 2
 
-[node name="Slot11" parent="GridContainer" instance=ExtResource("3_yaliu")]
+[node name="Slot11" parent="Inventario/GridContainer" unique_id=871161956 instance=ExtResource("3_yaliu")]
 layout_mode = 2
 
-[node name="Slot12" parent="GridContainer" instance=ExtResource("3_yaliu")]
+[node name="Slot12" parent="Inventario/GridContainer" unique_id=1517176078 instance=ExtResource("3_yaliu")]
 layout_mode = 2
+
+[node name="Equipamiento" type="NinePatchRect" parent="." unique_id=584609261]
+z_index = 99
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -481.0
+offset_top = -95.5
+offset_right = -366.0
+offset_bottom = 79.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = SubResource("AtlasTexture_epjf7")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Label" type="Label" parent="Equipamiento" unique_id=1314278854]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -47.0
+offset_top = 14.0
+offset_right = 47.0
+offset_bottom = 25.0
+grow_horizontal = 2
+text = "Equipamiento"
+label_settings = SubResource("LabelSettings_5wcim")
+
+[node name="Sprite2D" type="Sprite2D" parent="Equipamiento" unique_id=1867642891]
+position = Vector2(58.5, 61)
+scale = Vector2(0.859375, 0.828125)
+texture = SubResource("AtlasTexture_31arr")
+
+[node name="TextureRect" type="TextureRect" parent="Equipamiento" unique_id=18144879]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.5
+offset_top = -48.0
+offset_right = 37.5
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+texture = SubResource("AtlasTexture_rvsot")
+
+[node name="SlotsEquipamiento" type="GridContainer" parent="Equipamiento" unique_id=2012376129]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -46.0
+offset_top = -75.0
+offset_right = 46.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 3
+
+[node name="SlotEquipo2" parent="Equipamiento/SlotsEquipamiento" unique_id=1518834348 instance=ExtResource("7_vfkxd")]
+layout_mode = 2
+tipo_permitido = "Espada"
+imagen_fondo_normal = ExtResource("8_rvsot")
+imagen_fondo_silueta = ExtResource("9_sv1gr")
+
+[node name="SlotEquipo3" parent="Equipamiento/SlotsEquipamiento" unique_id=528184236 instance=ExtResource("7_vfkxd")]
+layout_mode = 2
+tipo_permitido = "Armadura"
+imagen_fondo_normal = ExtResource("8_rvsot")
+imagen_fondo_silueta = ExtResource("10_2qcag")
+
+[node name="SlotEquipo4" parent="Equipamiento/SlotsEquipamiento" unique_id=843277352 instance=ExtResource("7_vfkxd")]
+layout_mode = 2
+tipo_permitido = "Anillo"
+imagen_fondo_normal = ExtResource("8_rvsot")
+imagen_fondo_silueta = ExtResource("11_dcerr")
+
+[node name="Estadisticas" type="GridContainer" parent="Equipamiento" unique_id=1631128537]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -46.5
+offset_top = -40.0
+offset_right = 43.5
+grow_horizontal = 2
+grow_vertical = 0
+columns = 2
+
+[node name="Vida" type="Control" parent="Equipamiento/Estadisticas" unique_id=1486531259]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="IconoVida" type="TextureRect" parent="Equipamiento/Estadisticas/Vida" unique_id=251060908]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 34.0
+offset_bottom = 30.0
+texture = ExtResource("12_bayyy")
+
+[node name="LabelVida" type="Label" parent="Equipamiento/Estadisticas/Vida" unique_id=1844742293]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 7.0
+offset_right = 73.0
+offset_bottom = 30.0
+scale = Vector2(0.6, 0.6)
+text = "10"
+label_settings = SubResource("LabelSettings_ja7ft")
+
+[node name="Dano" type="Control" parent="Equipamiento/Estadisticas" unique_id=1476869245]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="IconoDano" type="TextureRect" parent="Equipamiento/Estadisticas/Dano" unique_id=46993731]
+layout_mode = 0
+offset_left = 44.0
+offset_top = -2.0
+offset_right = 76.0
+offset_bottom = 30.0
+texture = ExtResource("13_1ytqk")
+
+[node name="LabelDano" type="Label" parent="Equipamiento/Estadisticas/Dano" unique_id=1938476564]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 7.5
+offset_right = 114.0
+offset_bottom = 30.5
+scale = Vector2(0.5, 0.5)
+text = "15"
+label_settings = SubResource("LabelSettings_sqqdh")

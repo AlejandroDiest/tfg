@@ -21,6 +21,10 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="uid://chw755ds1u7d1"
 config/icon="uid://plm5oyfnfa4"
 
+[audio]
+
+buses/default_bus_layout="uid://6qbsmiof476l"
+
 [autoload]
 
 GameManager="*res://scripts/Managers/GameManager.gd"
@@ -46,6 +50,10 @@ enabled=PackedStringArray()
 
 Jugador=""
 Enemigo=""
+player=""
+CasaHerrero=""
+CasaJugador=""
+SalidaCementerio=""
 
 [input]
 

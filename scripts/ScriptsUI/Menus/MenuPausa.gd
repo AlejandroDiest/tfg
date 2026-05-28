@@ -2,9 +2,9 @@ extends CanvasLayer
 const MENU_AJUSTES = preload("res://scenes/UI/Menus/MenuAjustes.tscn")
 
 func _ready():
-	$CenterContainer/PanelContainer/VBoxContainer/BtnAjustes.pressed.connect(_on_btn_ajustes_pressed)
-	$CenterContainer/PanelContainer/VBoxContainer/BtnContinuar.pressed.connect(_on_btn_continuar_pressed)
-	$CenterContainer/PanelContainer/VBoxContainer/BtnSalir.pressed.connect(_on_btn_salir_pressed)
+	$CenterContainer/PanelContainer/MarginContainer/VBoxContainer/BtnAjustes.pressed.connect(_on_btn_ajustes_pressed)
+	$CenterContainer/PanelContainer/MarginContainer/VBoxContainer/BtnContinuar.pressed.connect(_on_btn_continuar_pressed)
+	$CenterContainer/PanelContainer/MarginContainer/VBoxContainer/BtnSalir.pressed.connect(_on_btn_salir_pressed)
 
 func _on_btn_continuar_pressed():
 	get_tree().paused = false

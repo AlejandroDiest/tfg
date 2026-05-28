@@ -3,10 +3,8 @@ extends CharacterBody2D
 @export var inventario : Inv
 @export var velocidad: float = 180.0
 @export var vida_maxima: int = 5
-
-# --- HITBOX Y PIVOTE ---
+@export var archivo_sonido_pasos: AudioStream
 @onready var pivot_ataque = $PivoteHitboxAtaque
-# Cambiamos la referencia al Polygon2D
 @onready var collision_hitbox = $PivoteHitboxAtaque/HitboxAtaque/PolygonHitbox
 
 # --- VARIABLES DE ESTADO ---
@@ -18,24 +16,36 @@ var puede_cancelar_ataque: bool = false
 
 @onready var anim = $AnimationPlayer
 @onready var sprite = $Sprite2D
+@onready var reproductor_pasos = $SonidoPasos
+@onready var reproductor_ataque = $SonidoAtaque
 
 func _ready():
-	vida_actual = vida_maxima
+	vida_maxima = GameManager.datos_jugador.vida_maxima
+	vida_actual = GameManager.datos_jugador.vida_actual
 	collision_hitbox.disabled = true
 	anim.animation_finished.connect(_on_animation_finished)
 
-func _physics_process(delta):
+
+func _physics_process(_delta):
 	if esta_muerto:
 		return
-
+	
+	if GameManager.inventario_abierto and esta_atacando:
+		esta_atacando = false 
+		$AnimationPlayer.play("Idle")
+	if GameManager.inventario_abierto or GameManager.dialogo_activo:
+		velocity = Vector2.ZERO 
+		move_and_slide()
+		$AnimationPlayer.play("Idle")
+		return 
+		
 	var direccion = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 
-	# --- GESTIÓN DE ROTACIÓN ÚNICAMENTE IZQ / DER ---
-	# Solo actualizamos el pivote si hay movimiento horizontal
+
 	if direccion.x > 0:
-		pivot_ataque.scale.x = 1   # Escala normal, mira a la derecha
+		pivot_ataque.scale.x = 1   
 	elif direccion.x < 0:
-		pivot_ataque.scale.x = -1  # Escala invertida, mira a la izquierda
+		pivot_ataque.scale.x = -1  
 
 	if esta_atacando:
 		if puede_cancelar_ataque and direccion != Vector2.ZERO:
@@ -59,16 +69,14 @@ func _physics_process(delta):
 		_actualizar_animacion("Idle")
 
 	move_and_slide()
-	var fuerza_choque = 60.0 # Ajusta esto para que el enemigo sea más "pesado" o "ligero"
+	var fuerza_choque = 60.0 
 	
 	for i in get_slide_collision_count():
 		var colision = get_slide_collision(i)
 		var cuerpo_colisionado = colision.get_collider()
 		
 		if cuerpo_colisionado.is_in_group("Enemigo"):
-			# Empujamos al enemigo usando la normal de la colisión (dirección opuesta al choque)
 			cuerpo_colisionado.velocity = -colision.get_normal() * fuerza_choque
-			# Le pedimos al enemigo que procese ese movimiento
 			cuerpo_colisionado.move_and_slide()
 	
 	if Input.is_action_just_pressed("ataque"): 
@@ -88,25 +96,20 @@ func atacar():
 	esta_atacando = true
 	puede_cancelar_ataque = false 
 	anim.play("Attack")
-	
-	# --- LÓGICA DE DAÑO ---
-	# Usamos set_deferred para evitar errores de físicas al activar/desactivar
+	reproducir_ataque()
+
 	collision_hitbox.set_deferred("disabled", false)
-	
-	# Esperamos un frame para que las físicas detecten el área nueva
 	await get_tree().physics_frame
 	
 	var area_daño = $PivoteHitboxAtaque/HitboxAtaque
 	var cuerpos_alcanzados = area_daño.get_overlapping_bodies()
 	
 	for cuerpo in cuerpos_alcanzados:
-		# Cambia "enemigos" por "Enemigo" (Exactamente como lo tienes en tu grupo)
 		if cuerpo.is_in_group("Enemigo") and cuerpo.has_method("recibir_daño"):
 			var direccion_golpe = (cuerpo.global_position - global_position).normalized()
-			
-			cuerpo.recibir_daño(1, direccion_golpe)
+			var dano_total = GameManager.datos_jugador.dano 
+			cuerpo.recibir_daño(dano_total, direccion_golpe)
 	
-	# Tiempo que el arco de la espada es "dañino"
 	await get_tree().create_timer(0.15).timeout
 	collision_hitbox.set_deferred("disabled", true)
 
@@ -162,3 +165,14 @@ func _on_animation_finished(anim_name):
 	
 	if anim_name == "Hurt":
 		esta_herido = false
+		
+func reproducir_paso():
+	if archivo_sonido_pasos != null:
+		reproductor_pasos.stream = archivo_sonido_pasos # Metemos el disco en el reproductor
+		reproductor_pasos.pitch_scale = randf_range(0.8, 1.2) # Variamos el tono
+		reproductor_pasos.play()
+		
+		
+func reproducir_ataque():
+	reproductor_ataque.pitch_scale = randf_range(0.6, 0.8)
+	reproductor_ataque.play()		

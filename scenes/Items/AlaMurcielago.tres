@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://csti4bddfo5m2"]
+
+[ext_resource type="Script" uid="uid://dqrekxnosbd60" path="res://scripts/ScriptsUI/Inventario/InventoryItem.gd" id="1_wcu46"]
+[ext_resource type="Texture2D" uid="uid://bjujuavw3ea6a" path="res://assets/sprites/assets_finales/items/ala_murcielago.png" id="2_qwoo8"]
+
+[resource]
+script = ExtResource("1_wcu46")
+nombreItem = "AlaMurcielago"
+descripcion = "Ala cortada de un murcielago."
+texturaItem = ExtResource("2_qwoo8")
+metadata/_custom_type_script = "uid://dqrekxnosbd60"

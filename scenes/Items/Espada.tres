@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://d2hr5rhja4a6e"]
+
+[ext_resource type="Script" uid="uid://dqrekxnosbd60" path="res://scripts/ScriptsUI/Inventario/InventoryItem.gd" id="1_47gpu"]
+[ext_resource type="Texture2D" uid="uid://c3n8d1cyqgmg8" path="res://assets/sprites/assets_finales/items/espada_2.png" id="2_e75o1"]
+
+[resource]
+script = ExtResource("1_47gpu")
+nombreItem = "Espada de piedra"
+descripcion = "+1 de Daño"
+tipo_item = "Espada"
+texturaItem = ExtResource("2_e75o1")
+bono_dano = 1
+metadata/_custom_type_script = "uid://dqrekxnosbd60"

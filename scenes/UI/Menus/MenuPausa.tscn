@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://wwinc27ni0dn"]
+[gd_scene format=3 uid="uid://wwinc27ni0dn"]
 
 [ext_resource type="Script" uid="uid://doev3mjcjgkfm" path="res://scripts/ScriptsUI/Menus/MenuPausa.gd" id="1_du1f8"]
 
@@ -11,11 +11,11 @@ stacked_shadow_0/offset = Vector2(1, 1)
 stacked_shadow_0/color = Color(0.427493, 0.42749307, 0.42749307, 1)
 stacked_shadow_0/outline_size = 2
 
-[node name="MenuPausa" type="CanvasLayer"]
+[node name="MenuPausa" type="CanvasLayer" unique_id=1783264162]
 process_mode = 2
 script = ExtResource("1_du1f8")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1164226134]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -23,39 +23,46 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.38039216)
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=70497295]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
-custom_minimum_size = Vector2(120, 120)
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=778628119]
+custom_minimum_size = Vector2(180, 120)
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="CenterContainer/PanelContainer"]
+[node name="ColorRect" type="ColorRect" parent="CenterContainer/PanelContainer" unique_id=1269221237]
 layout_mode = 2
-color = Color(0.42735425, 0.36040643, 0.56361425, 0.8745098)
+color = Color(0.51785815, 0.3583352, 0.3139157, 0.6431373)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=1335104531]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=39523972]
 layout_mode = 2
 
-[node name="TextoPausa" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="TextoPausa" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=27633381]
 layout_mode = 2
 text = "Menu Pausa"
 label_settings = SubResource("LabelSettings_4peet")
 horizontal_alignment = 1
 
-[node name="BtnContinuar" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="BtnContinuar" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1228284155]
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 text = "Continuar"
 
-[node name="BtnAjustes" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="BtnAjustes" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=837791801]
 layout_mode = 2
 text = "Ajustes"
 
-[node name="BtnSalir" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="BtnSalir" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=896138968]
 layout_mode = 2
 text = "Salir"

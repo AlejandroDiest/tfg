@@ -1,32 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5kwwh814j7ig"]
+[gd_scene format=3 uid="uid://b5kwwh814j7ig"]
 
 [ext_resource type="Texture2D" uid="uid://byjny4y51b7cw" path="res://assets/sprites/assets_finales/pueblo/UI/UI-elements-32x32-separated sprites/9SlicedObjects_slot1_0.png" id="1_5g2cy"]
 [ext_resource type="Script" uid="uid://drc4wraf06hv4" path="res://scripts/ScriptsUI/Inventario/slot_inv_ui.gd" id="1_q8785"]
 
-[node name="Slot" type="Panel"]
+[node name="Slot" type="Panel" unique_id=1688471829]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(28, 28)
 offset_right = 28.0
 offset_bottom = 28.0
+mouse_filter = 1
 script = ExtResource("1_q8785")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=249474924]
 position = Vector2(-2, -2)
 texture = ExtResource("1_5g2cy")
 centered = false
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=745322459]
 custom_minimum_size = Vector2(28, 28)
-layout_mode = 0
-offset_right = 28.0
-offset_bottom = 28.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="CenterContainer"]
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=1562907563]
 layout_mode = 2
+mouse_filter = 1
 
-[node name="item" type="Sprite2D" parent="CenterContainer/Panel"]
+[node name="item" type="TextureRect" parent="CenterContainer/Panel" unique_id=2070470235]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -14.0
+offset_right = 14.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
 
-[node name="Label" type="Label" parent="CenterContainer/Panel"]
+[node name="Label" type="Label" parent="CenterContainer/Panel" unique_id=925016652]
 custom_minimum_size = Vector2(20, 23)
 layout_mode = 0
 offset_left = 2.0

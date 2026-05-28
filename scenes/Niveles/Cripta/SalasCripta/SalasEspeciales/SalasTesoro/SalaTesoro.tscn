@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://qdwn36qyt0qc" path="res://assets/sprites/assets_finales/cripta/Tilesets/Tileset-Terrain.png" id="2_jha4c"]
 [ext_resource type="Texture2D" uid="uid://44gps5t2mtwy" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/banner 3.png" id="3_bewpu"]
 [ext_resource type="TileSet" uid="uid://clxp5x6hvcxip" path="res://assets/sprites/assets_finales/HitboxBordeCripta.tres" id="3_vchb1"]
-[ext_resource type="PackedScene" uid="uid://dj54lotxb4v3f" path="res://scenes/NPCs/Monstruos/slime.tscn" id="4_7sdep"]
 [ext_resource type="Texture2D" uid="uid://bc6a814fb03xa" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/banner 4.png" id="4_u0mu4"]
 [ext_resource type="Texture2D" uid="uid://c0ba7qft5gd5y" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/banner 8.png" id="5_6ek3r"]
 [ext_resource type="Texture2D" uid="uid://0d7d3cciji37" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/coffin lid - vertical - 4.png" id="5_7v2q0"]
@@ -8302,9 +8301,3 @@ offset_top = -383.0
 offset_right = 383.0
 offset_bottom = 383.0
 border_width = 4.5
-
-[node name="slime2" parent="." unique_id=930342458 instance=ExtResource("4_7sdep")]
-position = Vector2(-39, -22)
-
-[node name="slime" parent="." unique_id=825595274 instance=ExtResource("4_7sdep")]
-position = Vector2(75, 30)
