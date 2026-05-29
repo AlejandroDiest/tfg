@@ -2,7 +2,44 @@
 
 [ext_resource type="Script" uid="uid://dg8gn27dfmoj7" path="res://scripts/Niveles/Cripta/DatosSala.gd" id="1_5krus"]
 [ext_resource type="Texture2D" uid="uid://qdwn36qyt0qc" path="res://assets/sprites/assets_finales/cripta/Tilesets/Tileset-Terrain.png" id="2_yqhg6"]
+[ext_resource type="Texture2D" uid="uid://bb4x2os2m34v1" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/banner 1.png" id="3_8yxd2"]
 [ext_resource type="TileSet" uid="uid://clxp5x6hvcxip" path="res://assets/sprites/assets_finales/HitboxBordeCripta.tres" id="3_vohkn"]
+[ext_resource type="Texture2D" uid="uid://ktov55sxwh7n" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/banner 5.png" id="4_w8nom"]
+[ext_resource type="Texture2D" uid="uid://76r5kxqim2qf" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/banner 9.png" id="5_iobve"]
+[ext_resource type="Texture2D" uid="uid://i6ay22y8kjyc" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/banner 12.png" id="6_3sbcd"]
+[ext_resource type="Texture2D" uid="uid://depbf4w44tgpf" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/bones - color scheme 1 - 11.png" id="7_8yed2"]
+[ext_resource type="Texture2D" uid="uid://btroaikfj12mo" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/cross 1.png" id="8_4dc7d"]
+[ext_resource type="Texture2D" uid="uid://cop54rpfa7kvb" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle_burning2_1.png" id="9_o0nwc"]
+[ext_resource type="Texture2D" uid="uid://cedxnveqtmpfg" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/torch support front.png" id="9_utjr6"]
+[ext_resource type="Texture2D" uid="uid://btu0ed2odav7c" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle_burning2_2.png" id="10_ur1t1"]
+[ext_resource type="Texture2D" uid="uid://dvqvwh2mseb7u" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle_burning2_3.png" id="11_v6xov"]
+[ext_resource type="Texture2D" uid="uid://ci43kmy12wako" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle_burning2_4.png" id="12_hgg3m"]
+[ext_resource type="Texture2D" uid="uid://ds8yyw5sduna8" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle_burning2_5.png" id="13_vpni6"]
+[ext_resource type="Texture2D" uid="uid://voiju07yhlol" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle_burning2_6.png" id="14_j785k"]
+[ext_resource type="Texture2D" uid="uid://cl3iq3a11bhwv" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle_burning2_7.png" id="15_1m44m"]
+[ext_resource type="Texture2D" uid="uid://co3sssp8om7ib" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle_burning2_8.png" id="16_v5vud"]
+[ext_resource type="Texture2D" uid="uid://bnqjvgs533cbq" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle_burning2_9.png" id="17_rgjn5"]
+[ext_resource type="Texture2D" uid="uid://dtt5jtfchqnji" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle_burning2_10.png" id="18_sx7ru"]
+[ext_resource type="Texture2D" uid="uid://d2u3rkxevyyy7" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle_burning2_11.png" id="19_gf8xr"]
+[ext_resource type="Texture2D" uid="uid://cl8p5lo5xbqkm" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle_burning2_12.png" id="20_6phwm"]
+[ext_resource type="Texture2D" uid="uid://frt8qi503uel" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle-only smoke_1.png" id="22_g4jor"]
+[ext_resource type="Texture2D" uid="uid://b4yycsq4vnxrl" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle-only smoke_2.png" id="23_acvmu"]
+[ext_resource type="Texture2D" uid="uid://2nd8wp71awsm" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle-only smoke_3.png" id="24_juonq"]
+[ext_resource type="Texture2D" uid="uid://dnlbpaffics0v" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle-only smoke_4.png" id="25_hcbcq"]
+[ext_resource type="Texture2D" uid="uid://ds8bgaibrgyws" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle-only smoke_5.png" id="26_g0yac"]
+[ext_resource type="Texture2D" uid="uid://cd211g68l78uj" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle-only smoke_6.png" id="27_3e3bl"]
+[ext_resource type="Texture2D" uid="uid://jcpcie4ry6sd" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle-only smoke_7.png" id="28_q4s17"]
+[ext_resource type="Texture2D" uid="uid://c7jviy5aftqrm" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle-only smoke_8.png" id="29_2fxxg"]
+[ext_resource type="Texture2D" uid="uid://dhe5nrmrwulm5" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle-only smoke_9.png" id="30_kwapx"]
+[ext_resource type="Texture2D" uid="uid://cqcsc32pwkld4" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle-only smoke_10.png" id="31_ss0fq"]
+[ext_resource type="Texture2D" uid="uid://ccou48o468rub" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle-only smoke_11.png" id="32_4u5tk"]
+[ext_resource type="Texture2D" uid="uid://cbcev6mgjak4s" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle-only smoke_12.png" id="33_7lk82"]
+[ext_resource type="Texture2D" uid="uid://b8q3yq56jv3p8" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle-only smoke_13.png" id="34_opk67"]
+[ext_resource type="Texture2D" uid="uid://devlgrj52m27i" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle-only smoke_14.png" id="35_65825"]
+[ext_resource type="Texture2D" uid="uid://4n1sya4mjfet" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle-only smoke_15.png" id="36_ijknd"]
+[ext_resource type="Texture2D" uid="uid://d2680dyfhv86w" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle-only smoke_16.png" id="37_rm4u5"]
+[ext_resource type="Texture2D" uid="uid://d2os3ygj8h2w7" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle-only smoke_17.png" id="38_qv18r"]
+[ext_resource type="Texture2D" uid="uid://bi84f27jpmw75" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle-only smoke_18.png" id="39_fe8uj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qfrkk"]
 texture = ExtResource("2_yqhg6")
@@ -7548,6 +7585,178 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_hhl66")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j15cn"]
+texture = ExtResource("3_8yxd2")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_utjr6"]
+texture = ExtResource("4_w8nom")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4jor"]
+texture = ExtResource("5_iobve")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_acvmu"]
+texture = ExtResource("6_3sbcd")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_juonq"]
+texture = ExtResource("7_8yed2")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hcbcq"]
+texture = ExtResource("8_4dc7d")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ui6fl"]
+texture = ExtResource("9_utjr6")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_g0yac"]
+sources/0 = SubResource("TileSetAtlasSource_j15cn")
+sources/1 = SubResource("TileSetAtlasSource_utjr6")
+sources/2 = SubResource("TileSetAtlasSource_g4jor")
+sources/4 = SubResource("TileSetAtlasSource_acvmu")
+sources/5 = SubResource("TileSetAtlasSource_juonq")
+sources/6 = SubResource("TileSetAtlasSource_hcbcq")
+sources/7 = SubResource("TileSetAtlasSource_ui6fl")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3e3bl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_o0nwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ur1t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_v6xov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hgg3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vpni6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_j785k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_1m44m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_v5vud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rgjn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_sx7ru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_gf8xr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_6phwm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f0l34"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_g4jor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_acvmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_juonq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_hcbcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_g0yac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_3e3bl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_q4s17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_2fxxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_kwapx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_ss0fq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_4u5tk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_7lk82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_opk67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_65825")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_ijknd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_rm4u5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_qv18r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_fe8uj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="SalaBase" type="Node2D" unique_id=24117935 node_paths=PackedStringArray("tapon_norte", "tapon_sur", "tapon_este", "tapon_oeste")]
 script = ExtResource("1_5krus")
 puertas_disponibles = Array[Vector2]([Vector2(1, 0), Vector2(0, 1), Vector2(-1, 0), Vector2(0, -1)])
@@ -7571,6 +7780,54 @@ tile_set = SubResource("TileSet_afp1m")
 [node name="Borde" type="TileMapLayer" parent="." unique_id=694774103]
 tile_map_data = PackedByteArray("AAD1//b/AQAEAAIAAAD1//j/AQAEAAIAAAD1//f/AQAEAAIAAAD1//n/AQAEAAIAAAD1//r/AQAEAAIAAAD1//v/AQAEAAIAAAD1//z/AQAEAAIAAAD1//3/AQAEAAIAAAD1/wIAAQAEAAIAAAD1/wMAAQAEAAIAAAD1/wQAAQAEAAIAAAD1/wUAAQAEAAIAAAD1/wYAAQAEAAIAAAD1/wcAAQAEAAIAAAD1/wgAAQAEAAIAAAD1/wkAAQAEAAIAAAD0/wkAAQACAAIAAAD0/wgAAQACAAIAAAD0/wcAAQACAAIAAAD0/wYAAQACAAIAAAD0/wUAAQACAAIAAAD0/wQAAQACAAIAAAD0/wMAAQACAAIAAAD0/wIAAQACAAIAAAD0//3/AQACAAIAAAD0//z/AQACAAIAAAD0//v/AQACAAIAAAD0//r/AQACAAIAAAD0//n/AQACAAIAAAD0//j/AQACAAIAAAD0//f/AQACAAIAAAD0//b/AQACAAIAAAD0//X/AQACAAIAAAD0//T/AQACAAIAAAD1//T/AQACAAIAAAD2/woAAQACAAAAAAD1/woAAQADAAEAAAD3/woAAQACAAAAAAD4/woAAQACAAAAAAD5/woAAQACAAAAAAD6/woAAQACAAAAAAD7/woAAQACAAAAAAD8/woAAQACAAAAAAD9/woAAQACAAAAAAACAAoAAQACAAAAAAADAAoAAQACAAAAAAAEAAoAAQACAAAAAAAFAAoAAQACAAAAAAAGAAoAAQACAAAAAAAHAAoAAQACAAAAAAAIAAoAAQACAAAAAAAJAAoAAQACAAAAAAAKAAkAAQAAAAIAAAAKAAgAAQAAAAIAAAAKAAcAAQAAAAIAAAAKAAYAAQAAAAIAAAAKAAUAAQAAAAIAAAAKAAQAAQAAAAIAAAAKAAMAAQAAAAIAAAAKAAIAAQAAAAIAAAAKAP3/AQAAAAIAAAAKAPz/AQAAAAIAAAAKAPv/AQAAAAIAAAAKAPr/AQAAAAIAAAAKAPn/AQAAAAIAAAAKAPj/AQAAAAIAAAAKAPf/AQAAAAIAAAAKAPb/AQAAAAIAAAAKAAoAAQABAAEAAAAKAPX/AQABAAEAAGAJAPX/AQACAAAAADAIAPX/AQACAAAAADAHAPX/AQACAAAAADAGAPX/AQACAAAAADAFAPX/AQACAAAAADAEAPX/AQACAAAAADADAPX/AQACAAAAADACAPX/AQACAAAAADD9//X/AQACAAAAADD8//X/AQACAAAAADD7//X/AQACAAAAADD6//X/AQACAAAAADD2//T/AQACAAIAAAD3//T/AQACAAIAAAD4//T/AQACAAIAAAD5//T/AQACAAIAAAD6//T/AQACAAIAAAD7//T/AQACAAIAAAD8//T/AQACAAIAAAD9//T/AQACAAIAAAACAPT/AQACAAIAAAADAPT/AQACAAIAAAAEAPT/AQACAAIAAAAFAPT/AQACAAIAAAAGAPT/AQACAAIAAAAHAPT/AQACAAIAAAAIAPT/AQACAAIAAAAJAPT/AQACAAIAAAAKAPT/AQACAAIAAAALAPT/AQACAAIAAAD0/woAAQACAAIAAAD0/wsAAQACAAIAAAD1/wsAAQACAAIAAAD2/wsAAQACAAIAAAD3/wsAAQACAAIAAAD4/wsAAQACAAIAAAD5/wsAAQACAAIAAAD6/wsAAQACAAIAAAD7/wsAAQACAAIAAAD8/wsAAQACAAIAAAD9/wsAAQACAAIAAAACAAsAAQACAAIAAAADAAsAAQACAAIAAAAEAAsAAQACAAIAAAAFAAsAAQACAAIAAAAGAAsAAQACAAIAAAAHAAsAAQACAAIAAAAIAAsAAQACAAIAAAAJAAsAAQACAAIAAAAKAAsAAQACAAIAAAALAAsAAQACAAIAAAALAAoAAQACAAIAAAALAAkAAQACAAIAAAALAAgAAQACAAIAAAALAAcAAQACAAIAAAALAPX/AQACAAIAAAALAPb/AQACAAIAAAALAPf/AQACAAIAAAALAPj/AQACAAIAAAALAPn/AQACAAIAAAALAPr/AQACAAIAAAALAPv/AQACAAIAAAALAPz/AQACAAIAAAALAP3/AQACAAIAAAALAAIAAQACAAIAAAALAAMAAQACAAIAAAALAAQAAQACAAIAAAALAAUAAQACAAIAAAALAAYAAQACAAIAAAD+/woAAQADAAAAAAD+/wsAAQAEAAIAAAABAAoAAQADAAAAABABAAsAAQAEAAIAABAKAP7/AQADAAAAAEALAP7/AQAEAAIAAEAKAAEAAQADAAAAAGALAAEAAQAEAAIAAGD1/wEAAQADAAAAAHD0/wEAAQAEAAIAAHD0//7/AQAEAAIAAFD1//7/AQADAAAAAFD+//X/AQADAAAAACD+//T/AQAEAAIAACABAPT/AQAEAAIAADABAPX/AQADAAAAADD1//X/AQADAAEAAFD2//X/AQACAAAAADD3//X/AQACAAAAADD4//X/AQACAAAAADD5//X/AQACAAAAADA=")
 tile_set = SubResource("TileSet_qfrkk")
+
+[node name="Estructuras" type="TileMapLayer" parent="." unique_id=1110318674]
+tile_map_data = PackedByteArray("AAAGAOz/AAAAAAAAAAAGAO3/AAAAAAEAAAAGAO7/AAAAAAIAAAAHAOz/AAABAAAAAAAHAO3/AAABAAEAAAAHAO7/AAABAAIAAAAKAOz/AQAAAAAAAAAKAO3/AQAAAAEAAAAKAO7/AQAAAAIAAAALAOz/AQABAAAAAAALAO3/AQABAAEAAAALAO7/AQABAAIAAAD0/+z/AQAAAAAAAAD0/+3/AQAAAAEAAAD0/+7/AQAAAAIAAAD1/+z/AQABAAAAAAD1/+3/AQABAAEAAAD1/+7/AQABAAIAAAAOAOz/AgAAAAAAAAAOAO3/AgAAAAEAAAAOAO7/AgAAAAIAAAAPAOz/AgABAAAAAAAPAO3/AgABAAEAAAAPAO7/AgABAAIAAADw/+z/AgAAAAAAAADw/+3/AgAAAAEAAADw/+7/AgAAAAIAAADx/+z/AgABAAAAAADx/+3/AgABAAEAAADx/+7/AgABAAIAAADs/+z/BAAAAAAAAADs/+3/BAAAAAEAAADs/+7/BAAAAAIAAADt/+z/BAABAAAAAADt/+3/BAABAAEAAADt/+7/BAABAAIAAAASAOz/BAAAAAAAAAASAO3/BAAAAAEAAAASAO7/BAAAAAIAAAATAOz/BAABAAAAAAATAO3/BAABAAEAAAATAO7/BAABAAIAAAD4/+z/AAAAAAAAAAD4/+3/AAAAAAEAAAD4/+7/AAAAAAIAAAD5/+z/AAABAAAAAAD5/+3/AAABAAEAAAD5/+7/AAABAAIAAADs/+//BQAAAAAAAADs//D/BQAAAAEAAADt/+//BQABAAAAAADt//D/BQABAAEAAAD3/+//BQAAAAAAAAD3//D/BQAAAAEAAAD4/+//BQABAAAAAAD4//D/BQABAAEAAAAFAO//BQAAAAAAAAAFAPD/BQAAAAEAAAAGAO//BQABAAAAAAAGAPD/BQABAAEAAADw/+//BgAAAAAAAADw//D/BgAAAAEAAADx/+//BgABAAAAAADx//D/BgABAAEAAAALAO//BQAAAAAAAAALAPD/BQAAAAEAAAAMAO//BQABAAAAAAAMAPD/BQABAAEAAAAOAO//BgAAAAAAAAAOAPD/BgAAAAEAAAAPAO//BgABAAAAAAAPAPD/BgABAAEAAADv//z/BQAAAAAAAADv//3/BQAAAAEAAADw//z/BQABAAAAAADw//3/BQABAAEAAAAKAAIABQAAAAAAAAAKAAMABQAAAAEAAAALAAIABQABAAAAAAALAAMABQABAAEAAAD2/wIABQAAAAAAAAD2/wMABQAAAAEAAAD3/wIABQABAAAAAAD3/wMABQABAAEAAAAIAPz/BQAAAAAAAAAIAP3/BQAAAAEAAAAJAPz/BQABAAAAAAAJAP3/BQABAAEAAAD7//v/BwAAAAAAAAD7//z/BwAAAAEAAAD8//v/BwABAAAAAAD8//z/BwABAAEAAAD7/wIABwAAAAAAAAD7/wMABwAAAAEAAAD8/wIABwABAAAAAAD8/wMABwABAAEAAAADAPv/BwAAAAAAAAADAPz/BwAAAAEAAAAEAPv/BwABAAAAAAAEAPz/BwABAAEAAAADAAIABwAAAAAAAAADAAMABwAAAAEAAAAEAAIABwABAAAAAAAEAAMABwABAAEAAAA=")
+tile_set = SubResource("TileSet_g0yac")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Estructuras" unique_id=1763556753]
+position = Vector2(311.5, -255)
+scale = Vector2(1.109375, 1)
+sprite_frames = SubResource("SpriteFrames_3e3bl")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Estructuras" unique_id=589172770]
+position = Vector2(152.5, -256)
+scale = Vector2(1.4218751, 0.9687498)
+sprite_frames = SubResource("SpriteFrames_3e3bl")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Estructuras" unique_id=1705894709]
+position = Vector2(-83.5, -255.99998)
+scale = Vector2(1.234375, 0.96875024)
+sprite_frames = SubResource("SpriteFrames_3e3bl")
+autoplay = "default"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Estructuras" unique_id=1932787808]
+position = Vector2(-177.50002, -257.5)
+scale = Vector2(1.2968751, 0.9218751)
+sprite_frames = SubResource("SpriteFrames_3e3bl")
+autoplay = "default"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Estructuras" unique_id=2013523182]
+position = Vector2(-65, -78)
+scale = Vector2(1.1250001, 1.1875)
+sprite_frames = SubResource("SpriteFrames_f0l34")
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="Estructuras" unique_id=954891613]
+position = Vector2(63.000004, -78)
+scale = Vector2(1.34375, 1.1875)
+sprite_frames = SubResource("SpriteFrames_f0l34")
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="Estructuras" unique_id=472050996]
+position = Vector2(63.000004, 34.5)
+scale = Vector2(1.34375, 1.2656249)
+sprite_frames = SubResource("SpriteFrames_f0l34")
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="Estructuras" unique_id=1639769299]
+position = Vector2(-63.500004, 34.5)
+scale = Vector2(1.484375, 1.2656249)
+sprite_frames = SubResource("SpriteFrames_f0l34")
 
 [node name="Tapones" type="Node2D" parent="." unique_id=715695352]
 
