@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://bhf2vtxuxuo51"]
+
+[ext_resource type="Script" uid="uid://dqrekxnosbd60" path="res://scripts/ScriptsUI/Inventario/InventoryItem.gd" id="1_7bk5m"]
+[ext_resource type="Texture2D" uid="uid://d0rnivbe58g3y" path="res://assets/sprites/assets_finales/items/anillo2.png" id="2_nmnfy"]
+
+[resource]
+script = ExtResource("1_7bk5m")
+nombreItem = "Anillo de rubí"
+descripcion = "Otorga +2 de Vida y Daño"
+tipo_item = "Anillo"
+texturaItem = ExtResource("2_nmnfy")
+bono_dano = 1
+bono_vida = 1
+precio_compra = 50
+receta = {
+"AlaMurcielago": 20,
+"Hueso": 5
+}

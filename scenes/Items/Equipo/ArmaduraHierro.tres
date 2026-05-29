@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://cua42nugosc8p"]
+
+[ext_resource type="Script" uid="uid://dqrekxnosbd60" path="res://scripts/ScriptsUI/Inventario/InventoryItem.gd" id="1_me1yb"]
+[ext_resource type="Texture2D" uid="uid://ek751h4coxbf" path="res://assets/sprites/assets_finales/items/armadura_ns.png" id="2_eieff"]
+
+[resource]
+script = ExtResource("1_me1yb")
+nombreItem = "Armadura de Hierro"
+descripcion = "Otorga +3 de vida"
+tipo_item = "Armadura"
+texturaItem = ExtResource("2_eieff")
+bono_vida = 3
+precio_compra = 100
+receta = {
+"AlaMurcielago": 10,
+"Hueso": 5
+}

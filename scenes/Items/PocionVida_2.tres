@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://d4vk67tnaet4"]
+
+[ext_resource type="Script" uid="uid://dqrekxnosbd60" path="res://scripts/ScriptsUI/Inventario/InventoryItem.gd" id="1_dy6xf"]
+[ext_resource type="Texture2D" uid="uid://bso0j37f6n1gs" path="res://assets/sprites/assets_finales/items/pocion_2.png" id="2_dy6xf"]
+
+[resource]
+script = ExtResource("1_dy6xf")
+nombreItem = "Poción Vida+"
+descripcion = "Cura 2 corazones de vida"
+tipo_item = "Pocion"
+texturaItem = ExtResource("2_dy6xf")
+curacion_vida = 2
+precio_compra = 10

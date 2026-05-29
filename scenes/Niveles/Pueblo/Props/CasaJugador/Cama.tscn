@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://kuv2a6r3jcmr"]
+
+[ext_resource type="Texture2D" uid="uid://5rja6mq0es5l" path="res://assets/sprites/assets_finales/interior/assets/furniture_and_props_sprites/bed_7.png" id="1_legn1"]
+[ext_resource type="Script" uid="uid://ch77a40c8qbuy" path="res://scripts/Niveles/Pueblo/misc/cama.gd" id="1_uxguj"]
+[ext_resource type="Script" uid="uid://qe13n4w0kimt" path="res://scripts/NPCs/personaje/ZonaInteraccion.gd" id="3_kir5u"]
+[ext_resource type="Texture2D" uid="uid://csgwmhyg62ec2" path="res://assets/sprites/assets_finales/HUD/tecla_e.png" id="4_84q4n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sfpyy"]
+radius = 52.03845
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxguj"]
+size = Vector2(44, 62)
+
+[node name="Cama" type="Node2D" unique_id=1284160716]
+y_sort_enabled = true
+script = ExtResource("1_uxguj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1901549518]
+y_sort_enabled = true
+texture = ExtResource("1_legn1")
+offset = Vector2(0, -25)
+
+[node name="ZonaInteraccion" type="Area2D" parent="." unique_id=1599267584]
+position = Vector2(0, 3)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("3_kir5u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaInteraccion" unique_id=1364628429]
+position = Vector2(0, -22)
+shape = SubResource("CircleShape2D_sfpyy")
+
+[node name="Sprite2D" type="Sprite2D" parent="ZonaInteraccion" unique_id=1060916353]
+position = Vector2(0.99999994, -23.999998)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_84q4n")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1875592303]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=859359407]
+position = Vector2(0, -19)
+shape = SubResource("RectangleShape2D_uxguj")
+
+[connection signal="body_entered" from="ZonaInteraccion" to="." method="_on_zona_interaccion_body_entered"]
+[connection signal="body_entered" from="ZonaInteraccion" to="ZonaInteraccion" method="_on_body_entered"]
+[connection signal="body_exited" from="ZonaInteraccion" to="." method="_on_zona_interaccion_body_exited"]
+[connection signal="body_exited" from="ZonaInteraccion" to="ZonaInteraccion" method="_on_body_exited"]
+[connection signal="body_shape_entered" from="ZonaInteraccion" to="ZonaInteraccion" method="_on_body_shape_entered"]

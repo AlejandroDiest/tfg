@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://crqd5m3tu4md5"]
+[gd_scene format=3 uid="uid://crqd5m3tu4md5"]
 
 [ext_resource type="Texture2D" uid="uid://dk1aw12ce271t" path="res://assets/sprites/assets_finales/pueblo/Props/animated/Animated Tree2.png" id="1_4ep3v"]
 
@@ -66,8 +66,8 @@ animations = [{
 "speed": 4.0
 }]
 
-[node name="ArbolDos" type="Node2D"]
+[node name="ArbolDos" type="Node2D" unique_id=399829886]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=48476217]
 sprite_frames = SubResource("SpriteFrames_l3sud")
 frame_progress = 0.44485575

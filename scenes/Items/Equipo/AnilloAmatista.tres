@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://ddkrej72j8cp1"]
+
+[ext_resource type="Script" uid="uid://dqrekxnosbd60" path="res://scripts/ScriptsUI/Inventario/InventoryItem.gd" id="1_ttung"]
+[ext_resource type="Texture2D" uid="uid://dagbc7bcd1br7" path="res://assets/sprites/assets_finales/items/ring1.png" id="2_ttung"]
+
+[resource]
+script = ExtResource("1_ttung")
+nombreItem = "Anillo de Amatista"
+descripcion = "Otorga +1 de Vida y Daño"
+tipo_item = "Anillo"
+texturaItem = ExtResource("2_ttung")
+bono_dano = 2
+bono_vida = 2
+precio_compra = 250
+receta = {
+"Ala de murcielago": 20,
+"Hueso": 30
+}

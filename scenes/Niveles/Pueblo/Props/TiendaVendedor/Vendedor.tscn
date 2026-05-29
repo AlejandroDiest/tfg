@@ -180,7 +180,7 @@ font_size = 12
 [sub_resource type="CircleShape2D" id="CircleShape2D_sfpyy"]
 radius = 52.03845
 
-[node name="Vendedor" type="CharacterBody2D" unique_id=574545028]
+[node name="Vendedor" type="CharacterBody2D" unique_id=574545028 groups=["NPC"]]
 script = ExtResource("1_lm8f2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=707646966]
@@ -221,6 +221,7 @@ patch_margin_left = 5
 patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="Texto" type="Label" parent="CapaDialogo/CajaTextoDialogo" unique_id=196145078]
 layout_mode = 1
@@ -230,13 +231,14 @@ anchor_top = 0.162
 anchor_right = 0.95800006
 anchor_bottom = 0.86500007
 offset_left = 11.04015
-offset_top = 1.6666336
+offset_top = -2.9487548
 offset_right = 116.40721
-offset_bottom = 20.124077
+offset_bottom = 15.508686
 scale = Vector2(0.6, 0.6)
 text = "Hola"
 label_settings = SubResource("LabelSettings_ddbm1")
 autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="PantallaNegra" type="ColorRect" parent="CapaDialogo" unique_id=1217292110]
 visible = false

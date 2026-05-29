@@ -41,7 +41,7 @@ font = ExtResource("3_7i4el")
 font_size = 20
 font_color = Color(1, 0.6862745, 0.5921569, 1)
 
-[node name="Control" type="CanvasLayer" unique_id=1377733890]
+[node name="Control" type="CanvasLayer" unique_id=1377733890 groups=["InterfazInventario"]]
 script = ExtResource("2_dpae8")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1661836812]

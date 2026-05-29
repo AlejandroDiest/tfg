@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bj1g606httsn6"]
+
+[ext_resource type="Script" uid="uid://beg7ee2ep56fx" path="res://scripts/NPCs/personaje/antorcha.gd" id="1_dfua5"]
+
+[sub_resource type="Gradient" id="Gradient_5qa1r"]
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0, 0.18666667)
+colors = PackedColorArray(0.80766773, 0.45721108, 1.92523e-07, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rtgx6"]
+gradient = SubResource("Gradient_5qa1r")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[node name="Antorcha" type="PointLight2D" unique_id=2120154950]
+visible = false
+scale = Vector2(0.9999998, 0.9999998)
+texture = SubResource("GradientTexture2D_rtgx6")
+texture_scale = 10.0
+script = ExtResource("1_dfua5")

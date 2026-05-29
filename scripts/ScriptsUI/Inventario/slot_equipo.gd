@@ -12,7 +12,7 @@ signal clic_derecho_equipo(hueco)
 # --- VARIABLES INTERNAS ---
 var item_equipado = null 
 @onready var fondo_base = $FondoBase
-@onready var icono_item = $IconoItem
+@onready var icono_item = $CenterContainer/Panel/IconoItem
 
 func _ready():
 	actualizar_visual()

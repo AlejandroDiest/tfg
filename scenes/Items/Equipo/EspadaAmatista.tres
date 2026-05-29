@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://qeufkyiebnvg"]
+
+[ext_resource type="Script" uid="uid://dqrekxnosbd60" path="res://scripts/ScriptsUI/Inventario/InventoryItem.gd" id="1_bu2bi"]
+[ext_resource type="Texture2D" uid="uid://cpv0culss6jao" path="res://assets/sprites/assets_finales/items/icons_items_sword_purple.png" id="2_t7w8s"]
+
+[resource]
+script = ExtResource("1_bu2bi")
+nombreItem = "Espada de Amatista"
+descripcion = "Otorga +3 de daño"
+tipo_item = "Espada"
+texturaItem = ExtResource("2_t7w8s")
+bono_dano = 3
+precio_compra = 200
+receta = {
+"Hueso": 20
+}

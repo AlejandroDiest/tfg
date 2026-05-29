@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cutml2iot4hcj"]
+
+[ext_resource type="Texture2D" uid="uid://dhuwgpbfvh3ld" path="res://assets/sprites/assets_finales/cementerio/Props/abandoned structures - cemetery/props by individual sprites/tree - darker - 3.png" id="1_kkxts"]
+
+[node name="Arbol2" type="Node2D" unique_id=447353213]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=568005942]
+y_sort_enabled = true
+texture = ExtResource("1_kkxts")
+offset = Vector2(0, -40)

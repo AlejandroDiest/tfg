@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://rlmi2f7qtia1"]
+
+[ext_resource type="Script" uid="uid://dqrekxnosbd60" path="res://scripts/ScriptsUI/Inventario/InventoryItem.gd" id="1_gjqea"]
+[ext_resource type="Texture2D" uid="uid://cr1vx5mhqsxa5" path="res://assets/sprites/assets_finales/items/brazo_zombie.png" id="2_gjqea"]
+
+[resource]
+script = ExtResource("1_gjqea")
+nombreItem = "Brazo de Zombie"
+descripcion = "Brazo cortado de un Zombie"
+texturaItem = ExtResource("2_gjqea")
+precio_venta = 3

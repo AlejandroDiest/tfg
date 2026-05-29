@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://db5qgv87vq7wl"]
+
+[ext_resource type="Script" uid="uid://dqrekxnosbd60" path="res://scripts/ScriptsUI/Inventario/InventoryItem.gd" id="1_lx3lx"]
+[ext_resource type="Texture2D" uid="uid://c1c8x5ws3cdd8" path="res://assets/sprites/assets_finales/items/armadura_cuero.png" id="2_vqxtk"]
+
+[resource]
+script = ExtResource("1_lx3lx")
+nombreItem = "Armadura de Cuero"
+descripcion = "Otorga +1 de Vida"
+tipo_item = "Armadura"
+texturaItem = ExtResource("2_vqxtk")
+bono_vida = 1
+precio_compra = 10

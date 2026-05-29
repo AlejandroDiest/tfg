@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://ba7hsjiw8b3nj"]
+
+[ext_resource type="Texture2D" uid="uid://cmjha3iw4tvyv" path="res://assets/sprites/assets_finales/cementerio/Props/abandoned structures - cemetery/props by individual sprites/lamp post - color scheme 1 - lit - 3.png" id="1_emxq0"]
+[ext_resource type="Script" uid="uid://beg7ee2ep56fx" path="res://scripts/NPCs/personaje/antorcha.gd" id="2_emxq0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_07vvx"]
+radius = 8.0
+
+[sub_resource type="Gradient" id="Gradient_emxq0"]
+interpolation_color_space = 2
+colors = PackedColorArray(0.54954237, 0.3742814, 0.17711046, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gtd0x"]
+gradient = SubResource("Gradient_emxq0")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[node name="Luz" type="Node2D" unique_id=359089135]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2106821407]
+y_sort_enabled = true
+texture = ExtResource("1_emxq0")
+offset = Vector2(0, -20)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=645965297]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1316483878]
+position = Vector2(12, 7)
+shape = SubResource("CircleShape2D_07vvx")
+
+[node name="AntorchaPueblo" type="PointLight2D" parent="." unique_id=1981959653]
+scale = Vector2(0.2, 0.2)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_gtd0x")
+texture_scale = 6.66
+script = ExtResource("2_emxq0")

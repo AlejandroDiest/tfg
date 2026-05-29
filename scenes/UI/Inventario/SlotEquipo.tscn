@@ -2,10 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dp2x58o7gvgt" path="res://scripts/ScriptsUI/Inventario/slot_equipo.gd" id="1_ij0mr"]
 
-[node name="SlotEquipo" type="Control" unique_id=1518834348]
-custom_minimum_size = Vector2(28, 28)
-layout_mode = 3
-anchors_preset = 0
+[node name="SlotEquipo" type="Panel" unique_id=1328121609]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(30, 30)
+offset_right = 30.0
+offset_bottom = 30.0
+size_flags_horizontal = 0
+mouse_filter = 1
 script = ExtResource("1_ij0mr")
 
 [node name="FondoBase" type="TextureRect" parent="." unique_id=1221278963]
@@ -18,7 +21,21 @@ grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="IconoItem" type="TextureRect" parent="." unique_id=375330432]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1135031446]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=1380935074]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="IconoItem" type="TextureRect" parent="CenterContainer/Panel" unique_id=375330432]
+custom_minimum_size = Vector2(22, 22)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

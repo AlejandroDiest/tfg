@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://d2hr5rhja4a6e"]
+
+[ext_resource type="Script" uid="uid://dqrekxnosbd60" path="res://scripts/ScriptsUI/Inventario/InventoryItem.gd" id="1_wcypb"]
+[ext_resource type="Texture2D" uid="uid://0plybqq66gkk" path="res://assets/sprites/assets_finales/items/espada_2.png" id="2_ws70r"]
+
+[resource]
+script = ExtResource("1_wcypb")
+nombreItem = "Espada de hierro"
+descripcion = "Otorga +1 de Daño"
+tipo_item = "Espada"
+texturaItem = ExtResource("2_ws70r")
+bono_dano = 1
+metadata/_custom_type_script = "uid://dqrekxnosbd60"

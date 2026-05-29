@@ -4,6 +4,7 @@
 [ext_resource type="Resource" uid="uid://duqxbv32ij5ag" path="res://scenes/UI/Inventario/Inventario.tres" id="2_5qa1r"]
 [ext_resource type="Texture2D" uid="uid://c4x6t6sxf3ag5" path="res://assets/sprites/assets_finales/pueblo/Characters/Warrior/warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96.png" id="2_gwc8l"]
 [ext_resource type="Script" uid="uid://beg7ee2ep56fx" path="res://scripts/NPCs/personaje/antorcha.gd" id="3_5qa1r"]
+[ext_resource type="PackedScene" uid="uid://bj1g606httsn6" path="res://scenes/Misc/Luz.tscn" id="4_j3q6p"]
 [ext_resource type="PackedScene" uid="uid://b64ts4u6hq118" path="res://scenes/UI/HUD/HUD.tscn" id="4_rtgx6"]
 [ext_resource type="PackedScene" uid="uid://dfj6mhfr5npud" path="res://scenes/UI/Inventario/InventarioUI.tscn" id="6_5qa1r"]
 [ext_resource type="AudioStream" uid="uid://c5hggxplsbeeu" path="res://assets/sounds/666herohero-slash-21834.mp3" id="7_rtgx6"]
@@ -154,19 +155,6 @@ _data = {
 &"Run": SubResource("Animation_g0knn")
 }
 
-[sub_resource type="Gradient" id="Gradient_5qa1r"]
-interpolation_color_space = 2
-offsets = PackedFloat32Array(0, 0.18666667)
-colors = PackedColorArray(0.80766773, 0.45721108, 1.92523e-07, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_rtgx6"]
-gradient = SubResource("Gradient_5qa1r")
-width = 256
-height = 256
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(1, 0.5)
-
 [sub_resource type="Gradient" id="Gradient_j3q6p"]
 interpolation_color_space = 2
 colors = PackedColorArray(0.54954237, 0.3742814, 0.17711046, 1, 0, 0, 0, 1)
@@ -179,7 +167,7 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
 
-[node name="Personaje" type="CharacterBody2D" unique_id=1318302166 groups=["Jugador"]]
+[node name="Personaje" type="CharacterBody2D" unique_id=1318302166 groups=["Jugador", "player"]]
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 3
@@ -201,12 +189,7 @@ frame = 1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1489250380]
 libraries/ = SubResource("AnimationLibrary_g0knn")
 
-[node name="Antorcha" type="PointLight2D" parent="." unique_id=1469820025]
-visible = false
-scale = Vector2(0.9999998, 0.9999998)
-texture = SubResource("GradientTexture2D_rtgx6")
-texture_scale = 10.0
-script = ExtResource("3_5qa1r")
+[node name="Antorcha" parent="." unique_id=2120154950 instance=ExtResource("4_j3q6p")]
 
 [node name="AntorchaPueblo" type="PointLight2D" parent="." unique_id=1958380130]
 visible = false

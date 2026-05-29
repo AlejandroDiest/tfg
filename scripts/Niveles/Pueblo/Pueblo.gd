@@ -1,13 +1,21 @@
 extends Node2D
 @onready var personaje: CharacterBody2D = $Node2D/Personaje
-
+@onready var luces_noche = get_node_or_null("LucesNoche")
+@onready var luces_dia = get_node_or_null("LucesDia")
 @onready var jugador = $Node2D/Personaje
 @onready var filtro_noche = $Noche 
 func _ready():
 	configurar_camaras()
 	actualizar_ambiente(GameManager.es_de_noche)
 	GameManager.connect("cambio_horario", actualizar_ambiente)
-
+	if SceneManager.destino_spawn_point != "":
+		var marker = get_node_or_null(SceneManager.destino_spawn_point)
+		
+		if marker and jugador:
+		
+			jugador.global_position = marker.global_position
+			
+		SceneManager.destino_spawn_point = ""
 func actualizar_ambiente(es_noche: bool):
 	
 	if filtro_noche:
@@ -18,7 +26,27 @@ func actualizar_ambiente(es_noche: bool):
 		antorcha.visible = es_noche 
 	if !es_noche:
 		personaje.modulate = Color(1, 1, 1)
-
+		
+	if luces_noche:
+		luces_noche.visible = es_noche
+	if luces_dia:
+		luces_dia.visible = !es_noche
+	gestionar_npcs(es_noche)
+	
+func gestionar_npcs(es_noche: bool):
+	var npcs = get_tree().get_nodes_in_group("NPC")
+	for npc in npcs:
+		var debe_estar_activo = not es_noche
+		if npc.name == "Herrero":
+			if GameManager.estado_actual_vendedor < GameManager.EstadoVendedor.CASA_REPARADA:
+				debe_estar_activo = false
+		if debe_estar_activo:
+			npc.visible = true
+			npc.process_mode = Node.PROCESS_MODE_INHERIT
+		else:
+			npc.visible = false
+			npc.process_mode = Node.PROCESS_MODE_DISABLED
+			
 func configurar_camaras():
 	if not jugador.has_node("Camera2D") or not jugador.has_node("HUD"):
 		return

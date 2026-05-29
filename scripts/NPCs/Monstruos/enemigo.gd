@@ -14,6 +14,7 @@ extends CharacterBody2D
 @export var scene_drop : PackedScene 
 @export var loot_item : InvItem      
 @export var drop_chance : float = 0.5 
+@export var delay_drop: float = 0.0 # NUEVO: Tiempo de espera extra tras morir
 
 var vida_actual: int = 0
 var objetivo: Node2D = null 
@@ -44,8 +45,7 @@ func _ready():
 		timer_deambular.timeout.connect(_on_timer_deambular_timeout)
 
 	# --- CORRECCIÓN CRÍTICA: Conectar la Detección por Código ---
-	# Así nos aseguramos de que los "ojos" funcionen siempre
-	var area_deteccion = $AreaDeteccion # Asegúrate que el nodo se llama así
+	var area_deteccion = $AreaDeteccion 
 	if not area_deteccion.body_entered.is_connected(_on_area_deteccion_body_entered):
 		area_deteccion.body_entered.connect(_on_area_deteccion_body_entered)
 	
@@ -62,11 +62,9 @@ func _physics_process(_delta):
 	
 	# --- NUEVO LÓGICA DE KNOCKBACK ---
 	if herido:
-		# Si está herido, frenamos la velocidad poco a poco usando move_toward
-		# El * 5 es la "fricción". A mayor número, antes frena.
 		velocity = velocity.move_toward(Vector2.ZERO, empuje * _delta * 5)
 		move_and_slide()
-		return # No hacemos nada más mientras esté aturdido por el golpe
+		return
 
 	if objetivo:
 		var distancia = global_position.distance_to(objetivo.global_position)
@@ -83,24 +81,22 @@ func _physics_process(_delta):
 # --- COMPORTAMIENTOS ---
 
 func _perseguir_jugador():
-	# SOLUCIÓN 1: Movimiento Directo (Sin NavigationAgent por ahora)
 	var direccion = global_position.direction_to(objetivo.global_position)
 	velocity = direccion * velocidad
 	_reproducir_animacion("Run")
 
 func _intentar_atacar():
-	velocity = Vector2.ZERO # Frenar en seco
+	velocity = Vector2.ZERO
 	
 	if puede_atacar:
 		atacar()
 	else:
-		# Si estoy en enfriamiento (cooldown), me quedo quieto mirando
 		_reproducir_animacion("Idle")
 
 func atacar():
-	atacando = true      # BLOQUEO: "Estoy ocupado"
-	puede_atacar = false # COOLDOWN: "Gasto mi turno"
-	anim.play("Attack")  # Forzamos la animación (sin usar _reproducir)
+	atacando = true      
+	puede_atacar = false 
+	anim.play("Attack")  
 
 func recibir_daño(cantidad: int, direccion_empuje: Vector2 = Vector2.ZERO):
 	if esta_muerto: return
@@ -121,23 +117,35 @@ func recibir_daño(cantidad: int, direccion_empuje: Vector2 = Vector2.ZERO):
 
 func morir():
 	esta_muerto = true
-	intentar_soltar_loot()
 	atacando = false
 	herido = false
 	velocity = Vector2.ZERO
 	
+	# Desactivar físicas de forma segura
 	$CollisionShape2D.set_deferred("disabled", true)
 	
+	# Avisar al GameManager si es el Zombie de la misión
+	# Solo ejecutamos esto si estamos matando al EnemigoBase del Cementerio
+	if name == "Enemigobase":
+		if GameManager.estado_cementerio == GameManager.EstadoCementerio.ZOMBIE:
+			GameManager.estado_cementerio = GameManager.EstadoCementerio.VERJA
+	
+	# Reproducir animación
 	anim.play("Die")
 	
+	# Esperar a que termine la animación
 	await anim.animation_finished
 
+	if delay_drop > 0.0:
+		await get_tree().create_timer(delay_drop).timeout
+
+	intentar_soltar_loot()
+	
 	set_physics_process(false)
 
 # --- UTILIDADES ---
 
 func _reproducir_animacion(nombre: String):
-	# Solo cambia si no está sonando ya, para evitar "tartamudeo"
 	if anim.current_animation != nombre:
 		anim.play(nombre)
 
@@ -147,14 +155,13 @@ func _gestionar_giro_sprite():
 
 # --- SEÑALES ---
 
-# SOLUCIÓN 3: Esta función desbloquea al monstruo cuando termina la animación
 func _on_animation_finished(anim_name):
 	if anim_name == "Attack":
-		atacando = false      # ¡Ya he terminado el golpe!
-		timer_ataque.start()  # Ahora empieza el tiempo de espera
+		atacando = false     
+		timer_ataque.start() 
 	
 	if anim_name == "Hurt":
-		herido = false        # Ya me he recuperado del golpe
+		herido = false       
 
 func _on_area_deteccion_body_entered(body):
 	if body.name == "Personaje":
@@ -168,27 +175,17 @@ func _on_timer_ataque_timeout():
 	puede_atacar = true
 	
 func intentar_soltar_loot():
-	# 1. Seguridad: Si no hemos configurado qué soltar, no hacemos nada
 	if scene_drop == null or loot_item == null:
 		return
 	
-	# 2. Tiramos el dado (0.0 a 1.0)
 	if randf() <= drop_chance:
 		var nuevo_drop = scene_drop.instantiate()
-		
-		# 3. Le pasamos los datos del objeto (Ej: El Ala)
-		# IMPORTANTE: Asumimos que ItemDrop.gd tiene la variable 'item_data'
 		nuevo_drop.item_data = loot_item
-		
-		# 4. Lo colocamos donde está el monstruo
 		nuevo_drop.global_position = global_position
 		
-		# 5. Lo añadimos al MUNDO (no al monstruo, o desaparecerá con él)
-		get_tree().current_scene.add_child(nuevo_drop)
-		# Alternativa si la anterior falla: get_parent().add_child(nuevo_drop)
+		get_parent().add_child(nuevo_drop)
 	
 func _deambular():
-	# Aplicamos movimiento en la dirección aleatoria actual
 	velocity = direccion_deambular * velocidad_deambular
 	
 	if velocity != Vector2.ZERO:
@@ -197,29 +194,20 @@ func _deambular():
 		_reproducir_animacion("Idle")
 
 func _on_timer_deambular_timeout():
-	# Este es el "Cerebro Indeciso"
-	
-	# 1. Decidir dirección
 	if randf() > 0.5:
 		direccion_deambular = Vector2.ZERO
 	else:
 		direccion_deambular = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
 		
-	# 2. Cambiar el tiempo para la PRÓXIMA decisión
 	timer_deambular.wait_time = randf_range(1.0, 3.0)
-	
-	# 3. --- CORRECCIÓN CRÍTICA: Forzar el reinicio ---
-	# Esto asegura que el bucle continúe infinitamente
 	timer_deambular.start()
 	
 func _input(event):
-	if event.is_action_pressed("ui_accept"): # Espacio
+	if event.is_action_pressed("ui_accept"):
 		recibir_daño(1)
 
-
 func _on_area_ataque_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
-
+	pass
 
 func _on_area_ataque_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.
+	pass

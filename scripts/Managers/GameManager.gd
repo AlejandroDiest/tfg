@@ -5,7 +5,9 @@ extends Node
 var inventario_recurso: Inv = preload("res://scenes/UI/Inventario/Inventario.tres") 
 var menu_pausa = preload("res://scenes/UI/Menus/MenuPausa.tscn")
 var dialogo_activo = false
+var puerta_destino: String = ""
 var inventario_abierto = false
+var herrero_hablado: bool = false
 var datos_jugador: Dictionary = {
 	"oro": 0,
 	"vida_maxima": 3,
@@ -22,9 +24,19 @@ enum EstadoPueblo {
 	HERRERIA_FIXED,
 	NOCHE
 }
-
+enum EstadoVendedor { 
+	DESCONOCIDO,   
+	MISION_ITEM,   
+	CASA_REPARADA,
+	TIENDA_ABIERTA  
+}
+enum EstadoCementerio {
+	ZOMBIE,  
+	VERJA,  
+	ABIERTO  
+}
 var estado_pueblo = EstadoPueblo.INICIO
-
+var estado_cementerio = EstadoCementerio.ZOMBIE
 var es_de_noche: bool = false
 signal cambio_horario(es_noche)
 
@@ -34,12 +46,7 @@ func alternar_dia_noche():
 	emit_signal("cambio_horario", es_de_noche)
 	
 	
-enum EstadoVendedor { 
-	DESCONOCIDO,   
-	MISION_ITEM,   
-	CASA_REPARADA,
-	TIENDA_ABIERTA  
-}
+
 var estado_actual_vendedor = EstadoVendedor.DESCONOCIDO
 
 func _ready():
@@ -49,8 +56,9 @@ func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		pausar_juego()
 
-# --- LÓGICA DE GAMEPLAY ORIGINAL ---
 func pausar_juego():
+	if inventario_abierto:
+		return
 	var menu_instance = menu_pausa.instantiate()
 	get_tree().root.add_child(menu_instance)
 	get_tree().paused = true
@@ -63,7 +71,6 @@ func recibir_daño():
 func curar_personaje():
 	datos_jugador.vida_actual = datos_jugador.vida_maxima
 
-# ESTA FALTABA EN LA VERSIÓN ANTERIOR
 func respawnear():
 	datos_jugador.vida_actual = datos_jugador.vida_maxima
 

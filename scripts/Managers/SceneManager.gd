@@ -6,7 +6,7 @@ var nivel_cementerio_cache: PackedScene = null
 
 var loading_screen_scene = preload("res://scenes/UI/PantallasCarga/PantallaCarga.tscn") 
 var destino_spawn_point: String = ""
-
+var viajando: bool = false
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
@@ -25,9 +25,11 @@ func ir_al_nivel_rapido(nombre_nivel: String, nombre_spawn: String):
 	else:
 		print("ERROR CRÍTICO: El nivel ", nombre_nivel, " no está en la mochila.")
 
-func cambiar_y_posicionar(nueva_escena_ruta: String):
-
-	
+func cambiar_y_posicionar(nueva_escena_ruta: String, nombre_spawn: String = ""):
+	if viajando:
+			return
+	destino_spawn_point = nombre_spawn
+	viajando = true
 	var loading_instance = loading_screen_scene.instantiate()
 	get_tree().root.add_child(loading_instance) 
 	
@@ -35,5 +37,7 @@ func cambiar_y_posicionar(nueva_escena_ruta: String):
 	await get_tree().create_timer(1.0).timeout 
 	
 	get_tree().change_scene_to_file(nueva_escena_ruta)
-	
+	get_tree().paused = false
 	await loading_instance.desaparecer()
+	loading_instance.queue_free()
+	viajando = false

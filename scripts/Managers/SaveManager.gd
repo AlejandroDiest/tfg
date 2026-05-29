@@ -6,8 +6,7 @@ var partida_actual = 0
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
-# --- LÓGICA DE GUARDADO MEJORADA ---
-func guardar_partida():
+func guardar_partida(ruta_escena_actual: String = "", posicion_jugador = null):
 	var archivo = FileAccess.open(guardado_ruta_actual(), FileAccess.WRITE)
 	if FileAccess.get_open_error() != OK:
 		print("Error al guardar en slot ", partida_actual)
@@ -16,6 +15,13 @@ func guardar_partida():
 	GameManager.datos_jugador["inventario"] = _serializar_inventario()
 	GameManager.datos_jugador["estado_vendedor"] = GameManager.estado_actual_vendedor
 	GameManager.datos_jugador["estado_pueblo"] = GameManager.estado_pueblo
+	GameManager.datos_jugador["estado_cementerio"] = GameManager.estado_cementerio
+	
+	if ruta_escena_actual != "":
+		GameManager.datos_jugador["escena_guardada"] = ruta_escena_actual
+		if posicion_jugador != null:
+			GameManager.datos_jugador["posicion_x"] = posicion_jugador.x
+			GameManager.datos_jugador["posicion_y"] = posicion_jugador.y
 	
 	var json_texto = JSON.stringify(GameManager.datos_jugador, "\t")
 	archivo.store_string(json_texto)
@@ -35,18 +41,21 @@ func cargar_partida():
 		GameManager.datos_jugador = datos_guardados
 		
 		GameManager.datos_jugador.oro = int(GameManager.datos_jugador.get("oro", 0))
-		GameManager.datos_jugador.vida_maxima = int(GameManager.datos_jugador.get("vida_maxima", 3))
+		GameManager.datos_jugador.vida_maxima = 3 
+		GameManager.datos_jugador.dano = 0 
 		GameManager.datos_jugador.vida_actual = int(GameManager.datos_jugador.get("vida_actual", 3))
+		
 		GameManager.datos_jugador["volumen_musica"] = float(datos_guardados.get("volumen_musica", 1.0))
 		GameManager.datos_jugador["volumen_sfx"] = float(datos_guardados.get("volumen_sfx", 1.0))
 		GameManager.estado_actual_vendedor = int(datos_guardados.get("estado_vendedor", 0))
 		GameManager.estado_pueblo = int(datos_guardados.get("estado_pueblo", 0))
+		GameManager.estado_cementerio = int(datos_guardados.get("estado_cementerio", 0))
 		
 		var bus_musica = AudioServer.get_bus_index("Musica")
 		var vol_musica = GameManager.datos_jugador.get("volumen_musica", 1.0)
 		AudioServer.set_bus_volume_db(bus_musica, linear_to_db(vol_musica))
 		
-		var bus_sfx = AudioServer.get_bus_index("SFX")
+		var bus_sfx = AudioServer.get_bus_index("VFX")
 		var vol_sfx = GameManager.datos_jugador.get("volumen_sfx", 1.0)
 		AudioServer.set_bus_volume_db(bus_sfx, linear_to_db(vol_sfx))
 		
@@ -55,7 +64,31 @@ func cargar_partida():
 		else:
 			GameManager.inventario_recurso.reset()
 			
+		
+		if datos_guardados.has("equipamiento"):
+			GameManager.datos_jugador["equipamiento"] = datos_guardados["equipamiento"]
+			for tipo in GameManager.datos_jugador["equipamiento"]:
+				var ruta = GameManager.datos_jugador["equipamiento"][tipo]
+				if ruta != "" and ResourceLoader.exists(ruta):
+					var item_cargado = load(ruta)
+					GameManager.datos_jugador.vida_maxima += item_cargado.bono_vida
+					GameManager.datos_jugador.dano += item_cargado.bono_dano
+			
 		print("Datos cargados del Slot ", partida_actual)
+		
+		var escena = datos_guardados.get("escena_guardada", "")
+		if escena != "":
+			var posX = datos_guardados.get("posicion_x", 0)
+			var posY = datos_guardados.get("posicion_y", 0)
+			
+			SceneManager.destino_spawn_point = ""
+			SceneManager.cambiar_y_posicionar(escena, "") 
+			call_deferred("_teletransportar_jugador", Vector2(posX, posY))
+
+func _teletransportar_jugador(pos: Vector2):
+	var jugador = get_tree().get_first_node_in_group("player")
+	if jugador:
+		jugador.global_position = pos
 
 func resetear_datos():
 	GameManager.datos_jugador = {
@@ -81,7 +114,6 @@ func existe_partida_en_slot(numero_slot: int) -> bool:
 	var ruta = RUTA_GUARDADO + str(numero_slot) + ".json"
 	return FileAccess.file_exists(ruta)
 
-# --- SERIALIZACIÓN (Intacta, ya era perfecta) ---
 func _serializar_inventario() -> Array:
 	var lista_guardado = []
 	for slot in GameManager.inventario_recurso.inventario:

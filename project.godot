@@ -54,6 +54,10 @@ player=""
 CasaHerrero=""
 CasaJugador=""
 SalidaCementerio=""
+NPC=""
+InterfazInventario=""
+TiendaGlobal=""
+HerreroGlobal=""
 
 [input]
 

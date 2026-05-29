@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://4kcex6wgwvo1" path="res://scenes/NPCs/Monstruos/EnemigoBase.tscn" id="1_epmnj"]
 [ext_resource type="Texture2D" uid="uid://bae2shws2om4o" path="res://assets/sprites/assets_finales/cementerio/Characters/bat/Bat-all-animations-96x96-each row is a different animation-from top to bottom-Idle-walk-walk to atk transition-atk instance-atk-hurt-death.png" id="2_pptii"]
-[ext_resource type="PackedScene" uid="uid://d4jcrfkxni85d" path="res://scenes/ItemDrop.tscn" id="2_yenp6"]
+[ext_resource type="PackedScene" uid="uid://d4jcrfkxni85d" path="res://scenes/Items/ItemDrop.tscn" id="2_yenp6"]
 [ext_resource type="Resource" uid="uid://csti4bddfo5m2" path="res://scenes/Items/AlaMurcielago.tres" id="3_q3n2q"]
 
 [sub_resource type="Animation" id="Animation_sncj7"]

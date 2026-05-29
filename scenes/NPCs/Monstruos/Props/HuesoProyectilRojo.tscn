@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://w7fq01y3iqhs"]
+
+[ext_resource type="Script" uid="uid://ec3wi7i24c33" path="res://scripts/NPCs/Monstruos/hueso_proyectil.gd" id="1_pauko"]
+[ext_resource type="Texture2D" uid="uid://b5gmfktulcwsf" path="res://assets/sprites/assets_finales/cripta/Characters/Skeleton/hueso_2.png" id="2_pauko"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_diww5"]
+radius = 15.033297
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5b80c"]
+atlas = ExtResource("2_pauko")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajf1e"]
+atlas = ExtResource("2_pauko")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cv1w2"]
+atlas = ExtResource("2_pauko")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35of0"]
+atlas = ExtResource("2_pauko")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq3nb"]
+atlas = ExtResource("2_pauko")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdmyj"]
+atlas = ExtResource("2_pauko")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6pot"]
+atlas = ExtResource("2_pauko")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yks87"]
+atlas = ExtResource("2_pauko")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ocs00"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5b80c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajf1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cv1w2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35of0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fq3nb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdmyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6pot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yks87")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="HuesoProyectil" type="Area2D" unique_id=1616568614]
+script = ExtResource("1_pauko")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=50805907]
+shape = SubResource("CircleShape2D_diww5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=155232313]
+sprite_frames = SubResource("SpriteFrames_ocs00")
+autoplay = "default"
+frame_progress = 0.036553346

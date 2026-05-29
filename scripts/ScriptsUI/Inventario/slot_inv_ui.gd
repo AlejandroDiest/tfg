@@ -13,7 +13,11 @@ func update(slot: InvSlot):
 		item_sprite.visible = true
 		item_sprite.texture = slot.item.texturaItem 
 		label.visible = true
-		label.text = str(slot.cantItem)
+		if slot.cantItem > 1:
+			label.text = str(slot.cantItem)
+			label.visible = true
+		else:
+			label.visible = false 
 		tooltip_text = slot.item.nombreItem + "\n" + slot.item.descripcion
 		
 func _gui_input(event):

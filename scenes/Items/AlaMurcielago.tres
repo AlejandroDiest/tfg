@@ -5,7 +5,8 @@
 
 [resource]
 script = ExtResource("1_wcu46")
-nombreItem = "AlaMurcielago"
+nombreItem = "Ala de murcielago"
 descripcion = "Ala cortada de un murcielago."
 texturaItem = ExtResource("2_qwoo8")
+precio_venta = 5
 metadata/_custom_type_script = "uid://dqrekxnosbd60"

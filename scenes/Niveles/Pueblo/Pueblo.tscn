@@ -4,22 +4,29 @@
 [ext_resource type="Texture2D" uid="uid://uvg05l12w1ib" path="res://assets/sprites/assets_finales/pueblo/Tilesets/Tileset-Terrain.png" id="1_yj2y8"]
 [ext_resource type="PackedScene" uid="uid://c3pca05365113" path="res://scenes/Niveles/Pueblo/CasaHerrero.tscn" id="2_7d4hp"]
 [ext_resource type="Texture2D" uid="uid://bh5iy3hyklmiw" path="res://assets/sprites/assets_finales/pueblo/Tilesets/Animated water tiles-transp.png" id="2_40rvy"]
+[ext_resource type="PackedScene" uid="uid://clfm0qnjl4rn6" path="res://scenes/Niveles/Pueblo/Props/TiendaVendedor/TiendaUI.tscn" id="2_ra0r5"]
 [ext_resource type="PackedScene" uid="uid://c3y38jgxdprvi" path="res://scenes/NPCs/Personajes/Personaje.tscn" id="3_d2twj"]
+[ext_resource type="PackedScene" uid="uid://c3c7jaj7lk100" path="res://scenes/Niveles/Pueblo/Props/CasaHerrero/HerreroUI.tscn" id="3_s2pmu"]
 [ext_resource type="Texture2D" uid="uid://cdk7vdoqintrn" path="res://assets/sprites/assets_finales/pueblo/Tilesets/tileset-cliff-premade corners.png" id="5_xws1h"]
 [ext_resource type="Texture2D" uid="uid://blc625wbtrtdi" path="res://assets/sprites/assets_finales/pueblo/Props/animated/Animated Tree1+2.png" id="6_6klks"]
 [ext_resource type="Texture2D" uid="uid://c6gguno1wyayp" path="res://assets/sprites/assets_finales/pueblo/Tilesets/tileset-cliff-transp.png" id="6_qkm2x"]
-[ext_resource type="Script" uid="uid://7gcpsbjc2ro" path="res://scripts/Niveles/Pueblo/ScriptsPuertas/EntradaCripta.gd" id="6_upvll"]
 [ext_resource type="Texture2D" uid="uid://bq2wryqirbxph" path="res://assets/sprites/assets_finales/pueblo/Tilesets/tileset-cliff.png" id="7_1ijsk"]
-[ext_resource type="PackedScene" uid="uid://bnlibe20d4b22" path="res://scenes/Misc/ZonaInteraccion.tscn" id="8_87i80"]
-[ext_resource type="Texture2D" uid="uid://balx0dcxyct5q" path="res://assets/sprites/assets_finales/interior/assets/furniture_and_props_sprites/banner_4.png" id="10_i03kf"]
 [ext_resource type="AudioStream" uid="uid://b71i4pnatun7o" path="res://assets/music/Pueblo.mp3" id="11_u0jbr"]
+[ext_resource type="Script" uid="uid://c8ogs6ji3o6om" path="res://scenes/Niveles/Pueblo/casa_player.gd" id="14_ra0r5"]
 [ext_resource type="Script" uid="uid://iyxpw13q4rtt" path="res://scripts/Niveles/Pueblo/ScriptsPuertas/ZonaSalida.gd" id="14_xws1h"]
+[ext_resource type="PackedScene" uid="uid://rtiwcxqnki8e" path="res://scenes/Misc/CambioZona.tscn" id="15_c2pfg"]
 [ext_resource type="PackedScene" uid="uid://422ovqvum50u" path="res://scenes/Niveles/Pueblo/TiendaVendedor.tscn" id="15_iwlaa"]
 [ext_resource type="PackedScene" uid="uid://00lpcxccearw" path="res://scenes/Niveles/Pueblo/CasaPlayer.tscn" id="15_xws1h"]
 [ext_resource type="AudioStream" uid="uid://lo6e88pudavo" path="res://assets/sounds/PasosHierba.ogg" id="16_q7iq4"]
-[ext_resource type="PackedScene" uid="uid://d4jcrfkxni85d" path="res://scenes/ItemDrop.tscn" id="17_1ijsk"]
-[ext_resource type="Resource" uid="uid://d2hr5rhja4a6e" path="res://scenes/Items/Espada.tres" id="21_uolu1"]
-[ext_resource type="Resource" uid="uid://i011q37k6mh6" path="res://scenes/Items/Armadura_1.tres" id="22_atufp"]
+[ext_resource type="PackedScene" uid="uid://d4jcrfkxni85d" path="res://scenes/Items/ItemDrop.tscn" id="17_1ijsk"]
+[ext_resource type="Resource" uid="uid://cua42nugosc8p" path="res://scenes/Items/Equipo/ArmaduraHierro.tres" id="18_88g26"]
+[ext_resource type="PackedScene" uid="uid://ba7hsjiw8b3nj" path="res://scenes/Niveles/Cementerio/Props/Farola.tscn" id="18_uolu1"]
+[ext_resource type="Texture2D" uid="uid://cmjha3iw4tvyv" path="res://assets/sprites/assets_finales/cementerio/Props/props by individual sprites/lamp post - color scheme 1 - lit - 3.png" id="19_ke6m1"]
+[ext_resource type="Resource" uid="uid://d2hr5rhja4a6e" path="res://scenes/Items/Equipo/EspadaHierro.tres" id="21_uolu1"]
+[ext_resource type="Resource" uid="uid://i011q37k6mh6" path="res://scenes/Items/Equipo/ArmaduraMalla.tres" id="22_atufp"]
+[ext_resource type="Script" uid="uid://beg7ee2ep56fx" path="res://scripts/NPCs/personaje/antorcha.gd" id="23_ra0r5"]
+[ext_resource type="PackedScene" uid="uid://dknwylvwbhoy5" path="res://scenes/Niveles/Cementerio/Props/Farola_Apagada.tscn" id="24_88g26"]
+[ext_resource type="Texture2D" uid="uid://c8sq5qadbuot8" path="res://assets/sprites/assets_finales/cementerio/Props/props by individual sprites/lamp post - color scheme 2  - 3.png" id="25_ra0r5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i03kf"]
 texture = ExtResource("6_6klks")
@@ -6357,9 +6364,31 @@ sources/1 = SubResource("TileSetAtlasSource_87i80")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iwlaa"]
 size = Vector2(20, 150)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_07vvx"]
+radius = 8.0
+
+[sub_resource type="Gradient" id="Gradient_s2pmu"]
+interpolation_color_space = 2
+colors = PackedColorArray(0.54954237, 0.3742814, 0.17711046, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s2pmu"]
+gradient = SubResource("Gradient_s2pmu")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q3r22"]
+radius = 8.0
+
 [node name="Pueblo" type="Node2D" unique_id=1168549738]
 y_sort_enabled = true
 script = ExtResource("1_oghdp")
+
+[node name="TiendaUi" parent="." unique_id=238597081 instance=ExtResource("2_ra0r5")]
+
+[node name="HerreroUI" parent="." unique_id=1179556226 instance=ExtResource("3_s2pmu")]
 
 [node name="Noche" type="CanvasModulate" parent="." unique_id=1997118838]
 visible = false
@@ -6439,25 +6468,18 @@ y_sort_enabled = true
 [node name="CasaHerrero" parent="Estructuras" unique_id=1599085141 groups=["CasaHerrero"] instance=ExtResource("2_7d4hp")]
 position = Vector2(540, -266)
 
-[node name="Puerta" type="Node2D" parent="Estructuras" unique_id=622219981]
-position = Vector2(325, 185)
-script = ExtResource("6_upvll")
-escena_destino = "uid://b5ilj4aondn1g"
-
-[node name="SpritePuerta" type="Sprite2D" parent="Estructuras/Puerta" unique_id=687199432]
-position = Vector2(-74.49999, -128.74998)
-scale = Vector2(1.1874998, 1.15625)
-texture = ExtResource("10_i03kf")
-
-[node name="ZonaInteraccion" parent="Estructuras/Puerta" unique_id=1879887701 instance=ExtResource("8_87i80")]
-position = Vector2(-74.5, -117.75)
-
 [node name="TiendaVendedor" parent="Estructuras" unique_id=2014376311 instance=ExtResource("15_iwlaa")]
 y_sort_enabled = true
 position = Vector2(-170, 255)
 
 [node name="CasaPlayer" parent="Estructuras" unique_id=505411988 instance=ExtResource("15_xws1h")]
 position = Vector2(-405, -892)
+script = ExtResource("14_ra0r5")
+
+[node name="Area2D" parent="Estructuras/CasaPlayer" unique_id=47059056 instance=ExtResource("15_c2pfg")]
+position = Vector2(104, -61)
+ruta = "res://scenes/Niveles/Pueblo/Props/CasaJugador/InteriorCasa.tscn"
+nombre_marker_destino = "EntradaCasa"
 
 [node name="ZonaSalida" type="Area2D" parent="Estructuras" unique_id=650994072]
 y_sort_enabled = true
@@ -6474,18 +6496,20 @@ shape = SubResource("RectangleShape2D_iwlaa")
 [node name="Node2D" type="Node2D" parent="." unique_id=2087802730]
 y_sort_enabled = true
 
-[node name="Personaje" parent="Node2D" unique_id=1725817340 groups=["player"] instance=ExtResource("3_d2twj")]
-position = Vector2(-272, 380)
+[node name="Personaje" parent="Node2D" unique_id=1725817340 instance=ExtResource("3_d2twj")]
+position = Vector2(-219, 384)
 archivo_sonido_pasos = ExtResource("16_q7iq4")
 
 [node name="MusicaFondo" type="AudioStreamPlayer" parent="Node2D" unique_id=215846445]
 process_mode = 3
 stream = ExtResource("11_u0jbr")
+volume_db = -15.0
 autoplay = true
 bus = &"Musica"
 
-[node name="SalidaCementerio" type="Marker2D" parent="." unique_id=222086771 groups=["SalidaCementerio"]]
-position = Vector2(957, 77)
+[node name="ItemDrop" parent="Node2D" unique_id=658332245 instance=ExtResource("17_1ijsk")]
+position = Vector2(173, 386)
+item_data = ExtResource("18_88g26")
 
 [node name="CasaHerrero" type="Marker2D" parent="." unique_id=1117848130 groups=["CasaHerrero"]]
 position = Vector2(543.9375, -310.39838)
@@ -6493,7 +6517,7 @@ position = Vector2(543.9375, -310.39838)
 [node name="CasaJugador" type="Marker2D" parent="." unique_id=2014701178 groups=["CasaJugador"]]
 position = Vector2(-176.02673, -757.43414)
 
-[node name="ItemDrop2" parent="." unique_id=658332245 instance=ExtResource("17_1ijsk")]
+[node name="ItemDrop2" parent="." unique_id=2121278291 instance=ExtResource("17_1ijsk")]
 position = Vector2(12, 437)
 item_data = ExtResource("21_uolu1")
 
@@ -6501,6 +6525,322 @@ item_data = ExtResource("21_uolu1")
 position = Vector2(88, 437)
 item_data = ExtResource("22_atufp")
 
-[connection signal="body_entered" from="Estructuras/Puerta/ZonaInteraccion" to="Estructuras/Puerta" method="_on_zona_interaccion_body_entered"]
-[connection signal="interactuado" from="Estructuras/Puerta/ZonaInteraccion" to="Estructuras/Puerta" method="_on_zona_interaccion_interactuado"]
+[node name="LucesNoche" type="Node2D" parent="." unique_id=1356663937]
+y_sort_enabled = true
+
+[node name="Luz" parent="LucesNoche" unique_id=359089135 instance=ExtResource("18_uolu1")]
+position = Vector2(159, 261)
+
+[node name="Luz2" parent="LucesNoche" unique_id=1530972408 instance=ExtResource("18_uolu1")]
+position = Vector2(163, -15)
+
+[node name="Luz3" parent="LucesNoche" unique_id=1338129586 instance=ExtResource("18_uolu1")]
+position = Vector2(517, -144)
+
+[node name="Luz12" parent="LucesNoche" unique_id=903186004 instance=ExtResource("18_uolu1")]
+position = Vector2(56, -281)
+
+[node name="Luz13" parent="LucesNoche" unique_id=1661954350 instance=ExtResource("18_uolu1")]
+position = Vector2(68, -471)
+
+[node name="Luz4" type="Node2D" parent="LucesNoche" unique_id=1982517456]
+y_sort_enabled = true
+position = Vector2(232, -171)
+
+[node name="Sprite2D" type="Sprite2D" parent="LucesNoche/Luz4" unique_id=2106821407]
+y_sort_enabled = true
+texture = ExtResource("19_ke6m1")
+offset = Vector2(0, -20)
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LucesNoche/Luz4" unique_id=645965297]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LucesNoche/Luz4/StaticBody2D" unique_id=1316483878]
+position = Vector2(-12, 7)
+shape = SubResource("CircleShape2D_07vvx")
+
+[node name="AntorchaPueblo" type="PointLight2D" parent="LucesNoche/Luz4" unique_id=913269441]
+scale = Vector2(0.2, 0.2)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_s2pmu")
+texture_scale = 6.66
+script = ExtResource("23_ra0r5")
+
+[node name="Luz6" type="Node2D" parent="LucesNoche" unique_id=43795050]
+y_sort_enabled = true
+position = Vector2(30, -126)
+
+[node name="Sprite2D" type="Sprite2D" parent="LucesNoche/Luz6" unique_id=1651398283]
+y_sort_enabled = true
+texture = ExtResource("19_ke6m1")
+offset = Vector2(0, -20)
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LucesNoche/Luz6" unique_id=178486735]
+position = Vector2(-23, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LucesNoche/Luz6/StaticBody2D" unique_id=2097302617]
+position = Vector2(12, 7)
+shape = SubResource("CircleShape2D_07vvx")
+
+[node name="AntorchaPueblo" type="PointLight2D" parent="LucesNoche/Luz6" unique_id=828761301]
+scale = Vector2(0.2, 0.2)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_s2pmu")
+texture_scale = 6.66
+script = ExtResource("23_ra0r5")
+
+[node name="Luz5" type="Node2D" parent="LucesNoche" unique_id=1632743262]
+y_sort_enabled = true
+position = Vector2(71, 92)
+
+[node name="Sprite2D" type="Sprite2D" parent="LucesNoche/Luz5" unique_id=1298051953]
+y_sort_enabled = true
+texture = ExtResource("19_ke6m1")
+offset = Vector2(0, -20)
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LucesNoche/Luz5" unique_id=238563008]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LucesNoche/Luz5/StaticBody2D" unique_id=1623332150]
+position = Vector2(-12, 7)
+shape = SubResource("CircleShape2D_07vvx")
+
+[node name="AntorchaPueblo" type="PointLight2D" parent="LucesNoche/Luz5" unique_id=1448140476]
+scale = Vector2(0.2, 0.2)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_s2pmu")
+texture_scale = 6.66
+script = ExtResource("23_ra0r5")
+
+[node name="Luz9" type="Node2D" parent="LucesNoche" unique_id=1568024333]
+y_sort_enabled = true
+position = Vector2(-342, -626)
+
+[node name="Sprite2D" type="Sprite2D" parent="LucesNoche/Luz9" unique_id=823719599]
+y_sort_enabled = true
+texture = ExtResource("19_ke6m1")
+offset = Vector2(0, -20)
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LucesNoche/Luz9" unique_id=1276689409]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LucesNoche/Luz9/StaticBody2D" unique_id=2133145926]
+position = Vector2(-12, 7)
+shape = SubResource("CircleShape2D_07vvx")
+
+[node name="AntorchaPueblo" type="PointLight2D" parent="LucesNoche/Luz9" unique_id=143399179]
+scale = Vector2(0.2, 0.2)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_s2pmu")
+texture_scale = 6.66
+script = ExtResource("23_ra0r5")
+
+[node name="Luz8" type="Node2D" parent="LucesNoche" unique_id=116255354]
+y_sort_enabled = true
+position = Vector2(-116, -460)
+
+[node name="Sprite2D" type="Sprite2D" parent="LucesNoche/Luz8" unique_id=2069120042]
+y_sort_enabled = true
+texture = ExtResource("19_ke6m1")
+offset = Vector2(0, -20)
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LucesNoche/Luz8" unique_id=2000601962]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LucesNoche/Luz8/StaticBody2D" unique_id=2138343267]
+position = Vector2(-13, 7)
+shape = SubResource("CircleShape2D_07vvx")
+
+[node name="AntorchaPueblo" type="PointLight2D" parent="LucesNoche/Luz8" unique_id=1328468885]
+scale = Vector2(0.2, 0.2)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_s2pmu")
+texture_scale = 6.66
+script = ExtResource("23_ra0r5")
+
+[node name="Luz7" type="Node2D" parent="LucesNoche" unique_id=1863538114]
+y_sort_enabled = true
+position = Vector2(-90, -278)
+
+[node name="Sprite2D" type="Sprite2D" parent="LucesNoche/Luz7" unique_id=1345389929]
+y_sort_enabled = true
+texture = ExtResource("19_ke6m1")
+offset = Vector2(0, -20)
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LucesNoche/Luz7" unique_id=331332077]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LucesNoche/Luz7/StaticBody2D" unique_id=1834294825]
+position = Vector2(-12, 7)
+shape = SubResource("CircleShape2D_07vvx")
+
+[node name="AntorchaPueblo" type="PointLight2D" parent="LucesNoche/Luz7" unique_id=1393018470]
+scale = Vector2(0.2, 0.2)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_s2pmu")
+texture_scale = 6.66
+script = ExtResource("23_ra0r5")
+
+[node name="Luz10" type="Node2D" parent="LucesNoche" unique_id=1568884569]
+y_sort_enabled = true
+position = Vector2(-380, 84)
+
+[node name="Sprite2D" type="Sprite2D" parent="LucesNoche/Luz10" unique_id=901446570]
+y_sort_enabled = true
+texture = ExtResource("19_ke6m1")
+offset = Vector2(0, -20)
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LucesNoche/Luz10" unique_id=1329454128]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LucesNoche/Luz10/StaticBody2D" unique_id=1735945]
+position = Vector2(-13, 7)
+shape = SubResource("CircleShape2D_07vvx")
+
+[node name="AntorchaPueblo" type="PointLight2D" parent="LucesNoche/Luz10" unique_id=2111041331]
+scale = Vector2(0.2, 0.2)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_s2pmu")
+texture_scale = 6.66
+script = ExtResource("23_ra0r5")
+
+[node name="Luz11" parent="LucesNoche" unique_id=485169064 instance=ExtResource("18_uolu1")]
+position = Vector2(-164, 81)
+
+[node name="LucesDia" type="Node2D" parent="." unique_id=1439407568]
+y_sort_enabled = true
+
+[node name="FarolaApagada" parent="LucesDia" unique_id=1258494771 instance=ExtResource("24_88g26")]
+position = Vector2(-164, 82)
+
+[node name="FarolaApagada2" parent="LucesDia" unique_id=1521379905 instance=ExtResource("24_88g26")]
+position = Vector2(165, -15)
+
+[node name="FarolaApagada3" parent="LucesDia" unique_id=2090197058 instance=ExtResource("24_88g26")]
+position = Vector2(520, -144)
+
+[node name="FarolaApagada4" parent="LucesDia" unique_id=1987087002 instance=ExtResource("24_88g26")]
+position = Vector2(56, -281)
+
+[node name="FarolaApagada5" parent="LucesDia" unique_id=894095491 instance=ExtResource("24_88g26")]
+position = Vector2(70, -471)
+
+[node name="FarolaApagada6" parent="LucesDia" unique_id=1027628611 instance=ExtResource("24_88g26")]
+position = Vector2(160, 261)
+
+[node name="FarolaApagada7" type="Node2D" parent="LucesDia" unique_id=1007469278]
+position = Vector2(-382, 84)
+
+[node name="Sprite2D" type="Sprite2D" parent="LucesDia/FarolaApagada7" unique_id=1704305685]
+y_sort_enabled = true
+texture = ExtResource("25_ra0r5")
+offset = Vector2(0, -20)
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LucesDia/FarolaApagada7" unique_id=1130197410]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LucesDia/FarolaApagada7/StaticBody2D" unique_id=2090510577]
+position = Vector2(-12, 7)
+shape = SubResource("CircleShape2D_q3r22")
+
+[node name="FarolaApagada11" type="Node2D" parent="LucesDia" unique_id=1300842076]
+position = Vector2(230, -174)
+
+[node name="Sprite2D" type="Sprite2D" parent="LucesDia/FarolaApagada11" unique_id=22588772]
+y_sort_enabled = true
+texture = ExtResource("25_ra0r5")
+offset = Vector2(0, -20)
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LucesDia/FarolaApagada11" unique_id=693091172]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LucesDia/FarolaApagada11/StaticBody2D" unique_id=1725359972]
+position = Vector2(-12, 7)
+shape = SubResource("CircleShape2D_q3r22")
+
+[node name="FarolaApagada12" type="Node2D" parent="LucesDia" unique_id=703645629]
+position = Vector2(-343, -626)
+
+[node name="Sprite2D" type="Sprite2D" parent="LucesDia/FarolaApagada12" unique_id=1838489047]
+y_sort_enabled = true
+texture = ExtResource("25_ra0r5")
+offset = Vector2(0, -20)
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LucesDia/FarolaApagada12" unique_id=641901857]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LucesDia/FarolaApagada12/StaticBody2D" unique_id=175526491]
+position = Vector2(-12, 7)
+shape = SubResource("CircleShape2D_q3r22")
+
+[node name="FarolaApagada13" type="Node2D" parent="LucesDia" unique_id=465947618]
+position = Vector2(-116, -460)
+
+[node name="Sprite2D" type="Sprite2D" parent="LucesDia/FarolaApagada13" unique_id=1389604252]
+y_sort_enabled = true
+texture = ExtResource("25_ra0r5")
+offset = Vector2(0, -20)
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LucesDia/FarolaApagada13" unique_id=1412162554]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LucesDia/FarolaApagada13/StaticBody2D" unique_id=935433003]
+position = Vector2(-12, 7)
+shape = SubResource("CircleShape2D_q3r22")
+
+[node name="FarolaApagada8" type="Node2D" parent="LucesDia" unique_id=2087770934]
+position = Vector2(70, 91)
+
+[node name="Sprite2D" type="Sprite2D" parent="LucesDia/FarolaApagada8" unique_id=1624138662]
+y_sort_enabled = true
+texture = ExtResource("25_ra0r5")
+offset = Vector2(0, -20)
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LucesDia/FarolaApagada8" unique_id=1251845778]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LucesDia/FarolaApagada8/StaticBody2D" unique_id=1327921709]
+position = Vector2(-12, 7)
+shape = SubResource("CircleShape2D_q3r22")
+
+[node name="FarolaApagada9" type="Node2D" parent="LucesDia" unique_id=1798662724]
+position = Vector2(30, -125)
+
+[node name="Sprite2D" type="Sprite2D" parent="LucesDia/FarolaApagada9" unique_id=803238143]
+y_sort_enabled = true
+texture = ExtResource("25_ra0r5")
+offset = Vector2(0, -20)
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LucesDia/FarolaApagada9" unique_id=453285309]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LucesDia/FarolaApagada9/StaticBody2D" unique_id=1656802084]
+position = Vector2(-12, 7)
+shape = SubResource("CircleShape2D_q3r22")
+
+[node name="FarolaApagada10" type="Node2D" parent="LucesDia" unique_id=87634805]
+position = Vector2(-90, -279)
+
+[node name="Sprite2D" type="Sprite2D" parent="LucesDia/FarolaApagada10" unique_id=1643525518]
+y_sort_enabled = true
+texture = ExtResource("25_ra0r5")
+offset = Vector2(0, -20)
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LucesDia/FarolaApagada10" unique_id=1648854693]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LucesDia/FarolaApagada10/StaticBody2D" unique_id=1301834944]
+position = Vector2(-12, 7)
+shape = SubResource("CircleShape2D_q3r22")
+
+[node name="SalidaCasa" type="Marker2D" parent="." unique_id=431695756]
+position = Vector2(-197, -632)
+
+[node name="SalidaCementerio" type="Marker2D" parent="." unique_id=226240156]
+position = Vector2(1231, 95)
+
+[node name="SalidaCementerio2" type="Marker2D" parent="." unique_id=782695477 groups=["SalidaCementerio"]]
+position = Vector2(884, 81)
+
 [connection signal="body_entered" from="Estructuras/ZonaSalida" to="Estructuras/ZonaSalida" method="_on_body_entered"]

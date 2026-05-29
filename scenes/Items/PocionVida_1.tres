@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://vq3mjgclj47s"]
+
+[ext_resource type="Script" uid="uid://dqrekxnosbd60" path="res://scripts/ScriptsUI/Inventario/InventoryItem.gd" id="1_yeun6"]
+[ext_resource type="Texture2D" uid="uid://ctq6jfpn2ofsq" path="res://assets/sprites/assets_finales/items/pocion_1.png" id="2_rdatd"]
+
+[resource]
+script = ExtResource("1_yeun6")
+nombreItem = "Pocion Vida"
+descripcion = "Regenera 1 corazón de vida"
+tipo_item = "Pocion"
+texturaItem = ExtResource("2_rdatd")
+curacion_vida = 1
+precio_compra = 5
+precio_venta = 1

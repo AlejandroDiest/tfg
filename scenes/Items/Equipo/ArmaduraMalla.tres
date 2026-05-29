@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://i011q37k6mh6"]
+
+[ext_resource type="Script" uid="uid://dqrekxnosbd60" path="res://scripts/ScriptsUI/Inventario/InventoryItem.gd" id="1_hw7t1"]
+[ext_resource type="Texture2D" uid="uid://qo0jmnohlyu2" path="res://assets/sprites/assets_finales/items/armor_mesh.png" id="2_b46ck"]
+
+[resource]
+script = ExtResource("1_hw7t1")
+nombreItem = "Armadura de malla"
+descripcion = "Otorga +2 de vida"
+tipo_item = "Armadura"
+texturaItem = ExtResource("2_b46ck")
+bono_vida = 2
+precio_compra = 30
+receta = {
+"Hueso": 15
+}

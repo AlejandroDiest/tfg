@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://tiy5vcjwi1u0"]
+
+[ext_resource type="Texture2D" uid="uid://bqxh32qcoiv7p" path="res://assets/sprites/assets_finales/cementerio/Props/atlas-Props.png" id="1_vqel3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1hgi"]
+atlas = ExtResource("1_vqel3")
+region = Rect2(199.2798, 1011.3062, 78.15672, 58.565735)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqel3"]
+size = Vector2(76, 33)
+
+[node name="Berja" type="Node2D" unique_id=2086198095]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=142653406]
+scale = Vector2(0.974359, 1.6896552)
+texture = SubResource("AtlasTexture_b1hgi")
+offset = Vector2(0, -30)
+
+[node name="Area2D" type="StaticBody2D" parent="." unique_id=142479253]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=526288014]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(1, -21)
+shape = SubResource("RectangleShape2D_vqel3")

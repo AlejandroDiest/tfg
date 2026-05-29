@@ -26,9 +26,13 @@ func _on_ajustes_cerrado():
 	self.visible = true
 	
 func _input(event):
-	if visible == false:
+	if GameManager.inventario_abierto == true:
 		return
-	
 	if event.is_action_pressed("escape"):
-		_on_btn_continuar_pressed() 
-		get_viewport().set_input_as_handled()
+		if visible == true:
+			_on_btn_continuar_pressed()
+			get_viewport().set_input_as_handled()
+		else:
+			visible = true 
+			get_tree().paused = true
+			get_viewport().set_input_as_handled()
