@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://c3y38jgxdprvi"]
 
-[ext_resource type="Script" uid="uid://datihs8q5th02" path="res://scripts/NPCs/personaje/PersonajePrueba.gd" id="1_4xru5"]
+[ext_resource type="Script" uid="uid://datihs8q5th02" path="res://scripts/NPCs/personaje/Personaje.gd" id="1_4xru5"]
 [ext_resource type="Resource" uid="uid://duqxbv32ij5ag" path="res://scenes/UI/Inventario/Inventario.tres" id="2_5qa1r"]
 [ext_resource type="Texture2D" uid="uid://c4x6t6sxf3ag5" path="res://assets/sprites/assets_finales/pueblo/Characters/Warrior/warrior-all-animations-from top to bottom(Idle-run-full combo attack with 3 swings-single swing 1-single swing 3-hurt-death)-canvas 144x96.png" id="2_gwc8l"]
+[ext_resource type="PackedScene" uid="uid://cu884208wj5rj" path="res://scenes/UI/Menus/MenuMuerte.tscn" id="3_2uag2"]
 [ext_resource type="Script" uid="uid://beg7ee2ep56fx" path="res://scripts/NPCs/personaje/antorcha.gd" id="3_5qa1r"]
 [ext_resource type="PackedScene" uid="uid://bj1g606httsn6" path="res://scenes/Misc/Luz.tscn" id="4_j3q6p"]
 [ext_resource type="PackedScene" uid="uid://b64ts4u6hq118" path="res://scenes/UI/HUD/HUD.tscn" id="4_rtgx6"]
@@ -173,6 +174,9 @@ collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_4xru5")
 inventario = ExtResource("2_5qa1r")
+
+[node name="MenuMuerte" parent="." unique_id=1783264162 instance=ExtResource("3_2uag2")]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1981118771]
 position = Vector2(-2, -5)

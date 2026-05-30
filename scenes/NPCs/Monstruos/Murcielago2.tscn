@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cl7dgkp6oog23"]
 
 [ext_resource type="PackedScene" uid="uid://4kcex6wgwvo1" path="res://scenes/NPCs/Monstruos/EnemigoBase.tscn" id="1_feo4x"]
+[ext_resource type="PackedScene" uid="uid://bqbsal1sr71hf" path="res://scenes/NPCs/Monstruos/Props/BatProyectil.tscn" id="2_540ye"]
 [ext_resource type="Texture2D" uid="uid://0umyjk1mbaba" path="res://assets/sprites/assets_finales/cementerio/Characters/bat/Bat2-all-animations-96x96-each row is a different animation-from top to bottom-Idle-walk-walk to atk transition-atk instance-atk-hurt-death.png" id="2_feo4x"]
 [ext_resource type="PackedScene" uid="uid://d4jcrfkxni85d" path="res://scenes/Items/ItemDrop.tscn" id="2_nloly"]
 [ext_resource type="Resource" uid="uid://csti4bddfo5m2" path="res://scenes/Items/AlaMurcielago.tres" id="3_540ye"]
@@ -121,9 +122,9 @@ _data = {
 visibility_layer = 2
 velocidad = 80.0
 velocidad_deambular = 40.0
+escena_proyectil = ExtResource("2_540ye")
 scene_drop = ExtResource("2_nloly")
 loot_item = ExtResource("3_540ye")
-drop_chance = 1.0
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=1081048242]
 position = Vector2(0, 0)
@@ -138,6 +139,12 @@ libraries/ = SubResource("AnimationLibrary_wpk1o")
 
 [node name="AreaDeteccion" parent="." index="4" unique_id=1324305469]
 collision_mask = 2
+
+[node name="TimerMelee" parent="." index="6" unique_id=1573780330]
+wait_time = 3.0
+
+[node name="TimerRango" parent="." index="8" unique_id=21516815]
+wait_time = 2.5
 
 [connection signal="body_entered" from="AreaDeteccion" to="." method="_on_area_deteccion_body_entered"]
 [connection signal="body_exited" from="AreaDeteccion" to="." method="_on_area_deteccion_body_exited"]

@@ -40,6 +40,8 @@
 [ext_resource type="Texture2D" uid="uid://d2680dyfhv86w" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle-only smoke_16.png" id="37_rm4u5"]
 [ext_resource type="Texture2D" uid="uid://d2os3ygj8h2w7" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle-only smoke_17.png" id="38_qv18r"]
 [ext_resource type="Texture2D" uid="uid://bi84f27jpmw75" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle-only smoke_18.png" id="39_fe8uj"]
+[ext_resource type="PackedScene" uid="uid://d4jcrfkxni85d" path="res://scenes/Items/ItemDrop.tscn" id="41_acvmu"]
+[ext_resource type="Resource" uid="uid://c6opjkhebq4nj" path="res://scenes/Items/Nucleo.tres" id="42_juonq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qfrkk"]
 texture = ExtResource("2_yqhg6")
@@ -7863,3 +7865,15 @@ offset_top = -383.0
 offset_right = 384.0
 offset_bottom = 385.0
 border_width = 4.5
+
+[node name="ItemDrop" parent="." unique_id=658332245 instance=ExtResource("41_acvmu")]
+position = Vector2(-1, -2)
+item_data = ExtResource("42_juonq")
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=1738394073 groups=["spawns"]]
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPoints" unique_id=278119327 groups=["spawns"]]
+position = Vector2(-152, 8)
+
+[node name="Marker2D3" type="Marker2D" parent="SpawnPoints" unique_id=1841791303 groups=["spawns"]]
+position = Vector2(112, 0)

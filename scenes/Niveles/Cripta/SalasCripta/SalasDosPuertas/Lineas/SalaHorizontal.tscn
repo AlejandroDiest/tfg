@@ -8162,3 +8162,11 @@ z_index = 1
 position = Vector2(-326, 153)
 sprite_frames = SubResource("SpriteFrames_lcl5v")
 autoplay = "default"
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=164920532 groups=["spawns"]]
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPoints" unique_id=1525305153]
+position = Vector2(-152, 8)
+
+[node name="Marker2D3" type="Marker2D" parent="SpawnPoints" unique_id=1625253798]
+position = Vector2(140, 38)

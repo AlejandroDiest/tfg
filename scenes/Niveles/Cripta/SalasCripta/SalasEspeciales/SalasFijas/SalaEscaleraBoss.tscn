@@ -56,6 +56,7 @@
 [ext_resource type="Texture2D" uid="uid://exi1f6tsxj21" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle_smoking_3.png" id="52_k5mee"]
 [ext_resource type="Texture2D" uid="uid://biih2e3ps5ed3" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle_smoking_6.png" id="53_tqvgr"]
 [ext_resource type="Texture2D" uid="uid://sv0nhq4agvoc" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle_smoking_2.png" id="54_t4meq"]
+[ext_resource type="PackedScene" uid="uid://rtiwcxqnki8e" path="res://scenes/Misc/CambioZona.tscn" id="57_dl3he"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qfrkk"]
 texture = ExtResource("1_k2m60")
@@ -8258,3 +8259,8 @@ offset_top = -383.0
 offset_right = 385.0
 offset_bottom = 382.0
 border_width = 4.5
+
+[node name="Area2D" parent="." unique_id=47059056 instance=ExtResource("57_dl3he")]
+position = Vector2(-36, -344)
+ruta = "res://scenes/Niveles/Cementerio/Cementerio.tscn"
+nombre_marker_destino = "SalidaCripta"

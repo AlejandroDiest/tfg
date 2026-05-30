@@ -71,6 +71,9 @@ animations = [{
 }]
 
 [node name="HuesoProyectil" type="Area2D" unique_id=1616568614]
+scale = Vector2(0.7, 0.7)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_adm7g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=50805907]

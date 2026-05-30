@@ -190,7 +190,6 @@ func instanciar_sala(coord: Vector2i, packed_scene: PackedScene, mapa_referencia
 
 	if instancia == null: 
 		instancia = packed_scene.instantiate()
-		print("AVISO: Forzando sala genérica en ", coord, ". Faltan piezas en tu inventario para: ", conexiones_necesarias)
 
 
 	instancia.position = Vector2(coord.x * PASO_GRID, coord.y * PASO_GRID)

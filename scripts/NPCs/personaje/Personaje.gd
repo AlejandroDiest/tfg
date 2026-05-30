@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+signal vida_cambiada(nueva_vida)
 @export var inventario : Inv
 @export var velocidad: float = 180.0
 @export var vida_maxima: int = 5
@@ -7,7 +7,6 @@ extends CharacterBody2D
 @onready var pivot_ataque = $PivoteHitboxAtaque
 @onready var collision_hitbox = $PivoteHitboxAtaque/HitboxAtaque/PolygonHitbox
 
-# --- VARIABLES DE ESTADO ---
 var vida_actual: int = 0
 var esta_atacando: bool = false
 var esta_herido: bool = false
@@ -82,7 +81,6 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("ataque"): 
 		atacar()
 
-# --- ACCIONES ---
 func recolectar(item: InvItem):
 	if inventario:
 		inventario.insertar(item)
@@ -126,26 +124,37 @@ func recibir_daño(cantidad: int):
 	if esta_muerto or esta_herido: return
 	
 	vida_actual -= cantidad
+	GameManager.datos_jugador.vida_actual = vida_actual
+	emit_signal("vida_cambiada", vida_actual)
 	esta_herido = true
 	esta_atacando = false 
 	puede_cancelar_ataque = false
 	collision_hitbox.set_deferred("disabled", true)
+	
+	velocity = -velocity * 2 
+	move_and_slide()
 	
 	if vida_actual <= 0:
 		morir()
 	else:
 		anim.play("Hurt")
 		sprite.modulate = Color.RED
-		await get_tree().create_timer(0.1).timeout
+		await get_tree().create_timer(0.3).timeout 
 		sprite.modulate = Color.WHITE
+		esta_herido = false 
+		
+		
 
 func morir():
 	esta_muerto = true
 	anim.play("Die")
 	collision_hitbox.set_deferred("disabled", true)
 	$CollisionShape2D.set_deferred("disabled", true)
-
-# --- UTILIDADES ---
+	var menu = get_tree().get_first_node_in_group("MenuMuerte")
+	if menu == null:
+		print(" ERROR CRÍTICO: El juego no encuentra ningún nodo llamado 'MenuMuerte' en el grupo.")
+	else:
+		menu.mostrar_menu()
 
 func _actualizar_animacion(nombre: String):
 	if anim.current_animation != nombre:
@@ -168,8 +177,8 @@ func _on_animation_finished(anim_name):
 		
 func reproducir_paso():
 	if archivo_sonido_pasos != null:
-		reproductor_pasos.stream = archivo_sonido_pasos # Metemos el disco en el reproductor
-		reproductor_pasos.pitch_scale = randf_range(0.8, 1.2) # Variamos el tono
+		reproductor_pasos.stream = archivo_sonido_pasos 
+		reproductor_pasos.pitch_scale = randf_range(0.8, 1.2) 
 		reproductor_pasos.play()
 		
 		

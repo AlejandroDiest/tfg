@@ -10,7 +10,6 @@ func _ready():
 	if not GameManager.is_connected("cambio_horario", actualizar_ambiente):
 		GameManager.connect("cambio_horario", actualizar_ambiente)
 		
-	# 3. --- MANTENEMOS EL SISTEMA DE PUERTAS INTACTO ---
 	if SceneManager.get("destino_spawn_point") != null and SceneManager.destino_spawn_point != "":
 		var marker = get_node_or_null(SceneManager.destino_spawn_point)
 		if marker and jugador:

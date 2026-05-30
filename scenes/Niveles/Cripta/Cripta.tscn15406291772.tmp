@@ -14,10 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://dc44fy26v3osf" path="res://scenes/Niveles/Cripta/SalasCripta/SalasTresPuertas/SalaT.tscn" id="12_36lb3"]
 [ext_resource type="PackedScene" uid="uid://d0qll1cktqvfj" path="res://scenes/Niveles/Cripta/SalasCripta/SalasEspeciales/SalasTesoro/SalaTesoro.tscn" id="13_vwggq"]
 [ext_resource type="PackedScene" uid="uid://bmfbi16gerqyr" path="res://scenes/Niveles/Cripta/SalasCripta/SalasCuatroPuertas/N-W-S-E.tscn" id="14_jhj5q"]
-[ext_resource type="PackedScene" uid="uid://6qyi81l5yn03" path="res://scenes/NPCs/Monstruos/Esqueleto.tscn" id="15_j0myy"]
-[ext_resource type="PackedScene" uid="uid://ba5x5pjaapnek" path="res://scenes/NPCs/Monstruos/Esqueleto2.tscn" id="16_nk4k0"]
-[ext_resource type="PackedScene" uid="uid://dc6fd3y1mf46m" path="res://scenes/NPCs/Monstruos/Murcielago.tscn" id="17_xh2c0"]
-[ext_resource type="PackedScene" uid="uid://cl7dgkp6oog23" path="res://scenes/NPCs/Monstruos/Murcielago2.tscn" id="18_4ixys"]
 
 [node name="Cripta" type="Node2D" unique_id=1201348367]
 script = ExtResource("1_w2ae0")
@@ -26,7 +22,6 @@ sala_escalera_boss = ExtResource("3_a77li")
 salas_cripta = Array[PackedScene]([ExtResource("4_wuh0y"), ExtResource("5_j0myy"), ExtResource("6_nk4k0"), ExtResource("7_xh2c0"), ExtResource("8_4ixys"), ExtResource("9_eyruf"), ExtResource("10_ifrqk"), ExtResource("11_2rumm"), ExtResource("12_36lb3")])
 salas_tesoro = Array[PackedScene]([ExtResource("13_vwggq")])
 salas_cruce = Array[PackedScene]([ExtResource("14_jhj5q")])
-lista_enemigos = Array[PackedScene]([ExtResource("15_j0myy"), ExtResource("16_nk4k0"), ExtResource("17_xh2c0"), ExtResource("18_4ixys")])
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=706771818]
 color = Color(0.47049934, 0.47555166, 0.67515445, 1)

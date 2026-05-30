@@ -1,7 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://6qyi81l5yn03"]
+[gd_scene format=3 uid="uid://6qyi81l5yn03"]
 
 [ext_resource type="PackedScene" uid="uid://4kcex6wgwvo1" path="res://scenes/NPCs/Monstruos/EnemigoBase.tscn" id="1_0argl"]
+[ext_resource type="PackedScene" uid="uid://d4jcrfkxni85d" path="res://scenes/Items/ItemDrop.tscn" id="2_2k1v4"]
+[ext_resource type="PackedScene" uid="uid://txy2dl018bb5" path="res://scenes/NPCs/Monstruos/Props/HuesoProyectil.tscn" id="2_hs8cp"]
 [ext_resource type="Texture2D" uid="uid://cbwr8w7ma13ip" path="res://assets/sprites/assets_finales/cripta/Characters/Skeleton/skeleton-variation1-all animations.png" id="2_ihpdv"]
+[ext_resource type="Resource" uid="uid://kmawwrtesh5i" path="res://scenes/Items/Hueso.tres" id="4_kn1pd"]
 
 [sub_resource type="Animation" id="Animation_s5w7u"]
 resource_name = "Attack"
@@ -125,21 +128,29 @@ _data = {
 &"Run": SubResource("Animation_ke6gj")
 }
 
-[node name="EnemigoBase" instance=ExtResource("1_0argl")]
+[node name="EnemigoBase" unique_id=867808490 instance=ExtResource("1_0argl")]
+escena_proyectil = ExtResource("2_hs8cp")
+scene_drop = ExtResource("2_2k1v4")
+loot_item = ExtResource("4_kn1pd")
+drop_chance = 1.0
 
-[node name="Sprite2D" parent="." index="1"]
+[node name="Sprite2D" parent="." index="1" unique_id=416455241]
 texture = ExtResource("2_ihpdv")
 hframes = 17
 vframes = 5
 frame = 51
 
-[node name="AnimationPlayer" parent="." index="2"]
-libraries = {
-&"": SubResource("AnimationLibrary_s5w7u")
-}
+[node name="AnimationPlayer" parent="." index="2" unique_id=467816267]
+libraries/ = SubResource("AnimationLibrary_s5w7u")
 
-[node name="AreaDeteccion" parent="." index="4"]
+[node name="AreaDeteccion" parent="." index="4" unique_id=1324305469]
 collision_mask = 2
+
+[node name="TimerMelee" parent="." index="6" unique_id=1573780330]
+wait_time = 3.0
+
+[node name="TimerRango" parent="." index="8" unique_id=21516815]
+wait_time = 2.5
 
 [connection signal="body_entered" from="AreaDeteccion" to="." method="_on_area_deteccion_body_entered"]
 [connection signal="body_exited" from="AreaDeteccion" to="." method="_on_area_deteccion_body_exited"]

@@ -13,6 +13,6 @@ bono_dano = 1
 bono_vida = 1
 precio_compra = 50
 receta = {
-"AlaMurcielago": 20,
+"Ala de murcielago": 20,
 "Hueso": 5
 }

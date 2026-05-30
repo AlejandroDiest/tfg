@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bqbsal1sr71hf"]
+
+[ext_resource type="Script" uid="uid://ec3wi7i24c33" path="res://scripts/NPCs/Monstruos/hueso_proyectil.gd" id="1_htkgr"]
+[ext_resource type="Texture2D" uid="uid://bydcurb02qfpt" path="res://assets/sprites/assets_finales/cementerio/Characters/bat/ProyectilBat.png" id="2_htkgr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_diww5"]
+radius = 8.062258
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idync"]
+atlas = ExtResource("2_htkgr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jybm"]
+atlas = ExtResource("2_htkgr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6m38u"]
+atlas = ExtResource("2_htkgr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ocs00"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idync")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jybm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6m38u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="HuesoProyectil" type="Area2D" unique_id=1616568614]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_htkgr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=50805907]
+position = Vector2(-2, 4)
+shape = SubResource("CircleShape2D_diww5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=155232313]
+sprite_frames = SubResource("SpriteFrames_ocs00")
+autoplay = "default"
+frame_progress = 0.64307004

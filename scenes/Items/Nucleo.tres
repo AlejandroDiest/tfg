@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://c6opjkhebq4nj"]
+
+[ext_resource type="Script" uid="uid://dqrekxnosbd60" path="res://scripts/ScriptsUI/Inventario/InventoryItem.gd" id="1_3ord5"]
+[ext_resource type="Texture2D" uid="uid://u7cib20khoyp" path="res://assets/sprites/assets_finales/pueblo/UI/UI-elements-64x64.png" id="2_lra4w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flkb1"]
+atlas = ExtResource("2_lra4w")
+region = Rect2(266.7264, 1035.461, 42.070496, 41.391968)
+
+[resource]
+script = ExtResource("1_3ord5")
+nombreItem = "Nucleo"
+descripcion = "Nucleo de un monstruo misterioso"
+texturaItem = SubResource("AtlasTexture_flkb1")
+precio_venta = 50

@@ -9182,6 +9182,9 @@ size = Vector2(45, 136)
 y_sort_enabled = true
 script = ExtResource("1_0es2e")
 
+[node name="SalidaCripta" type="Marker2D" parent="." unique_id=909478351]
+position = Vector2(736.3479, -495.09158)
+
 [node name="Noche" type="CanvasModulate" parent="." unique_id=1537601952]
 visible = false
 color = Color(0.20392157, 0.20392157, 0.33333334, 1)

@@ -95,14 +95,17 @@ func resetear_datos():
 		"oro": 0,
 		"vida_maxima": 3,
 		"vida_actual": 3,
-		"dano": 0,
-		"equipamiento": {},
+		"dano": 1,
+		"equipamiento": {
+			"Espada": "res://scenes/Items/Equipo/EspadaHierro.tres"
+		},
 		"volumen_musica": 1.0, 
 		"volumen_sfx": 1.0
 	}
 	
 	GameManager.estado_actual_vendedor = 0
-	GameManager.estado_pueblo = 0        
+	GameManager.estado_pueblo = 0  
+	GameManager.estado_cementerio = 0      
 	
 	if GameManager.inventario_recurso:
 		GameManager.inventario_recurso.reset()

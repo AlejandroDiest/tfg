@@ -1,7 +1,6 @@
 extends Node
 
-# --- VARIABLES ORIGINALES ---
-# Ajusta la ruta si es necesario, pero mantenemos la lógica
+
 var inventario_recurso: Inv = preload("res://scenes/UI/Inventario/Inventario.tres") 
 var menu_pausa = preload("res://scenes/UI/Menus/MenuPausa.tscn")
 var dialogo_activo = false

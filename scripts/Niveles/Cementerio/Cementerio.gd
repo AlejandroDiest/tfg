@@ -18,10 +18,9 @@ func _ready():
 	
 	personaje.modulate = Color(1, 1, 1)
 	if zombie:
-		# 1. Comprobamos si la misión ya está terminada
+
 		var mision_completada = GameManager.estado_actual_vendedor >= GameManager.EstadoVendedor.CASA_REPARADA
 		
-		# 2. Comprobamos si el jugador lleva el brazo en la mochila
 		var tiene_brazo = false
 		if GameManager.inventario_recurso != null:
 			for slot in GameManager.inventario_recurso.inventario:
@@ -29,8 +28,7 @@ func _ready():
 					tiene_brazo = true
 					break
 		
-		# 3. Si ya ha entregado el brazo, o si lo lleva encima, el zombie no reaparece.
-		# Pero si NO lo tiene, ignoramos este if y el zombie se queda en el mapa.
+		
 		if mision_completada or tiene_brazo:
 			zombie.queue_free()
 	match GameManager.estado_cementerio:

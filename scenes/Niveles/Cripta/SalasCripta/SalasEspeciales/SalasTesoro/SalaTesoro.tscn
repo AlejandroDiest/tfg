@@ -8301,3 +8301,11 @@ offset_top = -383.0
 offset_right = 383.0
 offset_bottom = 383.0
 border_width = 4.5
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=1497436409 groups=["spawns"]]
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPoints" unique_id=843199040 groups=["spawns"]]
+position = Vector2(-152, 8)
+
+[node name="Marker2D3" type="Marker2D" parent="SpawnPoints" unique_id=1832679717 groups=["spawns"]]
+position = Vector2(112, 0)

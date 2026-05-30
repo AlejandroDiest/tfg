@@ -15,19 +15,23 @@ func _process(_delta: float) -> void:
 func actualizar_oro():
 	texto_oro.text = str(GameManager.datos_jugador.oro)
 
-func actualizar_vida():
+func _ready():
+	var jugador = get_tree().get_first_node_in_group("player")
+	if jugador:
+		jugador.vida_cambiada.connect(actualizar_vida)
 	
+	actualizar_vida() 
+
+func actualizar_vida():
 	for corazon in contenedor_corazones.get_children():
 		corazon.queue_free()
 
 	var vida_actual = GameManager.datos_jugador.vida_actual
 	var vida_maxima = GameManager.datos_jugador.vida_maxima
-	var corazones_vacios_a_añadir = vida_maxima - vida_actual
 	
-	for i in range(vida_actual):
-		var corazon = corazon_lleno_scene.instantiate()
-		contenedor_corazones.add_child(corazon)
-
-	for i in range(corazones_vacios_a_añadir):
-		var corazon = corazon_vacio_scene.instantiate() 
-		contenedor_corazones.add_child(corazon)
+	
+	for i in range(vida_maxima):
+		if i < vida_actual:
+			contenedor_corazones.add_child(corazon_lleno_scene.instantiate())
+		else:
+			contenedor_corazones.add_child(corazon_vacio_scene.instantiate())

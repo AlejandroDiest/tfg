@@ -12,6 +12,6 @@ texturaItem = ExtResource("2_eieff")
 bono_vida = 3
 precio_compra = 100
 receta = {
-"AlaMurcielago": 10,
+"Ala de murcielago": 25,
 "Hueso": 5
 }

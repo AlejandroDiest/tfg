@@ -14,5 +14,5 @@ bono_vida = 2
 precio_compra = 250
 receta = {
 "Ala de murcielago": 20,
-"Hueso": 30
+"Nucleo": 5
 }

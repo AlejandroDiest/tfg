@@ -15,7 +15,6 @@ func insertar(item: InvItem):
 			update_ui.emit()
 			return
 			
-		#Si no existe le pone el sprite e inicia el contador en 1
 		if slot.item == null:
 			slot.item = item
 			slot.cantItem = 1

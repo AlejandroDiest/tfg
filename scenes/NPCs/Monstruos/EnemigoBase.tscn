@@ -37,6 +37,8 @@ visible = false
 [node name="AreaAtaque" type="CollisionShape2D" parent="AreaAtaque" unique_id=1776960448]
 shape = SubResource("CircleShape2D_d304v")
 
-[node name="TimerAtaque" type="Timer" parent="." unique_id=1573780330]
+[node name="TimerMelee" type="Timer" parent="." unique_id=1573780330]
 
 [node name="TimerDeambular" type="Timer" parent="." unique_id=484842673]
+
+[node name="TimerRango" type="Timer" parent="." unique_id=21516815]

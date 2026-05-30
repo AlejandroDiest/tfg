@@ -58,6 +58,8 @@ NPC=""
 InterfazInventario=""
 TiendaGlobal=""
 HerreroGlobal=""
+spawns=""
+MenuMuerte=""
 
 [input]
 

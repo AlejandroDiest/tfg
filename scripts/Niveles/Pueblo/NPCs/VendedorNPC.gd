@@ -1,15 +1,12 @@
 extends CharacterBody2D
 
-# --- REFERENCIAS A LA INTERFAZ ---
 @onready var capa_dialogo = $CapaDialogo
 @onready var retrato = $CapaDialogo/RetratoAnimado
 @onready var label = $CapaDialogo/CajaTextoDialogo/Texto
 @onready var pantalla_negra = $CapaDialogo/PantallaNegra
 
-# --- CONFIGURACIÓN ---
-const NOMBRE_ITEM_JEFE = "BrazoZombie" 
+const NOMBRE_ITEM_JEFE = "Brazo de Zombie" 
 
-# --- NUEVO: EL CATÁLOGO DE LA TIENDA ---
 var catalogo_vendedor = [
 	preload("res://scenes/Items/PocionVida_1.tres"),
 	preload("res://scenes/Items/PocionVida_2.tres")
@@ -38,7 +35,6 @@ var dialogos = {
 	"tienda": "Echa un vistazo. También compraré lo que no necesites."
 }
 
-# --- VARIABLES DE CONTROL DEL DIÁLOGO ---
 var jugador_cerca = false
 var frases_actuales: Array = []
 var indice_frase: int = 0
@@ -85,7 +81,6 @@ func iniciar_dialogo():
 				frases_actuales = [dialogos["esperando_material_a"], dialogos["esperando_material_b"]]
 				
 		GameManager.EstadoVendedor.CASA_REPARADA, GameManager.EstadoVendedor.TIENDA_ABIERTA:
-			# Ya no vendemos aquí directo, solo decimos la frase y luego se abre el menú
 			frases_actuales = [dialogos["tienda"]]
 
 	if frases_actuales.size() > 0:

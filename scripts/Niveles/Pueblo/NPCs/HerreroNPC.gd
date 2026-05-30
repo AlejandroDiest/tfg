@@ -79,7 +79,6 @@ func abrir_menu_forja():
 	else:
 		print("ERROR: No se encontró HerreroUI. ¿Está en la escena principal con el grupo 'HerreroGlobal'?")
 
-# --- SEÑALES DE LA ZONA DE INTERACCIÓN ---
 func _on_zona_interaccion_body_entered(body):
 	if body.is_in_group("player"): 
 		jugador_cerca = true

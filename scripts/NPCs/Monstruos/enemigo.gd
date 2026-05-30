@@ -1,66 +1,66 @@
 extends CharacterBody2D
 
-# --- CONFIGURACIÓN ---
 @export_group("Estadísticas")
 @export var vida_maxima: int = 3
-@export var velocidad: float = 60.0 # 
+@export var velocidad: float = 60.0  
 @export var empuje: float = 200.0
 
 @export_group("IA")
-@export var distancia_ataque: float = 30.0 
+@export var distancia_ataque: float = 40.0 
+@export var distancia_disparo: float = 150.0 
 @export var velocidad_deambular: float = 30.0 
+
+@export_group("Combate a Distancia")
+@export var escena_proyectil: PackedScene 
 
 @export_group("Loot (Drops)")
 @export var scene_drop : PackedScene 
-@export var loot_item : InvItem      
+@export var loot_item : Resource 
 @export var drop_chance : float = 0.5 
-@export var delay_drop: float = 0.0 # NUEVO: Tiempo de espera extra tras morir
+@export var delay_drop: float = 0.0
 
+var animacion_actual: String = ""
 var vida_actual: int = 0
 var objetivo: Node2D = null 
-var puede_atacar: bool = true
 var esta_muerto: bool = false
 var atacando: bool = false 
 var herido: bool = false   
 var direccion_deambular: Vector2 = Vector2.ZERO
 
+# Variables de estado independientes
+var puede_atacar_melee: bool = true
+var puede_disparar: bool = true
+
 @onready var timer_deambular = $TimerDeambular
 @onready var sprite = $Sprite2D
 @onready var anim = $AnimationPlayer
-@onready var timer_ataque = $TimerAtaque
+@onready var timer_melee = $TimerMelee
+@onready var timer_rango = $TimerRango
 
 func _ready():
 	vida_actual = vida_maxima
-
-	# 1. Conectar Animaciones
+	
+	# Conexiones independientes
+	timer_melee.timeout.connect(func(): puede_atacar_melee = true)
+	timer_rango.timeout.connect(func(): puede_disparar = true)
+	
 	if not anim.animation_finished.is_connected(_on_animation_finished):
 		anim.animation_finished.connect(_on_animation_finished)
 	
-	# 2. Conectar Timer Ataque
-	if not timer_ataque.timeout.is_connected(_on_timer_ataque_timeout):
-		timer_ataque.timeout.connect(_on_timer_ataque_timeout)
-		
-	# 3. Conectar Timer Deambular
 	if not timer_deambular.timeout.is_connected(_on_timer_deambular_timeout):
 		timer_deambular.timeout.connect(_on_timer_deambular_timeout)
 
-	# --- CORRECCIÓN CRÍTICA: Conectar la Detección por Código ---
 	var area_deteccion = $AreaDeteccion 
-	if not area_deteccion.body_entered.is_connected(_on_area_deteccion_body_entered):
+	if area_deteccion:
 		area_deteccion.body_entered.connect(_on_area_deteccion_body_entered)
-	
-	if not area_deteccion.body_exited.is_connected(_on_area_deteccion_body_exited):
 		area_deteccion.body_exited.connect(_on_area_deteccion_body_exited)
 		
-	# Arrancamos el patrullaje manual la primera vez
 	_on_timer_deambular_timeout()
 
-		
 func _physics_process(_delta):
 	if esta_muerto or atacando: 
 		return
 	
-	# --- NUEVO LÓGICA DE KNOCKBACK ---
 	if herido:
 		velocity = velocity.move_toward(Vector2.ZERO, empuje * _delta * 5)
 		move_and_slide()
@@ -68,47 +68,63 @@ func _physics_process(_delta):
 
 	if objetivo:
 		var distancia = global_position.distance_to(objetivo.global_position)
-		if distancia > distancia_ataque:
-			_perseguir_jugador()
+		
+		if distancia <= distancia_ataque:
+			if puede_atacar_melee:
+				_intentar_atacar_melee()
+			else:
+				if velocity.length() < 5: _reproducir_animacion("Idle")
+		
+		elif escena_proyectil != null and distancia <= distancia_disparo:
+			if puede_disparar:
+				disparar_proyectil()
+			else:
+				if velocity.length() < 5: _reproducir_animacion("Idle")
+		
 		else:
-			_intentar_atacar()
+			_perseguir_jugador()
 	else:
 		_deambular()
 
 	move_and_slide()
 	_gestionar_giro_sprite()
 
-# --- COMPORTAMIENTOS ---
-
 func _perseguir_jugador():
 	var direccion = global_position.direction_to(objetivo.global_position)
 	velocity = direccion * velocidad
 	_reproducir_animacion("Run")
 
-func _intentar_atacar():
-	velocity = Vector2.ZERO
-	
-	if puede_atacar:
-		atacar()
-	else:
-		_reproducir_animacion("Idle")
+func _intentar_atacar_melee():
+	puede_atacar_melee = false
+	timer_melee.start()
+	atacar_cuerpo_a_cuerpo()
 
-func atacar():
-	atacando = true      
-	puede_atacar = false 
+func atacar_cuerpo_a_cuerpo():
+	atacando = true     
 	anim.play("Attack")  
+
+func disparar_proyectil():
+	puede_disparar = false
+	timer_rango.start()
+		
+	var proyectil = escena_proyectil.instantiate()
+	proyectil.top_level = true
+	var direccion_disparo = global_position.direction_to(objetivo.global_position)
+	proyectil.global_position = global_position + (direccion_disparo * 20.0)
+	
+	if proyectil.has_method("configurar_proyectil"):
+		proyectil.configurar_proyectil(direccion_disparo, self)
+		
+	proyectil.rotation = direccion_disparo.angle()
+	get_parent().call_deferred("add_child", proyectil)
 
 func recibir_daño(cantidad: int, direccion_empuje: Vector2 = Vector2.ZERO):
 	if esta_muerto: return
-	
 	atacando = false 
 	herido = true
 	vida_actual -= cantidad
-	
 	velocity = direccion_empuje * empuje
-	
-	if vida_actual <= 0:
-		morir()
+	if vida_actual <= 0: morir()
 	else:
 		anim.play("Hurt")
 		sprite.modulate = Color.RED
@@ -120,94 +136,51 @@ func morir():
 	atacando = false
 	herido = false
 	velocity = Vector2.ZERO
-	
-	# Desactivar físicas de forma segura
 	$CollisionShape2D.set_deferred("disabled", true)
+	if has_node("AreaDeteccion"):
+		$AreaDeteccion.set_deferred("monitoring", false)
 	
-	# Avisar al GameManager si es el Zombie de la misión
-	# Solo ejecutamos esto si estamos matando al EnemigoBase del Cementerio
-	if name == "Enemigobase":
-		if GameManager.estado_cementerio == GameManager.EstadoCementerio.ZOMBIE:
-			GameManager.estado_cementerio = GameManager.EstadoCementerio.VERJA
-	
-	# Reproducir animación
 	anim.play("Die")
-	
-	# Esperar a que termine la animación
 	await anim.animation_finished
-
-	if delay_drop > 0.0:
-		await get_tree().create_timer(delay_drop).timeout
-
 	intentar_soltar_loot()
-	
 	set_physics_process(false)
-
-# --- UTILIDADES ---
-
+	
 func _reproducir_animacion(nombre: String):
-	if anim.current_animation != nombre:
-		anim.play(nombre)
-
+	if anim.current_animation == nombre and anim.is_playing():
+		return
+	anim.play(nombre)
 func _gestionar_giro_sprite():
 	if velocity.x > 0: sprite.flip_h = false
 	elif velocity.x < 0: sprite.flip_h = true
 
-# --- SEÑALES ---
-
 func _on_animation_finished(anim_name):
-	if anim_name == "Attack":
-		atacando = false     
-		timer_ataque.start() 
-	
-	if anim_name == "Hurt":
-		herido = false       
+	animacion_actual = "" 
+	if anim_name == "Attack": 
+		atacando = false 
+	if anim_name == "Hurt": 
+		herido = false     
 
 func _on_area_deteccion_body_entered(body):
-	if body.name == "Personaje":
-		objetivo = body
+	if body.name == "Personaje": objetivo = body
 
 func _on_area_deteccion_body_exited(body):
-	if body == objetivo:
-		objetivo = null
+	if body == objetivo: objetivo = null
 
-func _on_timer_ataque_timeout():
-	puede_atacar = true
-	
 func intentar_soltar_loot():
-	if scene_drop == null or loot_item == null:
-		return
-	
+	if scene_drop == null or loot_item == null: return
 	if randf() <= drop_chance:
 		var nuevo_drop = scene_drop.instantiate()
 		nuevo_drop.item_data = loot_item
 		nuevo_drop.global_position = global_position
-		
-		get_parent().add_child(nuevo_drop)
+		get_tree().current_scene.call_deferred("add_child", nuevo_drop)
 	
 func _deambular():
 	velocity = direccion_deambular * velocidad_deambular
-	
-	if velocity != Vector2.ZERO:
-		_reproducir_animacion("Run")
-	else:
-		_reproducir_animacion("Idle")
+	if velocity != Vector2.ZERO: _reproducir_animacion("Run")
+	else: _reproducir_animacion("Idle")
 
 func _on_timer_deambular_timeout():
-	if randf() > 0.5:
-		direccion_deambular = Vector2.ZERO
-	else:
-		direccion_deambular = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
-		
+	if randf() > 0.5: direccion_deambular = Vector2.ZERO
+	else: direccion_deambular = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
 	timer_deambular.wait_time = randf_range(1.0, 3.0)
 	timer_deambular.start()
-	
-func _input(event):
-	if event.is_action_pressed("ui_accept"):
-		recibir_daño(1)
-
-func _on_area_ataque_body_entered(body: Node2D) -> void:
-	pass
-
-func _on_area_ataque_body_exited(body: Node2D) -> void:
-	pass

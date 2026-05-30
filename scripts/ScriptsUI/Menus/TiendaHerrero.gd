@@ -40,8 +40,14 @@ func actualizar_ui():
 	for item in inventario_herrero:
 		crear_boton_forja(item)
 func crear_boton_forja(item):
+	var lineas_de_texto = 1 
+	if item.get("receta"):
+		lineas_de_texto += item.receta.size() 
+		
+	var altura_dinamica = 85 + (lineas_de_texto * 18) 
+	
 	var btn = Button.new()
-	btn.custom_minimum_size = Vector2(0, 85) 
+	btn.custom_minimum_size = Vector2(0, altura_dinamica) 
 	btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	
 	var hbox = HBoxContainer.new()
@@ -75,7 +81,10 @@ func crear_boton_forja(item):
 		
 	label_nombre.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	label_nombre.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	
+	label_nombre.custom_minimum_size = Vector2(10, 0) 
 	label_nombre.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	
 	vbox.add_child(label_nombre)
 	
 	var texto_coste = str(item.precio_compra) + " Oro"
@@ -90,17 +99,22 @@ func crear_boton_forja(item):
 	label_coste.add_theme_color_override("font_color", Color(0.7, 0.7, 0.7)) 
 	label_coste.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	label_coste.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	
+	label_coste.custom_minimum_size = Vector2(10, 0)
+	label_coste.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	
 	vbox.add_child(label_coste)
+	
 	var margen_abajo = Control.new()
 	margen_abajo.custom_minimum_size = Vector2(0, 5)
 	vbox.add_child(margen_abajo)
+	
 	if GameManager.datos_jugador.oro < item.precio_compra or not tiene_materiales_receta(item):
 		btn.disabled = true
 		
 	btn.pressed.connect(func(): ejecutar_forja(item))
 	grid_forjar.add_child(btn)
-
-
+	
 func ejecutar_forja(item_comprado):
 	if GameManager.datos_jugador.oro >= item_comprado.precio_compra and tiene_materiales_receta(item_comprado):
 		

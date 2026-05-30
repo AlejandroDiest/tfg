@@ -7,6 +7,9 @@ extends Node2D
 @export var salas_tesoro: Array[PackedScene] 
 @export var salas_cruce: Array[PackedScene]
 
+# --- AÑADIDO: Lista de enemigos ---
+@export var lista_enemigos: Array[PackedScene] 
+
 const GRID_ANCHO = 5
 const GRID_ALTO = 5
 const PASO_GRID = 768 
@@ -41,7 +44,7 @@ func generar_nivel():
 			intentos += 1
 	
 	var tiempo_math = Time.get_ticks_msec()
-	print("⏱️ Tiempo pensando el laberinto: ", tiempo_math - tiempo_inicio, "ms (Intentos: ", intentos, ")")
+	print(" Tiempo pensando el laberinto: ", tiempo_math - tiempo_inicio, "ms (Intentos: ", intentos, ")")
 	
 	if exito:
 		generar_ramas()
@@ -49,8 +52,7 @@ func generar_nivel():
 		_dibujar_debug()
 		
 		var tiempo_fin = Time.get_ticks_msec()
-		print("⏱️ Tiempo dibujando (Tilemaps): ", tiempo_fin - tiempo_math, "ms")
-		print("⏱️ TIEMPO TOTAL: ", (tiempo_fin - tiempo_inicio) / 1000.0, " segundos")
+		print(" Tiempo dibujando (Tilemaps): ", tiempo_fin - tiempo_math, "ms")
 	else:
 		print("ERROR: Fallo en generación.")
 
@@ -207,11 +209,12 @@ func instanciar_sala(coord: Vector2i, packed_scene: PackedScene, mapa_referencia
 
 	if instancia == null: 
 		instancia = packed_scene.instantiate()
-		print("AVISO: Forzando sala genérica en ", coord)
 
 	#Posicionamiento
 	instancia.position = Vector2(coord.x * PASO_GRID, coord.y * PASO_GRID)
 	add_child(instancia)
+	
+	spawnear_enemigos_en_sala(instancia)
 	
 	if instancia.has_method("configurar_tapones"):
 		instancia.configurar_tapones(conexiones_necesarias)
@@ -237,9 +240,41 @@ func instanciar_sala(coord: Vector2i, packed_scene: PackedScene, mapa_referencia
 	var personaje = instancia.get_node_or_null("Personaje")
 	if personaje:
 		personaje.modulate = Color(0.6, 0.6, 0.75)
+		personaje.z_index = 100 
+		personaje.z_as_relative = false 
 		var antorcha = personaje.get_node_or_null("Antorcha")
 		if antorcha:
 			antorcha.visible = true
+			
+func spawnear_enemigos_en_sala(instancia: Node2D):
+	print("--- INTENTANDO SPAWNEAR EN SALA: ", instancia.name, " ---")
+	
+	if lista_enemigos.is_empty(): 
+		return
+	
+	var contenedor = instancia.get_node_or_null("SpawnPoints")
+	if not contenedor: 
+		return 
+	
+	var puntos_spawn = []
+	for child in contenedor.get_children():
+		if child.is_in_group("spawns"):
+			puntos_spawn.append(child)
+	
+	if puntos_spawn.is_empty(): 
+		return
+	
+	
+	puntos_spawn.shuffle()
+	var cantidad_enemigos = randi_range(2, 3)
+	
+	for i in range(min(cantidad_enemigos, puntos_spawn.size())):
+		var punto = puntos_spawn[i]
+		var enemigo = lista_enemigos.pick_random().instantiate() 
+		instancia.add_child(enemigo) 
+		enemigo.global_position = punto.global_position
+		enemigo.global_rotation = 0.0
+
 #region utilidades
 
 func es_en_grid(pos: Vector2i) -> bool:

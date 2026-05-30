@@ -12,5 +12,5 @@ texturaItem = ExtResource("2_6anis")
 bono_dano = 2
 precio_compra = 100
 receta = {
-"AlaMurcielago": 15
+"Ala de murcielago": 15
 }

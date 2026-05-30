@@ -18,12 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://422ovqvum50u" path="res://scenes/Niveles/Pueblo/TiendaVendedor.tscn" id="15_iwlaa"]
 [ext_resource type="PackedScene" uid="uid://00lpcxccearw" path="res://scenes/Niveles/Pueblo/CasaPlayer.tscn" id="15_xws1h"]
 [ext_resource type="AudioStream" uid="uid://lo6e88pudavo" path="res://assets/sounds/PasosHierba.ogg" id="16_q7iq4"]
-[ext_resource type="PackedScene" uid="uid://d4jcrfkxni85d" path="res://scenes/Items/ItemDrop.tscn" id="17_1ijsk"]
-[ext_resource type="Resource" uid="uid://cua42nugosc8p" path="res://scenes/Items/Equipo/ArmaduraHierro.tres" id="18_88g26"]
 [ext_resource type="PackedScene" uid="uid://ba7hsjiw8b3nj" path="res://scenes/Niveles/Cementerio/Props/Farola.tscn" id="18_uolu1"]
 [ext_resource type="Texture2D" uid="uid://cmjha3iw4tvyv" path="res://assets/sprites/assets_finales/cementerio/Props/props by individual sprites/lamp post - color scheme 1 - lit - 3.png" id="19_ke6m1"]
-[ext_resource type="Resource" uid="uid://d2hr5rhja4a6e" path="res://scenes/Items/Equipo/EspadaHierro.tres" id="21_uolu1"]
-[ext_resource type="Resource" uid="uid://i011q37k6mh6" path="res://scenes/Items/Equipo/ArmaduraMalla.tres" id="22_atufp"]
 [ext_resource type="Script" uid="uid://beg7ee2ep56fx" path="res://scripts/NPCs/personaje/antorcha.gd" id="23_ra0r5"]
 [ext_resource type="PackedScene" uid="uid://dknwylvwbhoy5" path="res://scenes/Niveles/Cementerio/Props/Farola_Apagada.tscn" id="24_88g26"]
 [ext_resource type="Texture2D" uid="uid://c8sq5qadbuot8" path="res://assets/sprites/assets_finales/cementerio/Props/props by individual sprites/lamp post - color scheme 2  - 3.png" id="25_ra0r5"]
@@ -6507,23 +6503,11 @@ volume_db = -15.0
 autoplay = true
 bus = &"Musica"
 
-[node name="ItemDrop" parent="Node2D" unique_id=658332245 instance=ExtResource("17_1ijsk")]
-position = Vector2(173, 386)
-item_data = ExtResource("18_88g26")
-
 [node name="CasaHerrero" type="Marker2D" parent="." unique_id=1117848130 groups=["CasaHerrero"]]
 position = Vector2(543.9375, -310.39838)
 
 [node name="CasaJugador" type="Marker2D" parent="." unique_id=2014701178 groups=["CasaJugador"]]
 position = Vector2(-176.02673, -757.43414)
-
-[node name="ItemDrop2" parent="." unique_id=2121278291 instance=ExtResource("17_1ijsk")]
-position = Vector2(12, 437)
-item_data = ExtResource("21_uolu1")
-
-[node name="ItemDrop3" parent="." unique_id=165679321 instance=ExtResource("17_1ijsk")]
-position = Vector2(88, 437)
-item_data = ExtResource("22_atufp")
 
 [node name="LucesNoche" type="Node2D" parent="." unique_id=1356663937]
 y_sort_enabled = true

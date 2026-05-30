@@ -8,17 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://csqct6awpyvgx" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/statue 5.png" id="4_ecsxa"]
 [ext_resource type="Texture2D" uid="uid://dev3wqxrwlbh1" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/statue and cross support 1.png" id="5_36fdv"]
 [ext_resource type="Texture2D" uid="uid://y330t0n52iwh" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/bones - color scheme 1 - 36.png" id="5_fyegl"]
-[ext_resource type="PackedScene" uid="uid://6qyi81l5yn03" path="res://scenes/NPCs/Monstruos/Esqueleto.tscn" id="5_x45r2"]
 [ext_resource type="Texture2D" uid="uid://5cc8fqkwvica" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/vase color scheme 4 - 8.png" id="6_4ic0y"]
-[ext_resource type="PackedScene" uid="uid://ba5x5pjaapnek" path="res://scenes/NPCs/Monstruos/Esqueleto2.tscn" id="6_iyvl6"]
 [ext_resource type="Texture2D" uid="uid://bba3wutmklbp8" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/statue 6.png" id="6_lm44j"]
 [ext_resource type="PackedScene" uid="uid://c3y38jgxdprvi" path="res://scenes/NPCs/Personajes/Personaje.tscn" id="6_strer"]
 [ext_resource type="Texture2D" uid="uid://dcj3kadsd7pl6" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candelabrum 3.png" id="7_og8dd"]
 [ext_resource type="Texture2D" uid="uid://cfdp637bswspq" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/vase color scheme 4 - 7.png" id="7_phq0x"]
-[ext_resource type="PackedScene" uid="uid://dc6fd3y1mf46m" path="res://scenes/NPCs/Monstruos/Murcielago.tscn" id="7_strer"]
 [ext_resource type="Texture2D" uid="uid://d884k46h32a" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/torch-burning2_1.png" id="8_1l6wq"]
 [ext_resource type="Texture2D" uid="uid://ko381jtdfd68" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/vase color scheme 4 - 5.png" id="8_fg38n"]
-[ext_resource type="PackedScene" uid="uid://cl7dgkp6oog23" path="res://scenes/NPCs/Monstruos/Murcielago2.tscn" id="8_iuo2d"]
 [ext_resource type="Texture2D" uid="uid://n464f16ysqy5" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/vase color scheme 2 - 2.png" id="9_ajro7"]
 [ext_resource type="Texture2D" uid="uid://burbvkv3ixajn" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/torch-burning2_7.png" id="9_hi6lp"]
 [ext_resource type="Texture2D" uid="uid://c3i1cln7m3ft7" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/bench horizontal 2.png" id="10_34upn"]
@@ -48,6 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://dvqvwh2mseb7u" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle_burning2_3.png" id="35_yykgj"]
 [ext_resource type="Texture2D" uid="uid://voiju07yhlol" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle_burning2_6.png" id="36_dd2fd"]
 [ext_resource type="Texture2D" uid="uid://btu0ed2odav7c" path="res://assets/sprites/assets_finales/cripta/Props/atlas props - individual sprites/candle_burning2_2.png" id="37_51466"]
+[ext_resource type="AudioStream" uid="uid://cdme38y0dqq32" path="res://assets/music/Dungeon.mp3" id="45_4ic0y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pfykg"]
 texture = ExtResource("1_51sqt")
@@ -8131,20 +8128,12 @@ offset_right = 388.0
 offset_bottom = 380.0
 border_width = 4.5
 
-[node name="Enemigos" type="Node2D" parent="." unique_id=1703403431]
-
-[node name="EnemigoBase" parent="Enemigos" unique_id=1806350769 instance=ExtResource("5_x45r2")]
-position = Vector2(-208, -20)
-
-[node name="EnemigoBase2" parent="Enemigos" unique_id=742963312 instance=ExtResource("6_iyvl6")]
-position = Vector2(208, -23)
-
-[node name="EnemigoBase4" parent="Enemigos" unique_id=859899133 instance=ExtResource("8_iuo2d")]
-position = Vector2(-2, -201)
-
-[node name="EnemigoBase3" parent="Enemigos" unique_id=1597021434 instance=ExtResource("7_strer")]
-position = Vector2(-1, 197)
-
 [node name="Personaje" parent="." unique_id=1992610581 instance=ExtResource("6_strer")]
+
+[node name="MusicaFondo" type="AudioStreamPlayer" parent="." unique_id=1679241897]
+process_mode = 3
+stream = ExtResource("45_4ic0y")
+autoplay = true
+bus = &"Musica"
 
 [editable path="Personaje"]

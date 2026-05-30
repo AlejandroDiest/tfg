@@ -1,11 +1,8 @@
 extends Control
 
 @onready var barra = $ProgressBar 
-# Asegúrate de que tu nodo de barra se llame ProgressBar o cambia el nombre aquí
 
-# LISTA DE LA COMPRA: ¿Qué escenas quieres guardar en la mochila?
 var lista_de_carga = [
-	# CAMBIA ESTAS RUTAS POR LAS TUYAS EXACTAS
 	{ "ruta": "res://scenes/Niveles/Pueblo/Pueblo.tscn", "tipo": "Pueblo" },
 	{ "ruta": "res://scenes/Niveles/Cripta/Cripta.tscn", "tipo": "Cripta" },
 	{ "ruta": "res://scenes/UI/Menus/MenuInicio.tscn", "tipo": "Menu" },
